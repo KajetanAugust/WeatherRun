@@ -9749,6 +9749,11 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+simple-xml-to-json@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/simple-xml-to-json/-/simple-xml-to-json-1.0.7.tgz#b2d8de972e5f59a6726f02ec172234d4a9e89367"
+  integrity sha512-+/wZDXEADb1oC0zstvxaaeAZ+w6Y7chJ2UXi5q98jYm/rBd5XbuRrS+yPtPUU+y0iq9nw7ysOEJl3DIJQXijdA==
+
 sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
