@@ -1,7 +1,10 @@
 import React from 'react'
+import queryString from 'query-string';
+
 import { formatCityName } from "../utils/formatCityName";
+import { aqiToken } from "../tokens/tokens";
+
 import logo from '../logos/aqilogo.png'
-import { aqiToken } from "../keys/keys";
 
 const styles = {
     good: {
@@ -38,15 +41,19 @@ export default class AirQuality extends React.Component {
 
     state = {
         aqi: {},
-        city: 'sosnowiec',
+        city: '',
         loading: true
     }
 
     componentDidMount() {
-        fetch(`https://api.waqi.info/feed/${this.state.city}/?token=${aqiToken}`)
+        const searchValue = queryString.parse(this.props.location.search)
+        console.log('You have searched for: ', searchValue.search)
+        this.setState({city: searchValue.search})
+        fetch(`https://api.waqi.info/feed/${searchValue.search}/?token=${aqiToken}`)
             .then(res => res.json())
             .then((data) => this.setState({aqi: data.data, loading: false}))
     }
+
 
     pollutionLevelChecker = (aqiData) => {
         if(aqiData <= 50) {
@@ -66,6 +73,7 @@ export default class AirQuality extends React.Component {
         }
     }
 
+
     render() {
 
         console.log(this.state.aqi)
@@ -77,7 +85,7 @@ export default class AirQuality extends React.Component {
                     !loading
                         ?
                             <div style={this.pollutionLevelChecker(aqi.aqi)} className='aqi-div'>
-                                <a href={`https://aqicn.org/search/#q=${city}`} target='_blank'>
+                                <a href={`https://aqicn.org/search/#q=${city}`} target='_blank' rel='noreferrer'>
                                     <img src={logo} className='aqi-logo' alt='AQICN Logo'/>
                                 </a>
                                 <p className='aqi-title'>AQI</p>
