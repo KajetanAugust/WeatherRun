@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 /src/keys/
 .idea
+/src/keys/keys.js
