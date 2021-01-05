@@ -11,7 +11,6 @@ export default class Search extends React.Component {
         this.setState({
             city: value
         })
-        console.log(this.state.city)
     }
 
     render() {
