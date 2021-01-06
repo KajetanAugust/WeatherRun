@@ -1,85 +1,60 @@
-import { WiDaySunny, WiDaySunnyOvercast, WiDayHaze, WiDayCloudy, WiCloud, WiCloudy, WiFog, WiShowers, WiDaySprinkle, WiStormShowers, WiDayThunderstorm, WiRain, WiSnow, WiDaySnow, WiSleet, WiRainMix, WiThermometerExterior, WiThermometer, WiWindy, WiNightClear, WiNightAltCloudy, WiNightFog, WiNightShowers, WiNightRain, WiNightThunderstorm, WiNightSnow, WiNa } from "react-icons/wi";
+import {
+    WiDaySunny,
+    WiDayCloudy,
+    WiCloud,
+    WiCloudy,
+    WiDayShowers,
+    WiSnow,
+    WiNightClear,
+    WiNightAltCloudy,
+    WiNightFog,
+    WiNightShowers,
+    WiNightRain,
+    WiNa,
+    WiDayRain,
+    WiDayFog,
+    WiNightThunderstorm,
+    WiDayThunderstorm
+} from "react-icons/wi";
 
-export function weatherIconChecker (weatherNum) {
-    switch (weatherNum) {
-        case 1 :
+export function weatherIconChecker (weatherCode) {
+    switch (weatherCode) {
+        case '01d' :
             return <WiDaySunny className='weather-icon'/>
-        case 2 :
-            return <WiDaySunnyOvercast className='weather-icon'/>
-        case 3 :
-            return <WiDaySunnyOvercast className='weather-icon'/>
-        case 4 :
-            return <WiDaySunnyOvercast className='weather-icon'/>
-        case 5 :
-            return <WiDayHaze className='weather-icon'/>
-        case 6 :
+        case '01n' :
+            return <WiNightClear className='weather-icon' />
+        case '02d' :
             return <WiDayCloudy className='weather-icon'/>
-        case 7 :
-            return <WiCloud className='weather-icon'/>
-        case 8 :
-            return <WiCloud className='weather-icon'/>
-        case 11 :
-            return <WiFog className='weather-icon'/>
-        case 12 :
-            return <WiShowers className='weather-icon'/>
-        case 13 :
-            return <WiDaySprinkle className='weather-icon'/>
-        case 14 :
-            return <WiDaySprinkle className='weather-icon'/>
-        case 15 :
-            return <WiStormShowers className='weather-icon'/>
-        case 16 :
-            return <WiDayThunderstorm className='weather-icon'/>
-        case 17 :
-            return <WiDayThunderstorm className='weather-icon'/>
-        case 18 :
-            return <WiRain className='weather-icon'/>
-        case 19 :
-            return <WiSnow className='weather-icon'/>
-        case 22 :
-            return <WiSnow className='weather-icon'/>
-        case 20:
-            return <WiDaySnow className='weather-icon'/>
-        case 21 :
-            return <WiDaySnow className='weather-icon'/>
-        case 23 :
-            return <WiDaySnow className='weather-icon'/>
-        case 25 :
-            return <WiSleet className='weather-icon'/>
-        case 26  :
-            return <WiRainMix className='weather-icon'/>
-        case 29 :
-            return <WiRainMix className='weather-icon'/>
-        case 30 :
-            return <WiThermometer className='weather-icon'/>
-        case 31 :
-            return <WiThermometerExterior className='weather-icon'/>
-        case 32 :
-            return <WiWindy className='weather-icon'/>
-        case 33 :
-            return <WiNightClear className='weather-icon'/>
-        case 34 :
-            return <WiNightAltCloudy className='weather-icon'/>
-        case 35 :
-            return <WiNightAltCloudy className='weather-icon'/>
-        case 36 :
-            return <WiNightAltCloudy className='weather-icon'/>
-        case 38 :
-            return <WiNightAltCloudy className='weather-icon'/>
-        case 37 :
-            return <WiNightFog className='weather-icon'/>
-        case 39 :
-            return <WiNightShowers className='weather-icon'/>
-        case 40 :
-            return <WiNightRain className='weather-icon'/>
-        case 41 :
-            return <WiNightThunderstorm className='weather-icon'/>
-        case 42 :
-            return <WiNightThunderstorm className='weather-icon'/>
-        case 43 :
-            return <WiNightSnow className='weather-icon'/>
-        case 44 :
-            return <WiNightSnow className='weather-icon'/>
+        case '02n' :
+            return <WiNightAltCloudy className='weather-icon' />
+        case '03d' :
+            return <WiCloud className='weather-icon' />
+        case '03n' :
+            return <WiCloud className='weather-icon' />
+        case '04d' :
+            return <WiCloudy className='weather-icon' />
+        case '04n' :
+            return <WiCloudy className='weather-icon' />
+        case '09d' :
+            return <WiDayShowers className='weather-icon' />
+        case '09n' :
+            return <WiNightShowers className='weather-icon' />
+        case '10d' :
+            return <WiDayRain className='weather-icon' />
+        case '10n' :
+            return <WiNightRain className='weather-icon' />
+        case '11d' :
+            return <WiDayThunderstorm className='weather-icon' />
+        case '11n' :
+            return <WiNightThunderstorm className='weather-icon' />
+        case '13d' :
+            return <WiSnow className='weather-icon' />
+        case '13n' :
+            return <WiSnow className='weather-icon' />
+        case '50d' :
+            return <WiDayFog className='weather-icon' />
+        case '50n' :
+            return <WiNightFog className='weather-icon' />
         default :
             return <WiNa className='weather-icon'/>
     }

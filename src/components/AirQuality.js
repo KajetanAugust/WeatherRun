@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { formatCityName } from "../utils/formatCityName";
-import { aqiToken } from "../tokens/tokens";
 
-import logo from '../logos/aqilogo.png'
+// import { formatCityName } from "../utils/formatCityName";
+// import { aqiToken } from "../tokens/tokens";
+
 
 const styles = {
     good: {
@@ -39,18 +39,29 @@ const styles = {
 export default class AirQuality extends React.Component {
 
     state = {
-        aqi: {},
+        aqi: null,
         location: '',
-        loading: true
+        loading: true,
+        error:'',
     }
 
     componentDidMount() {
-        const {location} = this.props
-        this.setState({location: location})
-        fetch(`https://cors-anywhere.herokuapp.com/https://api.waqi.info/feed/${location}/?token=${aqiToken}`)
-            .then(res => res.json())
-            .then((data) => this.setState({aqi: data.data, loading: false}))
-            .catch(err => console.log('There was en error: ', err))
+        this.setState({
+            aqi: this.props.pollution.list[0].main.aqi,
+            city: this.props.city,
+            country: this.props.country,
+            loading: false
+        })
+
+        // const {location} = this.props
+        // this.setState({location: location})
+        // fetch(`https://api.waqi.info/search/?token=${aqiToken}&keyword=${location}&origin=*`)
+        //     .then(res => res.json())
+        //     .then(data => this.setState({
+        //         aqi: Number(data.data[0].aqi),
+        //         loading: false
+        //     }))
+        //     .catch(err => this.setState({error: err, loading: false}))
     }
 
 
@@ -74,27 +85,22 @@ export default class AirQuality extends React.Component {
 
 
     render() {
-        const {aqi, location, loading} = this.state
-
+        const {aqi, city, country,  loading} = this.state
+        // console.log(aqi)
         return (
             <React.Fragment>
                 {
                     !loading
                         ?
-                            <div style={this.pollutionLevelChecker(aqi.aqi)} className='aqi-div'>
-                                <a href={`https://aqicn.org/search/#q=${location}`} target='_blank' rel='noreferrer'>
-                                    <img src={logo} className='aqi-logo' alt='AQICN Logo'/>
-                                </a>
+                            <div style={this.pollutionLevelChecker(aqi)} className='aqi-div'>
                                 <p className='aqi-title'>AQI</p>
-                                <p className='aqi-num'>{typeof aqi.aqi === 'number' ? aqi.aqi : 'No Data'}</p>
-                                <p className='aqi-city'>{formatCityName(location)}</p>
+                                <p className='aqi-num'>{typeof aqi === 'number' ? aqi : 'No Data'}</p>
+                                <p className='aqi-city'>{city}, {country}</p>
                             </div>
-
                         :
-                            <div style={this.pollutionLevelChecker(aqi.aqi)} className='aqi-div'>
+                            <div style={this.pollutionLevelChecker(aqi)} className='aqi-div'>
                                 <p className='aqi-title'>Loading...</p>
                             </div>
-
                 }
             </React.Fragment>
         )
