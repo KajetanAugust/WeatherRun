@@ -2,8 +2,11 @@ import React from "react";
 import AirQuality from "./AirQuality";
 import queryString from "query-string";
 import Weather from "./Weather";
+import { Link } from 'react-router-dom'
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
-import { openWeatherToken } from "../tokens/tokens";
+
+import { openWeatherToken, aqiToken } from "../tokens/tokens";
 
 export default class ResultsPage extends React.Component {
     state = {
@@ -17,36 +20,22 @@ export default class ResultsPage extends React.Component {
 
         const searchValue = queryString.parse(this.props.location.search)
 
-        this.setState({
-            location: searchValue.search,
-            weather: null,
-        })
-
-
-        console.log('You have searched for: ', searchValue.search)
-
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue.search}&appid=${openWeatherToken}&units=metric`)
-                .then(res => res.json())
-                .then(data => {
-                    this.setState({
-                        weather: data,
-                        loading: true,
-                    })
-
-                    return fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${openWeatherToken}`)
-                        .then(res => res.json())
-                        .then(data => {
-                            this.setState({
-                                pollution: data,
-                                loading: false,
-                            })
-
-                    // return fetch(`https://api.openaq.org/v1/latest&coordinates=${data.coord.lat},${data.coord.lon}`)
-                    //     .then(res => res.json())
-                    //     .then(data => console.log(data))
+            .then(res => res.json())
+            .then(data => {
+                this.setState({
+                    weather: data,
+                    loading: true,
                 })
-                .catch(err => console.log('There was an error: ', err))
-    })
+                fetch(`https://api.waqi.info/feed/geo:${data.coord.lat};${data.coord.lon}/?token=${aqiToken}&origin=*`)
+                    .then(res => res.json())
+                    .then(data => this.setState({
+                        pollution: data.data,
+                        loading: false
+                    }))
+
+            })
+            .catch(err => console.log('There was an error: ', err))
     }
 
     render() {
@@ -56,12 +45,19 @@ export default class ResultsPage extends React.Component {
                 {
                     !loading
                         ?
-                            <div>
-                                <AirQuality pollution={pollution} city={weather.name} country={weather.sys.country} />
-                                <Weather weather={weather} />
-                            </div>
-
-                        : <p>Loading...</p>
+                            <React.Fragment>
+                                <Link to='/' className='back-button'>
+                                    <AiOutlineArrowLeft className='back-arrow'/>
+                                    <p className='back-text'>BACK</p>
+                                </Link>
+                                <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
+                                <div className='results-container'>
+                                    <AirQuality pollution={pollution} />
+                                    <Weather weather={weather} />
+                                </div>
+                            </React.Fragment>
+                        :
+                            <p>Loading...</p>
                 }
             </React.Fragment>
         );

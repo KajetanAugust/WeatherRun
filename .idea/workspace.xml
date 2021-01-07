@@ -1,6 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AirQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AirQuality.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResultsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Weather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/formatCityName.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formatWeather.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectId" id="1mbpwXoRGDCHMzCvqRLeBfqhqz3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/logos" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/Components" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="" />
+      <created>1609772383757</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609772383757</updated>
+      <workItem from="1609772384833" duration="11469000" />
+      <workItem from="1609790491908" duration="4524000" />
+      <workItem from="1609840133457" duration="6339000" />
+      <workItem from="1609858168289" duration="5140000" />
+      <workItem from="1609882002440" duration="1157000" />
+      <workItem from="1609883559418" duration="3410000" />
+      <workItem from="1609944846270" duration="7648000" />
+      <workItem from="1610030557932" duration="8357000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1609783876114</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609783876114</updated>
+    </task>
+    <task id="LOCAL-00002" summary="initial commit">
+      <created>1609784345948</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609784345948</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: added basics in search component, added routing&#10;&#10;Basics of Search.js component are done, input value is passed to the AirQuality.js component via url params and the result for location is displayed.">
+      <created>1609797315106</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609797315106</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: Added ResultsPage.js and Weather.js components&#10;&#10;ResultsPage.js will collect data from search and pass it to all the subcomponents. Weather component is now added with basic logic and data fetching. It fetches city key from AccuWeather API and then fetches weather for this city using the key. All fetches use herokus cors-anywhere now to fix cors errors.">
+      <created>1609844518657</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609844518657</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: basic content and styling for Weather.js&#10;&#10;Weather.js component now has basic style and content, it uses react-icons for weather icons. Helper function weatherIconChecker.js is created, it checks for weatherIcon number in the response from AccuWeather API and returns appropriate icon from react-icons.">
+      <created>1609863286928</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609863286928</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: changed API to openWeather&#10;&#10;Both APIs are now switched for openWeather API due to more possible requests in the new one.">
+      <created>1609959644567</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609959644567</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="feat: added basics in search component, added routing&#10;&#10;Basics of Search.js component are done, input value is passed to the AirQuality.js component via url params and the result for location is displayed." />
+    <MESSAGE value="feat: Added ResultsPage.js and Weather.js components&#10;&#10;ResultsPage.js will collect data from search and pass it to all the subcomponents. Weather component is now added with basic logic and data fetching. It fetches city key from AccuWeather API and then fetches weather for this city using the key. All fetches use herokus cors-anywhere now to fix cors errors." />
+    <MESSAGE value="feat: basic content and styling for Weather.js&#10;&#10;Weather.js component now has basic style and content, it uses react-icons for weather icons. Helper function weatherIconChecker.js is created, it checks for weatherIcon number in the response from AccuWeather API and returns appropriate icon from react-icons." />
+    <MESSAGE value="feat: changed API to openWeather&#10;&#10;Both APIs are now switched for openWeather API due to more possible requests in the new one." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: changed API to openWeather&#10;&#10;Both APIs are now switched for openWeather API due to more possible requests in the new one." />
   </component>
 </project>

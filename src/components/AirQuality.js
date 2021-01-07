@@ -1,67 +1,41 @@
 import React from 'react'
 
-
-// import { formatCityName } from "../utils/formatCityName";
-// import { aqiToken } from "../tokens/tokens";
-
-
 const styles = {
     good: {
-        backgroundColor: 'rgb(18, 138, 83)',
-        color: 'white'
+        color: '#06D6A0',
     },
     moderate: {
-        backgroundColor: 'rgb(254, 217, 40)',
-        color: 'black'
+        color: '#FFD166',
     },
     sensitive: {
-        backgroundColor: 'rgb(253, 134, 40)',
-        color: 'black'
+        color: '#ED6A5A',
     },
     unhealthy: {
-        backgroundColor: 'rgb(190, 0, 39)',
-        color: 'white'
+        color: '#E65F5C',
     },
     veryUnhealthy: {
-        backgroundColor: 'rgb(82, 0, 135)',
-        color: 'white'
+        color: '#231651',
     },
     hazardous: {
-        backgroundColor: 'rgb(105, 0, 27)',
-        color: 'white'
+        color: '#580C1F',
     },
     notFound: {
-        backgroundColor: 'rgb(193, 193, 193)',
-        color: 'black'
+        color: 'rgba(255,255,255)',
     }
 }
 
 export default class AirQuality extends React.Component {
-
     state = {
-        aqi: null,
-        location: '',
+        pollutionData: null,
         loading: true,
-        error:'',
     }
 
     componentDidMount() {
+        const { pollution } = this.props
         this.setState({
-            aqi: this.props.pollution.list[0].main.aqi,
-            city: this.props.city,
-            country: this.props.country,
+            pollutionData: pollution,
             loading: false
         })
-
-        // const {location} = this.props
-        // this.setState({location: location})
-        // fetch(`https://api.waqi.info/search/?token=${aqiToken}&keyword=${location}&origin=*`)
-        //     .then(res => res.json())
-        //     .then(data => this.setState({
-        //         aqi: Number(data.data[0].aqi),
-        //         loading: false
-        //     }))
-        //     .catch(err => this.setState({error: err, loading: false}))
     }
 
 
@@ -85,20 +59,23 @@ export default class AirQuality extends React.Component {
 
 
     render() {
-        const {aqi, city, country,  loading} = this.state
-        // console.log(aqi)
+        const {pollutionData, loading} = this.state
+        console.log(pollutionData)
         return (
             <React.Fragment>
                 {
                     !loading
                         ?
-                            <div style={this.pollutionLevelChecker(aqi)} className='aqi-div'>
+                            // <div style={this.pollutionLevelChecker(aqi)} className='aqi-div'>
+                            <div className='aqi-div'>
                                 <p className='aqi-title'>AQI</p>
-                                <p className='aqi-num'>{typeof aqi === 'number' ? aqi : 'No Data'}</p>
-                                <p className='aqi-city'>{city}, {country}</p>
+                                <p className='aqi-num' style={this.pollutionLevelChecker(pollutionData.aqi)}>{typeof pollutionData.aqi === 'number' ? pollutionData.aqi : 'No Data'}</p>
+                                <p className='aqi-details'>PM10: {pollutionData.iaqi.pm10 ? pollutionData.iaqi.pm10.v : 'No Data '}&micro;g/m&sup3;</p>
+                                <p className='aqi-details'>PM2.5: {pollutionData.iaqi.pm25 ? pollutionData.iaqi.pm25.v : 'No Data '}&micro;g/m&sup3;</p>
                             </div>
                         :
-                            <div style={this.pollutionLevelChecker(aqi)} className='aqi-div'>
+                            // <div style={this.pollutionLevelChecker(aqi)} className='aqi-div'>
+                            <div className='aqi-div'>
                                 <p className='aqi-title'>Loading...</p>
                             </div>
                 }

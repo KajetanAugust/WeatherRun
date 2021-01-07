@@ -1,9 +1,9 @@
-export function formatCityName (cityName) {
+export function formatWeather (weather) {
     let capitalized = ''
 
-    if(cityName.includes(' ')) {
+    if(weather.includes(' ')) {
 
-        const toArr = cityName.split(' ')
+        const toArr = weather.split(' ')
         let newValue = ''
 
         for(let i = 0; i < toArr.length; i++) {
@@ -13,8 +13,8 @@ export function formatCityName (cityName) {
             }
         }
         capitalized = newValue
-    } else if (cityName.includes('-')) {
-        const toArr = cityName.split('-')
+    } else if (weather.includes('-')) {
+        const toArr = weather.split('-')
         let newValue = ''
 
         for(let i = 0; i < toArr.length; i++) {
@@ -25,7 +25,7 @@ export function formatCityName (cityName) {
         }
         capitalized = newValue
     } else {
-        capitalized = cityName.charAt(0).toUpperCase() + cityName.slice(1)
+        capitalized = weather.charAt(0).toUpperCase() + weather.slice(1)
     }
     return capitalized
 }
