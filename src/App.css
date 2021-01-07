@@ -169,9 +169,6 @@ body {
   left: 25px;
   color: hsla(202, 71%, 27%, 1);
   text-decoration: none;
-  /*border: 1px solid hsla(202, 71%, 27%, 1);*/
-  /*padding: 15px;*/
-
 }
 
 .back-arrow {
@@ -184,4 +181,25 @@ body {
   font-size: 1.5rem;
   text-decoration: none;
   margin: 0;
+}
+
+/*///////////*/
+/*  LOADING  */
+/*///////////*/
+
+.loading-indicator {
+  width: 120px;
+  height: 120px;
+  color: white;
+  animation: roll 3s infinite;
+  transform: rotate(360deg);
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

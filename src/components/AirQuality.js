@@ -66,7 +66,6 @@ export default class AirQuality extends React.Component {
                 {
                     !loading
                         ?
-                            // <div style={this.pollutionLevelChecker(aqi)} className='aqi-div'>
                             <div className='aqi-div'>
                                 <p className='aqi-title'>AQI</p>
                                 <p className='aqi-num' style={this.pollutionLevelChecker(pollutionData.aqi)}>{typeof pollutionData.aqi === 'number' ? pollutionData.aqi : 'No Data'}</p>
@@ -74,7 +73,6 @@ export default class AirQuality extends React.Component {
                                 <p className='aqi-details'>PM2.5: {pollutionData.iaqi.pm25 ? pollutionData.iaqi.pm25.v : 'No Data '}&micro;g/m&sup3;</p>
                             </div>
                         :
-                            // <div style={this.pollutionLevelChecker(aqi)} className='aqi-div'>
                             <div className='aqi-div'>
                                 <p className='aqi-title'>Loading...</p>
                             </div>

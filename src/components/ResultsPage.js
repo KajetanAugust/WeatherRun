@@ -2,6 +2,7 @@ import React from "react";
 import AirQuality from "./AirQuality";
 import queryString from "query-string";
 import Weather from "./Weather";
+import Loading from "./Loading";
 import { Link } from 'react-router-dom'
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
@@ -10,7 +11,7 @@ import { openWeatherToken, aqiToken } from "../tokens/tokens";
 
 export default class ResultsPage extends React.Component {
     state = {
-        location:'',
+        location: '',
         weather: null,
         pollution: null,
         loading: true
@@ -39,27 +40,27 @@ export default class ResultsPage extends React.Component {
     }
 
     render() {
-        const { loading, weather, pollution } = this.state
+        const {loading, weather, pollution} = this.state
         return (
             <React.Fragment>
                 {
                     !loading
                         ?
-                            <React.Fragment>
-                                <Link to='/' className='back-button'>
-                                    <AiOutlineArrowLeft className='back-arrow'/>
-                                    <p className='back-text'>BACK</p>
-                                </Link>
-                                <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
-                                <div className='results-container'>
-                                    <AirQuality pollution={pollution} />
-                                    <Weather weather={weather} />
-                                </div>
-                            </React.Fragment>
+                        <React.Fragment>
+                            <Link to='/' className='back-button'>
+                                <AiOutlineArrowLeft className='back-arrow'/>
+                                <p className='back-text'>BACK</p>
+                            </Link>
+                            <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
+                            <div className='results-container'>
+                                <AirQuality pollution={pollution}/>
+                                <Weather weather={weather}/>
+                            </div>
+                        </React.Fragment>
                         :
-                            <p>Loading...</p>
+                        <Loading/>
                 }
             </React.Fragment>
         );
     }
-    }
+}

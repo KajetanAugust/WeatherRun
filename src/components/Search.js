@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, Redirect} from "react-router-dom";
 
 export default class Search extends React.Component {
     state = {
@@ -13,9 +13,15 @@ export default class Search extends React.Component {
         })
     }
 
+    handleKeyPress = (e) => {
+        if(e.keyCode === 13 && this.state.city !== '') {
+            this.props.history.push(`/results?search=${this.state.city}`)
+        }
+    }
+
     render() {
         return (
-            <div className='search-form'>
+            <div className='search-form' onKeyDown={(e) => this.handleKeyPress(e)}>
                 <input
                     type='text'
                     placeholder='Enter city name'
@@ -23,7 +29,8 @@ export default class Search extends React.Component {
                     onChange={(e) => this.handleInput(e)}
                 />
                 <Link to={`/results?search=${this.state.city}`}>
-                    <button>Search</button>
+                    <button
+                    >Search</button>
                 </Link>
             </div>
         )
