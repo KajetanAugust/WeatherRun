@@ -30,7 +30,12 @@ export default class Weather extends React.Component {
                             {weatherIconChecker(weather.weather[0].icon)}
                             <p className='weather-details'>Temperature: {Math.round(weather.main.temp)}&deg;C</p>
                             <p className='weather-details'>Feels Like: {Math.round(weather.main.feels_like)}&deg;C</p>
-                            <a href={`https://openweathermap.org/city/${weather.id}`}>
+                            <p className='weather-details'>Wind: {Math.ceil((weather.wind.speed * 3.6))} km/h</p>
+                            <a
+                                href={`https://openweathermap.org/city/${weather.id}`}
+                                target='_blank'
+                                rel="noreferrer"
+                            >
                                 <img src={openWeatherLogo} className='open-weather-logo' alt='OpenWeather logo' />
                             </a>
 
