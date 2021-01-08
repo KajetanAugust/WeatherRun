@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
+import { FaRunning } from "react-icons/fa";
+import { WiDayRainWind } from 'react-icons/wi';
+
 export default class Search extends React.Component {
     state = {
         city: ''
@@ -21,18 +24,24 @@ export default class Search extends React.Component {
 
     render() {
         return (
-            <div className='search-form' onKeyDown={(e) => this.handleKeyPress(e)}>
-                <input
-                    type='text'
-                    placeholder='Enter city name'
-                    value={this.state.city}
-                    onChange={(e) => this.handleInput(e)}
-                    autoFocus
-                />
-                <Link to={`/results?search=${this.state.city}`}>
-                    <button>Search</button>
-                </Link>
-            </div>
+            <React.Fragment>
+                <div className='app-logo'>
+                    <FaRunning className='app-logo-runner'/>
+                    <WiDayRainWind className='app-logo-cloud'/>
+                </div>
+                <div className='search-form' onKeyDown={(e) => this.handleKeyPress(e)}>
+                    <input
+                        type='text'
+                        placeholder='Enter city name'
+                        value={this.state.city}
+                        onChange={(e) => this.handleInput(e)}
+                        autoFocus
+                    />
+                    <Link to={`/results?search=${this.state.city}`}>
+                        <button>Search</button>
+                    </Link>
+                </div>
+            </React.Fragment>
         )
     }
 }
