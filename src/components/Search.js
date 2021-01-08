@@ -29,7 +29,9 @@ export default class Search extends React.Component {
                     <FaRunning className='app-logo-runner'/>
                     <WiDayRainWind className='app-logo-cloud'/>
                 </div>
+                <h1 className='app-title'>WeatherRun</h1>
                 <div className='search-form' onKeyDown={(e) => this.handleKeyPress(e)}>
+
                     <input
                         type='text'
                         placeholder='Enter city name'
