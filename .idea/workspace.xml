@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="feat: Loading component is added, Enter keypress handling added &#10;&#10;Loading component now displays loading indicator while data is fetched. Search component pushes searchphrase to the history.">
-      <change afterPath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" afterDir="false" />
+    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="refactor: cleaning code&#10;&#10;Unused imports, old commented code, unnecesary files deletion.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AirQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AirQuality.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Weather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +90,7 @@
       <workItem from="1609944846270" duration="7648000" />
       <workItem from="1610030557932" duration="8857000" />
       <workItem from="1610041889112" duration="3647000" />
-      <workItem from="1610096898911" duration="2320000" />
+      <workItem from="1610096898911" duration="3238000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609783876114</created>
@@ -147,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610055855995</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: Added features in AirQuality.js and Weather.js&#10;&#10;* AirQuality component now displays smiley/sad face in appropriate color depending on the level of pollution. &#10;* AQI number is moved down and is now displayed with pm10 and pm2.5 counters. &#10;* Checker logic from AirQuality moved to separate file in utils folder.&#10;* aqiFaceChecker.js checks AQI number and returns smiley/sad face in appropriate color. &#10; * Weather component now displays additional data obout the wind.">
+      <created>1610121786573</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610121786574</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +170,8 @@
     <MESSAGE value="feat: changed API to openWeather&#10;&#10;Both APIs are now switched for openWeather API due to more possible requests in the new one." />
     <MESSAGE value="feat: Changed air quality API, added some styling for the whole app, displaying additional info&#10;&#10;openWeather API for air quality was disaster, so I have switched back to the Aqicn API, but now it is fetching data using coordinates from openWeather weather data fetch response. Weather displays react icon now, temperature and feels like temperature. Air quality displays color coded AQI, pm10 and pm2.5. Some styling is added for whole app." />
     <MESSAGE value="feat: Loading component is added, Enter keypress handling added &#10;&#10;Loading component now displays loading indicator while data is fetched. Search component pushes search phrase to the history. User can only search with button click, enter click, and empty input can't be submitted." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Loading component is added, Enter keypress handling added &#10;&#10;Loading component now displays loading indicator while data is fetched. Search component pushes search phrase to the history. User can only search with button click, enter click, and empty input can't be submitted." />
+    <MESSAGE value="feat: Added features in AirQuality.js and Weather.js&#10;&#10;* AirQuality component now displays smiley/sad face in appropriate color depending on the level of pollution. &#10;* AQI number is moved down and is now displayed with pm10 and pm2.5 counters. &#10;* Checker logic from AirQuality moved to separate file in utils folder.&#10;* aqiFaceChecker.js checks AQI number and returns smiley/sad face in appropriate color. &#10; * Weather component now displays additional data obout the wind." />
+    <MESSAGE value="refactor: cleaning code&#10;&#10;Unused imports, old commented code, unnecesary files deletion." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: cleaning code&#10;&#10;Unused imports, old commented code, unnecesary files deletion." />
   </component>
 </project>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Redirect} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class Search extends React.Component {
     state = {
@@ -27,6 +27,7 @@ export default class Search extends React.Component {
                     placeholder='Enter city name'
                     value={this.state.city}
                     onChange={(e) => this.handleInput(e)}
+                    autoFocus
                 />
                 <Link to={`/results?search=${this.state.city}`}>
                     <button>Search</button>

@@ -1,4 +1,11 @@
-import { CgSmileMouthOpen, CgSmileNeutral, CgSmileSad, CgSmile, CgSmileNoMouth, CgSmileUpside } from "react-icons/cg";
+import {
+    CgSmileMouthOpen,
+    CgSmileNeutral,
+    CgSmileSad,
+    CgSmile,
+    CgSmileNoMouth,
+    CgSmileUpside
+} from "react-icons/cg";
 
 const styles = {
     good: {
