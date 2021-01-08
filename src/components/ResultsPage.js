@@ -3,9 +3,10 @@ import AirQuality from "./AirQuality";
 import queryString from "query-string";
 import Weather from "./Weather";
 import Loading from "./Loading";
-import { Link } from 'react-router-dom'
-import { AiOutlineArrowLeft } from "react-icons/ai";
 
+import { Link } from 'react-router-dom'
+
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import { openWeatherToken, aqiToken } from "../tokens/tokens";
 

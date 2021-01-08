@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { weatherIconChecker } from "../utils/weatherIconChecker";
 import { formatWeather } from "../utils/formatWeather";
 

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="refactor: cleaning code&#10;&#10;Unused imports, old commented code, unnecesary files deletion.">
+    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AirQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AirQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/News.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResultsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Weather.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +88,8 @@
       <workItem from="1610030557932" duration="8857000" />
       <workItem from="1610041889112" duration="3647000" />
       <workItem from="1610096898911" duration="3238000" />
+      <workItem from="1610122604818" duration="43000" />
+      <workItem from="1610132108128" duration="515000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609783876114</created>
@@ -155,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610121786574</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactor: cleaning code&#10;&#10;Unused imports, old commented code, unnecesary files deletion.">
+      <created>1610122612216</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1610122612216</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
