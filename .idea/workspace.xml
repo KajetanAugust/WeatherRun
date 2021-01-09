@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="feat: Added app icon, changed app name&#10;&#10;App icon is now visible on the start page with search component. App name is changed in index.html file">
+    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +88,9 @@
       <workItem from="1610096898911" duration="3238000" />
       <workItem from="1610122604818" duration="43000" />
       <workItem from="1610132108128" duration="2150000" />
+      <workItem from="1610135417904" duration="86000" />
+      <workItem from="1610136192922" duration="923000" />
+      <workItem from="1610231119754" duration="142000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609783876114</created>
@@ -168,7 +169,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610133963713</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: Added app icon, changed app name&#10;&#10;App icon is now visible on the start page with search component. App name is changed in index.html file">
+      <created>1610135429619</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610135429619</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: Added App title on the main/search page">
+      <created>1610137256934</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610137256934</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +201,7 @@
     <MESSAGE value="feat: Added features in AirQuality.js and Weather.js&#10;&#10;* AirQuality component now displays smiley/sad face in appropriate color depending on the level of pollution. &#10;* AQI number is moved down and is now displayed with pm10 and pm2.5 counters. &#10;* Checker logic from AirQuality moved to separate file in utils folder.&#10;* aqiFaceChecker.js checks AQI number and returns smiley/sad face in appropriate color. &#10; * Weather component now displays additional data obout the wind." />
     <MESSAGE value="refactor: cleaning code&#10;&#10;Unused imports, old commented code, unnecesary files deletion." />
     <MESSAGE value="feat: Added app icon, changed app name&#10;&#10;App icon is now visible on the start page with search component. App name is changed in index.html file" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added app icon, changed app name&#10;&#10;App icon is now visible on the start page with search component. App name is changed in index.html file" />
+    <MESSAGE value="feat: Added App title on the main/search page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added App title on the main/search page" />
   </component>
 </project>
