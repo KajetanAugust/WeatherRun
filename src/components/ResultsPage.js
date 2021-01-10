@@ -47,7 +47,7 @@ export default class ResultsPage extends React.Component {
                 {
                     !loading
                         ?
-                        <React.Fragment>
+                        <div className='results-page'>
                             <Link to='/' className='back-button'>
                                 <AiOutlineArrowLeft className='back-arrow'/>
                                 <p className='back-text'>BACK</p>
@@ -57,7 +57,7 @@ export default class ResultsPage extends React.Component {
                                 <AirQuality pollution={pollution}/>
                                 <Weather weather={weather}/>
                             </div>
-                        </React.Fragment>
+                        </div>
                         :
                         <Loading/>
                 }

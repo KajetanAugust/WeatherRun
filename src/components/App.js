@@ -1,17 +1,21 @@
+import React from 'react'
 import '../App.css';
 import ResultsPage from "./ResultsPage";
 import Search from "./Search";
-import {BrowserRouter as Router, Route } from "react-router-dom";
+import NotFound from './NotFound';
+import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-
-    <div className="App">
+    <React.Fragment>
         <Router>
-            <Route exact path='/' component={Search} />
-            <Route path='/results' component={ResultsPage} />
+            <Switch>
+                <Route exact path='/' component={Search} />
+                <Route path='/results' component={ResultsPage} />
+                <Route component={NotFound} />
+            </Switch>
         </Router>
-    </div>
+    </ React.Fragment>
   );
 }
 

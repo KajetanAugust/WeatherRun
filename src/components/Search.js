@@ -24,7 +24,7 @@ export default class Search extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className='search-page'>
                 <div className='app-logo'>
                     <FaRunning className='app-logo-runner'/>
                     <WiDayRainWind className='app-logo-cloud'/>
@@ -43,7 +43,7 @@ export default class Search extends React.Component {
                         <button>Search</button>
                     </Link>
                 </div>
-            </React.Fragment>
+            </div>
         )
     }
 }
