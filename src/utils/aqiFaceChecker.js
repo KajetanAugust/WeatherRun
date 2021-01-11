@@ -1,11 +1,12 @@
+
 import {
-    CgSmileMouthOpen,
-    CgSmileNeutral,
-    CgSmileSad,
-    CgSmile,
-    CgSmileNoMouth,
-    CgSmileUpside
-} from "react-icons/cg";
+    RiEmotionLaughLine,
+    RiEmotionLine,
+    RiEmotionHappyLine,
+    RiEmotionNormalLine,
+    RiEmotionUnhappyLine,
+    RiEmotionSadLine
+} from "react-icons/ri";
 
 const styles = {
     good: {
@@ -33,18 +34,18 @@ const styles = {
 
 export function aqiFaceChecker (aqi) {
     if (aqi <= 50) {
-        return <CgSmileMouthOpen style={styles.good} className='aqi-face' />
+        return <RiEmotionLine style={styles.good} className='aqi-face' />
     } else if (aqi >= 51 && aqi <= 100) {
-        return <CgSmile style={styles.moderate} className='aqi-face' />
+        return <RiEmotionNormalLine style={styles.moderate} className='aqi-face' />
     } else if (aqi >= 101 && aqi <= 150) {
-        return <CgSmileNeutral style={styles.sensitive} className='aqi-face' />
+        return <RiEmotionNormalLine style={styles.sensitive} className='aqi-face' />
     } else if (aqi >= 151 && aqi <= 200) {
-        return <CgSmileSad style={styles.unhealthy} className='aqi-face' />
+        return <RiEmotionUnhappyLine style={styles.unhealthy} className='aqi-face' />
     } else if (aqi >= 201 && aqi <= 300) {
-        return <CgSmileSad style={styles.veryUnhealthy} className='aqi-face' />
+        return <RiEmotionUnhappyLine style={styles.veryUnhealthy} className='aqi-face' />
     } else if (aqi >= 300) {
-        return <CgSmileNoMouth style={styles.hazardous} className='aqi-face' />
+        return <RiEmotionSadLine style={styles.hazardous} className='aqi-face' />
     } else if (typeof aqi !== 'number') {
-        return <CgSmileUpside style={styles.notFound} className='aqi-face' />
+        return <RiEmotionNormalLine style={styles.notFound} className='aqi-face' />
     }
 }

@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ResultsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +92,7 @@
       <workItem from="1610136192922" duration="923000" />
       <workItem from="1610231119754" duration="364000" />
       <workItem from="1610306697738" duration="4740000" />
-      <workItem from="1610355720423" duration="2561000" />
+      <workItem from="1610355720423" duration="4348000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609783876114</created>
@@ -202,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610313455615</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: Added functionality search errors&#10;&#10;Not found components now accepts props with text to display. If there is no URL match, 'Page not found' is displayed, when there is no matches for the city in the API (404) 'City not found, please try again.' text is displayed. In other cases, 'There was an error, please try again.' message is displayed.">
+      <created>1610371946296</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1610371946296</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +227,7 @@
     <MESSAGE value="feat: Added App title on the main/search page" />
     <MESSAGE value="feat: Added NotFound component" />
     <MESSAGE value="feat: Added NotFound component and route&#10;&#10;NotFound.js component is created. It displays Page not found message and back button for returning to search page. React-router switch is added to the app component along with route without path parameter rendering NotFound.js component when no URL match is found." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added NotFound component and route&#10;&#10;NotFound.js component is created. It displays Page not found message and back button for returning to search page. React-router switch is added to the app component along with route without path parameter rendering NotFound.js component when no URL match is found." />
+    <MESSAGE value="feat: Added functionality search errors&#10;&#10;Not found components now accepts props with text to display. If there is no URL match, 'Page not found' is displayed, when there is no matches for the city in the API (404) 'City not found, please try again.' text is displayed. In other cases, 'There was an error, please try again.' message is displayed." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added functionality search errors&#10;&#10;Not found components now accepts props with text to display. If there is no URL match, 'Page not found' is displayed, when there is no matches for the city in the API (404) 'City not found, please try again.' text is displayed. In other cases, 'There was an error, please try again.' message is displayed." />
   </component>
 </project>
