@@ -268,6 +268,7 @@ html, body {
   align-content: center;
   justify-items: center;
   text-align: center;
+  margin-top:0;
 }
 
 .not-found-div h1 {
@@ -275,6 +276,7 @@ html, body {
   font-size: 3rem;
   color: white;
   margin-bottom: 25px;
+  margin-top:0;
 }
 
 .not-found-back-button {

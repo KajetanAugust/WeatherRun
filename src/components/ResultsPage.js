@@ -9,13 +9,14 @@ import { Link } from 'react-router-dom'
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import { openWeatherToken, aqiToken } from "../tokens/tokens";
+import NotFound from './NotFound';
 
 export default class ResultsPage extends React.Component {
     state = {
         location: '',
         weather: null,
         pollution: null,
-        loading: true
+        loading: true,
     }
 
     componentDidMount() {
@@ -37,7 +38,14 @@ export default class ResultsPage extends React.Component {
                     }))
 
             })
-            .catch(err => console.log('There was an error: ', err))
+            .catch(err => {
+                this.setState({
+                    err: err.status,
+                    loading: false
+                })
+                console.log('There was an error: ', err.status)
+
+            })
     }
 
     render() {
@@ -52,11 +60,20 @@ export default class ResultsPage extends React.Component {
                                 <AiOutlineArrowLeft className='back-arrow'/>
                                 <p className='back-text'>BACK</p>
                             </Link>
-                            <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
-                            <div className='results-container'>
-                                <AirQuality pollution={pollution}/>
-                                <Weather weather={weather}/>
-                            </div>
+                            {
+                                weather.cod !== '404'
+                                    ?
+                                    <React.Fragment>
+                                        <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
+                                        <div className='results-container'>
+                                            <AirQuality pollution={pollution}/>
+                                            <Weather weather={weather}/>
+                                        </div>
+                                    </React.Fragment>
+                                    :
+                                    <NotFound
+                                        text={weather.cod === '404' ? 'City not found, please try again.' : 'There was an error, please try again.'}/>
+                            }
                         </div>
                         :
                         <Loading/>

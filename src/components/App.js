@@ -12,7 +12,7 @@ function App() {
             <Switch>
                 <Route exact path='/' component={Search} />
                 <Route path='/results' component={ResultsPage} />
-                <Route component={NotFound} />
+                <Route render={() => <NotFound text='Page not found' /> } />
             </Switch>
         </Router>
     </ React.Fragment>
