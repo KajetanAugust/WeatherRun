@@ -36,7 +36,7 @@ export function aqiFaceChecker (aqi) {
     if (aqi <= 50) {
         return <RiEmotionLine style={styles.good} className='aqi-face' />
     } else if (aqi >= 51 && aqi <= 100) {
-        return <RiEmotionNormalLine style={styles.moderate} className='aqi-face' />
+        return <RiEmotionHappyLine style={styles.moderate} className='aqi-face' />
     } else if (aqi >= 101 && aqi <= 150) {
         return <RiEmotionNormalLine style={styles.sensitive} className='aqi-face' />
     } else if (aqi >= 151 && aqi <= 200) {

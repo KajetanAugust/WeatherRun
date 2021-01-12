@@ -291,3 +291,33 @@ html, body {
 .back-button:hover, .not-found-back-button:hover {
   color: white;
 }
+
+/*///////////////////*/
+/*  RECOMMENDATIONS  */
+/*///////////////////*/
+
+.running-tips-title {
+  color: white;
+  text-align: center;
+}
+
+.recommendations-div {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  width: 800px;
+  height: 300px;
+}
+
+.conditions-desc, .clothing-desc {
+  width: 40%;
+  padding: 0 30px;
+  height: 100%;
+  text-align: center;
+  margin-top: 25px;
+}

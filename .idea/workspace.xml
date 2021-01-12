@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="">
+    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="refactor: changed icons for AQI ratings&#10;&#10;changed css.gg emojis to Remix Icon emojis from react-icons. They are still looking passive-agresive, but it can't be helped for now.">
+      <change afterPath="$PROJECT_DIR$/src/components/ClothesRecomendation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RunRecommendation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/recommendations.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/runRecommendationGenerator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResultsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Weather.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +99,8 @@
       <workItem from="1610136192922" duration="923000" />
       <workItem from="1610231119754" duration="364000" />
       <workItem from="1610306697738" duration="4740000" />
-      <workItem from="1610355720423" duration="4348000" />
+      <workItem from="1610355720423" duration="4549000" />
+      <workItem from="1610461699821" duration="7080000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609783876114</created>
@@ -206,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610371946296</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="refactor: changed icons for AQI ratings&#10;&#10;changed css.gg emojis to Remix Icon emojis from react-icons">
+      <created>1610374480414</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1610374480414</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +243,7 @@
     <MESSAGE value="feat: Added NotFound component" />
     <MESSAGE value="feat: Added NotFound component and route&#10;&#10;NotFound.js component is created. It displays Page not found message and back button for returning to search page. React-router switch is added to the app component along with route without path parameter rendering NotFound.js component when no URL match is found." />
     <MESSAGE value="feat: Added functionality search errors&#10;&#10;Not found components now accepts props with text to display. If there is no URL match, 'Page not found' is displayed, when there is no matches for the city in the API (404) 'City not found, please try again.' text is displayed. In other cases, 'There was an error, please try again.' message is displayed." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added functionality search errors&#10;&#10;Not found components now accepts props with text to display. If there is no URL match, 'Page not found' is displayed, when there is no matches for the city in the API (404) 'City not found, please try again.' text is displayed. In other cases, 'There was an error, please try again.' message is displayed." />
+    <MESSAGE value="refactor: changed icons for AQI ratings&#10;&#10;changed css.gg emojis to Remix Icon emojis from react-icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: changed icons for AQI ratings&#10;&#10;changed css.gg emojis to Remix Icon emojis from react-icons" />
   </component>
 </project>

@@ -10,6 +10,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import { openWeatherToken, aqiToken } from "../tokens/tokens";
 import NotFound from './NotFound';
+import RunRecommendation from './RunRecommendation';
 
 export default class ResultsPage extends React.Component {
     state = {
@@ -74,6 +75,7 @@ export default class ResultsPage extends React.Component {
                                     <NotFound
                                         text={weather.cod === '404' ? 'City not found, please try again.' : 'There was an error, please try again.'}/>
                             }
+                            <RunRecommendation aqi={pollution.aqi} weather={weather}/>
                         </div>
                         :
                         <Loading/>
