@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="feat: added basic running tips functionality&#10;&#10;Json file containing basic air quality and weather tips is created in recommendations.json. It is imported to runRecommendationGenerator.js file where there is a function containing logic that returns appropriate text based on air quality and weather conditions. Final tips are rendered in RunRecommendation.js file rendered inside of the results component.">
+    <list default="true" id="b8ea791e-7c00-4bf6-b871-7e955a5a7162" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Weather.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/aqiFaceChecker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/recommendations.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/recommendations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/runRecommendationGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/runRecommendationGenerator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -98,7 +99,7 @@
       <workItem from="1610306697738" duration="4740000" />
       <workItem from="1610355720423" duration="4549000" />
       <workItem from="1610461699821" duration="7343000" />
-      <workItem from="1610653220961" duration="1943000" />
+      <workItem from="1610653220961" duration="5550000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609783876114</created>
@@ -226,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610471192069</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: changed css styling, added disabled state for the search button&#10;&#10;major changes in app styling. There is no more gradient on the background. Text is now gray on the white background. New colors for Air Quality emojis. &#10;&#10;The search button on the start page is now disabled when input is empty.">
+      <created>1610655417462</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1610655417462</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +258,7 @@
     <MESSAGE value="feat: Added functionality search errors&#10;&#10;Not found components now accepts props with text to display. If there is no URL match, 'Page not found' is displayed, when there is no matches for the city in the API (404) 'City not found, please try again.' text is displayed. In other cases, 'There was an error, please try again.' message is displayed." />
     <MESSAGE value="refactor: changed icons for AQI ratings&#10;&#10;changed css.gg emojis to Remix Icon emojis from react-icons" />
     <MESSAGE value="feat: added basic running tips functionality&#10;&#10;Json file containing basic air quality and weather tips is created in recommendations.json. It is imported to runRecommendationGenerator.js file where there is a function containing logic that returns appropriate text based on air quality and weather conditions. Final tips are rendered in RunRecommendation.js file rendered inside of the results component." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added basic running tips functionality&#10;&#10;Json file containing basic air quality and weather tips is created in recommendations.json. It is imported to runRecommendationGenerator.js file where there is a function containing logic that returns appropriate text based on air quality and weather conditions. Final tips are rendered in RunRecommendation.js file rendered inside of the results component." />
+    <MESSAGE value="feat: changed css styling, added disabled state for the search button&#10;&#10;major changes in app styling. There is no more gradient on the background. Text is now gray on the white background. New colors for Air Quality emojis. &#10;&#10;The search button on the start page is now disabled when input is empty." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: changed css styling, added disabled state for the search button&#10;&#10;major changes in app styling. There is no more gradient on the background. Text is now gray on the white background. New colors for Air Quality emojis. &#10;&#10;The search button on the start page is now disabled when input is empty." />
   </component>
 </project>

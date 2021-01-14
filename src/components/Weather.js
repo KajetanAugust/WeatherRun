@@ -3,8 +3,6 @@ import React from 'react'
 import { weatherIconChecker } from "../utils/weatherIconChecker";
 import { formatWeather } from "../utils/formatWeather";
 
-import openWeatherLogo from '../logos/openweatherlogo.png'
-
 export default class Weather extends React.Component {
     state = {
         weather: null,

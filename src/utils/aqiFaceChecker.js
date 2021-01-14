@@ -1,6 +1,5 @@
 
 import {
-    RiEmotionLaughLine,
     RiEmotionLine,
     RiEmotionHappyLine,
     RiEmotionNormalLine,

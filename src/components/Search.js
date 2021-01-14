@@ -6,13 +6,21 @@ import { WiDayRainWind } from 'react-icons/wi';
 
 export default class Search extends React.Component {
     state = {
-        city: ''
+        city: '',
+        warning: false
+    }
+
+    componentWillUnmount() {
+        this.setState({
+            warning: false
+        })
     }
 
     handleInput = (e) => {
         const value = e.target.value
         this.setState({
-            city: value
+            city: value,
+            warning: false
         })
     }
 
@@ -47,12 +55,18 @@ export default class Search extends React.Component {
                                 </Link>
                             :
                                 <button
-                                    // disabled
-                                    style={{'color':'rgba(115, 130, 144, 0.8)', 'border': '1px solid rgba(115, 130, 144, 0.8)'}}
-                                    onClick={() => alert('Search field can\'t be empty. Please enter the city name.')}
+                                    style={{'color':'rgba(115, 130, 144, 0.8)', 'background-color': 'white'}}
+                                    onClick={() => this.setState({
+                                        warning: true
+                                    })}
                                 >Search</button>
                     }
                 </div>
+                <p
+                    style={!this.state.warning ? {'display':'none'} : {'display': 'block', color:'#DB5461', 'text-align': 'center', 'font-weight': 400}}
+                >
+                    Search field can't be empty. Please enter the city name.
+                </p>
             </div>
         )
     }
