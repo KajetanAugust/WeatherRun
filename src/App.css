@@ -15,10 +15,10 @@ html, body {
   align-items: center;
   justify-content: center;
   background-size: cover;
-  background: hsla(202, 71%, 27%, 1);
-  background: linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
-  background: -moz-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
-  background: -webkit-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
+  /*background: hsla(202, 71%, 27%, 1);*/
+  /*background: linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);*/
+  /*background: -moz-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);*/
+  /*background: -webkit-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);*/
 }
 
 .results-container {
@@ -34,7 +34,7 @@ html, body {
   font-weight: 600;
   font-size: 3rem;
   margin-bottom: 0;
-  color: white;
+  color: #738290;
   text-align: center;
 }
 
@@ -47,7 +47,7 @@ html, body {
   justify-content: center;
   align-items: center;
   position: relative;
-  color: white;
+  color: #738290;
 }
 
 .aqi-details {
@@ -108,13 +108,13 @@ html, body {
   width: 25%;
   height: 40px;
   padding-left: 15px;
-  border:2px solid white;
+  border:1px solid #738290;
   border-radius: 5px;
   background: transparent;
 }
 
 .search-form input::placeholder, .search-form input, .search-form button {
-  color: white;
+  color: #738290;
   font-weight: 400;
   font-size: 1.1rem;
 }
@@ -124,7 +124,7 @@ html, body {
   width: 150px;
   margin-left: 15px;
   background-color: white;
-  border:1px solid white;
+  border:1px solid #738290;
   border-radius: 5px;
   color: hsla(202, 71%, 27%, 1);
 }
@@ -136,7 +136,7 @@ html, body {
 .app-title {
   font-size: 5rem;
   font-weight: 200;
-  color: white;
+  color: #738290;
   margin-top: 0;
   margin-bottom: 25px;
   text-align: center;
@@ -145,7 +145,7 @@ html, body {
 .app-logo {
   padding-bottom: 15px;
   margin: auto;
-  color: white;
+  color: #738290;
   position: relative;
   width: 400px;
   height: 400px;
@@ -185,7 +185,7 @@ html, body {
   justify-content: center;
   align-items: center;
   position: relative;
-  color: white;
+  color: #738290;
 }
 
 .weather-icon {
@@ -243,7 +243,7 @@ html, body {
   height: 120px;
   justify-self: center;
   align-self: center;
-  color: white;
+  color: #738290;
   animation: roll 3s infinite;
   transform: rotate(360deg);
 }
@@ -274,7 +274,7 @@ html, body {
 .not-found-div h1 {
   font-weight: 600;
   font-size: 3rem;
-  color: white;
+  color: #738290;
   margin-bottom: 25px;
   margin-top:0;
 }
@@ -289,7 +289,7 @@ html, body {
 }
 
 .back-button:hover, .not-found-back-button:hover {
-  color: white;
+  color: #738290;
 }
 
 /*///////////////////*/
@@ -297,13 +297,13 @@ html, body {
 /*///////////////////*/
 
 .running-tips-title {
-  color: white;
+  color: #738290;
   text-align: center;
 }
 
 .recommendations-div {
   text-align: center;
-  color: white;
+  color: #738290;
   display: flex;
   flex-direction: row;
   align-items: center;

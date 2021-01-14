@@ -37,5 +37,6 @@ export function RunRecommendationGenerator (aqi, weather) {
     } else if (weather.wind.speed > 3) {
         tip += recommendations.weather.windy
     }
+
     return tip
 }

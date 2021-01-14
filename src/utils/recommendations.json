@@ -17,5 +17,8 @@
         "freezingCold": " It's freezing cold outside, see clothing tips to know what to wear.",
         "windy": " It's windy outside, see clothing tips to know what to wear.",
         "rainy": " It's raining outside, see clothing tips to know what to wear."
+    },
+    "clothes": {
+
     }
 }

@@ -39,9 +39,19 @@ export default class Search extends React.Component {
                         onChange={(e) => this.handleInput(e)}
                         autoFocus
                     />
-                    <Link to={`/results?search=${this.state.city}`}>
-                        <button>Search</button>
-                    </Link>
+                    {
+                        this.state.city !== ''
+                            ?
+                                <Link to={`/results?search=${this.state.city}`}>
+                                <button>Search</button>
+                                </Link>
+                            :
+                                <button
+                                    // disabled
+                                    style={{'color':'rgba(115, 130, 144, 0.8)', 'border': '1px solid rgba(115, 130, 144, 0.8)'}}
+                                    onClick={() => alert('Search field can\'t be empty. Please enter the city name.')}
+                                >Search</button>
+                    }
                 </div>
             </div>
         )

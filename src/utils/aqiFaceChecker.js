@@ -8,27 +8,38 @@ import {
     RiEmotionSadLine
 } from "react-icons/ri";
 
+
+/*
+gray #738290
+green #9CDE9F
+yellow #F5B82E
+orange #FF8C42
+red #DB5461
+violet #593959
+dark red #2D1115
+*/
+
 const styles = {
     good: {
-        color: '#06D6A0',
+        color: '#9CDE9F',
     },
     moderate: {
-        color: '#FFD166',
+        color: '#F5B82E',
     },
     sensitive: {
-        color: '#ED6A5A',
+        color: '#FF8C42',
     },
     unhealthy: {
-        color: '#E65F5C',
+        color: '#DB5461',
     },
     veryUnhealthy: {
-        color: '#231651',
+        color: '#593959',
     },
     hazardous: {
-        color: '#580C1F',
+        color: '#2D1115',
     },
     notFound: {
-        color: 'rgba(255,255,255)',
+        color: '#738290',
     }
 }
 
