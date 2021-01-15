@@ -9,7 +9,7 @@ import {
 
 
 /*
-gray #738290
+gray #8D99AE
 green #9CDE9F
 yellow #F5B82E
 orange #FF8C42

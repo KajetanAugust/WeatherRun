@@ -3,6 +3,7 @@ import AirQuality from "./AirQuality";
 import queryString from "query-string";
 import Weather from "./Weather";
 import Loading from "./Loading";
+import Nav from './Nav'
 
 import { Link } from 'react-router-dom'
 
@@ -11,6 +12,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { openWeatherToken, aqiToken } from "../tokens/tokens";
 import NotFound from './NotFound';
 import RunRecommendation from './RunRecommendation';
+
 
 export default class ResultsPage extends React.Component {
     state = {
@@ -53,33 +55,34 @@ export default class ResultsPage extends React.Component {
         const {loading, weather, pollution} = this.state
         return (
             <React.Fragment>
-                {
-                    !loading
-                        ?
-                        <div className='results-page'>
-                            <Link to='/' className='back-button'>
-                                <AiOutlineArrowLeft className='back-arrow'/>
-                                <p className='back-text'>BACK</p>
-                            </Link>
-                            {
-                                weather.cod !== '404'
-                                    ?
-                                    <React.Fragment>
-                                        <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
-                                        <div className='results-container'>
-                                            <AirQuality pollution={pollution}/>
-                                            <Weather weather={weather}/>
-                                        </div>
-                                    </React.Fragment>
-                                    :
-                                    <NotFound
-                                        text={weather.cod === '404' ? 'City not found, please try again.' : 'There was an error, please try again.'}/>
-                            }
-                            <RunRecommendation aqi={pollution.aqi} weather={weather}/>
-                        </div>
-                        :
-                        <Loading/>
-                }
+                <Nav />
+                    <React.Fragment>
+
+                        {
+                            !loading
+                                ?
+                                <div className='results-page'>
+                                    {
+                                        weather.cod !== '404'
+                                            ?
+                                            <React.Fragment>
+                                                <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
+                                                <div className='results-container'>
+                                                    <AirQuality pollution={pollution}/>
+                                                    <Weather weather={weather}/>
+                                                </div>
+                                            </React.Fragment>
+                                            :
+                                            <NotFound
+                                                text={weather.cod === '404' ? 'City not found, please try again.' : 'There was an error, please try again.'}/>
+                                    }
+                                    <hr/>
+                                    <RunRecommendation aqi={pollution.aqi} weather={weather}/>
+                                </div>
+                                :
+                                <Loading/>
+                        }
+                    </React.Fragment>
             </React.Fragment>
         );
     }

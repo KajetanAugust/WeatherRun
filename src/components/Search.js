@@ -25,7 +25,7 @@ export default class Search extends React.Component {
     }
 
     handleKeyPress = (e) => {
-        if(e.keyCode === 13 && this.state.city !== '') {
+        if (e.keyCode === 13 && this.state.city !== '') {
             this.props.history.push(`/results?search=${this.state.city}`)
         }
     }
@@ -50,20 +50,26 @@ export default class Search extends React.Component {
                     {
                         this.state.city !== ''
                             ?
-                                <Link to={`/results?search=${this.state.city}`}>
+                            <Link to={`/results?search=${this.state.city}`}>
                                 <button>Search</button>
-                                </Link>
+                            </Link>
                             :
-                                <button
-                                    style={{'color':'rgba(115, 130, 144, 0.8)', 'background-color': 'white'}}
-                                    onClick={() => this.setState({
-                                        warning: true
-                                    })}
-                                >Search</button>
+                            <button
+                                style={{'color': 'rgba(115, 130, 144, 0.8)', 'backgroundColor': 'white'}}
+                                onClick={() => this.setState({
+                                    warning: true
+                                })}
+                            >Search</button>
                     }
                 </div>
                 <p
-                    style={!this.state.warning ? {'display':'none'} : {'display': 'block', color:'#DB5461', 'text-align': 'center', 'font-weight': 400}}
+                    style={!this.state.warning ? {'display': 'none'} : {
+                        'display': 'inline',
+                        color: '#DB5461',
+                        'text-align': 'center',
+                        'font-weight': 400,
+                        'width': '100%'
+                    }}
                 >
                     Search field can't be empty. Please enter the city name.
                 </p>
