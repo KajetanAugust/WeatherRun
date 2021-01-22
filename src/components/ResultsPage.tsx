@@ -1,21 +1,30 @@
 import React from "react";
+
+import { openWeatherToken, aqiToken } from "../tokens/tokens";
+import RunRecommendation from './RunRecommendation';
+
 import AirQuality from "./AirQuality";
 import queryString from "query-string";
 import Weather from "./Weather";
 import Loading from "./Loading";
 import Nav from './Nav'
-
-import { Link } from 'react-router-dom'
-
-import { AiOutlineArrowLeft } from "react-icons/ai";
-
-import { openWeatherToken, aqiToken } from "../tokens/tokens";
 import NotFound from './NotFound';
-import RunRecommendation from './RunRecommendation';
 
+interface PropsData {
+    weather: Record<any, any>
 
-export default class ResultsPage extends React.Component {
-    state = {
+}
+
+interface StateData {
+    location: string
+    weather: any,
+    loading: boolean,
+    pollution: any,
+    err?: any
+}
+
+export default class ResultsPage extends React.Component<PropsData, StateData> {
+    state: StateData = {
         location: '',
         weather: null,
         pollution: null,
@@ -24,7 +33,7 @@ export default class ResultsPage extends React.Component {
 
     componentDidMount() {
 
-        const searchValue = queryString.parse(this.props.location.search)
+        const searchValue = queryString.parse((this.props as any).location.search)
 
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue.search}&appid=${openWeatherToken}&units=metric`)
             .then(res => res.json())

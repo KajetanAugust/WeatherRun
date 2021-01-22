@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
 
 import { FaRunning } from "react-icons/fa";
 import { WiDayRainWind } from 'react-icons/wi';
 
 export default class Search extends React.Component {
+
     state = {
         city: '',
         warning: false
@@ -16,7 +17,7 @@ export default class Search extends React.Component {
         })
     }
 
-    handleInput = (e) => {
+    handleInput = (e:any) => {
         const value = e.target.value
         this.setState({
             city: value,
@@ -24,9 +25,9 @@ export default class Search extends React.Component {
         })
     }
 
-    handleKeyPress = (e) => {
+    handleKeyPress = (e: KeyboardEvent) => {
         if (e.keyCode === 13 && this.state.city !== '') {
-            this.props.history.push(`/results?search=${this.state.city}`)
+            (this.props as any).history.push(`/results?search=${this.state.city}`)
         }
     }
 
@@ -38,7 +39,7 @@ export default class Search extends React.Component {
                     <WiDayRainWind className='app-logo-cloud'/>
                 </div>
                 <h1 className='app-title'>WeatherRun</h1>
-                <div className='search-form' onKeyDown={(e) => this.handleKeyPress(e)}>
+                <div className='search-form' onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => this.handleKeyPress(e as any as KeyboardEvent)}>
 
                     <input
                         type='text'
@@ -63,13 +64,15 @@ export default class Search extends React.Component {
                     }
                 </div>
                 <p
-                    style={!this.state.warning ? {'display': 'none'} : {
-                        'display': 'inline',
-                        color: '#DB5461',
-                        'text-align': 'center',
-                        'font-weight': 400,
-                        'width': '100%'
-                    }}
+                    style={
+                        !this.state.warning
+                            ? {'display': 'none'}
+                            : {
+                                color: '#DB5461',
+                                'textAlign': 'center',
+                                'fontWeight': 400,
+                                'width': '100%'
+                            }}
                 >
                     Search field can't be empty. Please enter the city name.
                 </p>

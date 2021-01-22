@@ -2,7 +2,11 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import {AiOutlineArrowLeft} from 'react-icons/ai';
 
-export default class NotFound extends React.Component {
+interface Text {
+    text: string
+}
+
+export default class NotFound extends React.Component<Text, Text> {
     render() {
         return (
             <div className='not-found-div'>

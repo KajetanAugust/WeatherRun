@@ -2,14 +2,24 @@ import React from 'react'
 
 import { aqiFaceChecker } from '../utils/aqiFaceChecker';
 
-export default class AirQuality extends React.Component {
-    state = {
-        pollutionData: null,
+interface PropsData {
+    pollution: object
+
+}
+
+interface StateData {
+    pollutionData: Record<any, any>,
+    loading: boolean
+}
+
+export default class AirQuality extends React.Component<PropsData, StateData> {
+    state: StateData = {
+        pollutionData: {},
         loading: true,
     }
 
     componentDidMount() {
-        const {pollution} = this.props
+        const { pollution } = this.props
         this.setState({
             pollutionData: pollution,
             loading: false
