@@ -17,7 +17,7 @@ import {
     WiDayThunderstorm
 } from "react-icons/wi";
 
-export function weatherIconChecker (weatherCode) {
+export function weatherIconChecker (weatherCode: string) {
     switch (weatherCode) {
         case '01d' :
             return <WiDaySunny className='weather-icon'/>

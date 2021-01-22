@@ -42,7 +42,7 @@ const styles = {
     }
 }
 
-export function aqiFaceChecker (aqi) {
+export function aqiFaceChecker (aqi: number) {
     if (aqi <= 50) {
         return <RiEmotionLine style={styles.good} className='aqi-face' />
     } else if (aqi >= 51 && aqi <= 100) {
@@ -55,7 +55,7 @@ export function aqiFaceChecker (aqi) {
         return <RiEmotionUnhappyLine style={styles.veryUnhealthy} className='aqi-face' />
     } else if (aqi >= 300) {
         return <RiEmotionSadLine style={styles.hazardous} className='aqi-face' />
-    } else if (typeof aqi !== 'number') {
+    } else {
         return <RiEmotionNormalLine style={styles.notFound} className='aqi-face' />
     }
 }

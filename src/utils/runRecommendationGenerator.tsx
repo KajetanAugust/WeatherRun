@@ -1,6 +1,6 @@
 import recommendations from './recommendations.json'
 
-export function RunRecommendationGenerator (aqi, weather) {
+export function RunRecommendationGenerator (aqi: number, weather: Record<any, any>) {
 
     let tip = '';
 
