@@ -1,12 +1,12 @@
 import React from 'react'
 import {RunRecommendationGenerator} from '../utils/runRecommendationGenerator'
 
-interface PropsData {
+interface WeatherRecommendationPropsData {
     aqi: number,
     weather: Record<any, any>
 }
 
-export default function WeatherRecommendation (props: PropsData) {
+export default function WeatherRecommendation (props: WeatherRecommendationPropsData) {
     return (
         <React.Fragment>
                 <div className='conditions-desc'>

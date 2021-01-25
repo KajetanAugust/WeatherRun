@@ -4,7 +4,7 @@
 
 .weather-div {
   @include results-section-dimensions;
-  @include flex(column, center);
+  @include flex(column);
   position: relative;
   color: $gray;
 }

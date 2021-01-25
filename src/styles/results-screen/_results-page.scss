@@ -1,10 +1,13 @@
+/*///////////*/
+/*  RESULTS  */
+/*///////////*/
 
 .results-page {
   padding-top: 25px;
 }
 
 .results-container {
-  @include flex(row, center);
+  @include flex(row);
   width: 100%;
   flex-wrap: wrap;
 }

@@ -13,7 +13,7 @@ $font-size: 1.1rem;
 
 .search-form {
   width: 100%;
-  @include flex(row, center);
+  @include flex(row);
   input {
     width: 25%;
     height: 40px;

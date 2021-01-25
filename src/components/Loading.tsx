@@ -1,7 +1,7 @@
-import { VscLoading } from "react-icons/vsc";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export default function Loading () {
     return (
-        <VscLoading className='loading-indicator' />
+        <AiOutlineLoading3Quarters className='loading-indicator' />
     )
 }

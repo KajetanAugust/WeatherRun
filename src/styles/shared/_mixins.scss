@@ -1,3 +1,6 @@
+/*//////////*/
+/*  MIXINS  */
+/*//////////*/
 
 
 @mixin border($border-color) {
@@ -6,7 +9,7 @@
 }
 
 
-@mixin flex($direction, $justify) {
+@mixin flex($direction, $justify: center) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
