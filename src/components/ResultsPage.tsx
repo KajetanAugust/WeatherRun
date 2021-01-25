@@ -2,7 +2,6 @@ import React from "react";
 
 import { openWeatherToken, aqiToken } from "../tokens/tokens";
 import { fetchWeather, fetchAqi } from "../utils/fetchFunctions";
-import RunRecommendation from './RunRecommendation';
 
 import AirQuality from "./AirQuality";
 import queryString from "query-string";
@@ -10,6 +9,12 @@ import Weather from "./Weather";
 import Loading from "./Loading";
 import Nav from './Nav'
 import NotFound from './NotFound';
+import Recommendations from "./Recommendations";
+
+
+interface PropsData {
+    aqi: number
+}
 
 interface StateData {
     location: string
@@ -19,7 +24,7 @@ interface StateData {
     err?: any
 }
 
-export default class ResultsPage extends React.Component<any, StateData> {
+export default class ResultsPage extends React.Component<PropsData, StateData> {
     state: StateData = {
         location: '',
         weather: {},
@@ -43,9 +48,6 @@ export default class ResultsPage extends React.Component<any, StateData> {
                         loading: false
                     }))
             }).catch(err => {
-                // if(this.state.weather.cod === '404') {
-                //     console.log('There was an error: ', err)
-                // }
                 this.setState({
                     err: err,
                     loading: false
@@ -75,7 +77,7 @@ export default class ResultsPage extends React.Component<any, StateData> {
                                                     <Weather weather={weather}/>
                                                 </div>
                                                 <hr/>
-                                                <RunRecommendation aqi={pollution.aqi} weather={weather}/>
+                                                <Recommendations aqi={pollution.aqi} weather={weather}/>
                                             </React.Fragment>
                                             :
                                             <NotFound

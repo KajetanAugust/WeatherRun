@@ -1,0 +1,21 @@
+.not-found-div {
+  @include flex(column, center);
+  margin-top:0;
+  h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    color: $gray;
+    margin-bottom: 25px;
+    margin-top:0;
+  }
+}
+
+.not-found-back-button {
+  @include flex(row, center);
+  color: $gray;
+  text-decoration: none;
+  &:hover {
+    color: $gray;
+  }
+}
+

@@ -1,0 +1,41 @@
+/*////////////*/
+/*  APP LOGO  */
+/*////////////*/
+
+.app-title {
+  font-size: 5rem;
+  font-weight: 200;
+  color: $gray;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.app-logo {
+  padding-bottom: 15px;
+  margin: auto;
+  color: $gray;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  justify-self: center;
+  text-align: center;
+}
+
+.app-logo-runner, .app-logo-cloud {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+.app-logo-runner {
+  top: 200px;
+  left: 45px;
+}
+
+.app-logo-cloud {
+  top: 75px;
+  right: 55px;
+  width: 175px;
+  height: 175px;
+}

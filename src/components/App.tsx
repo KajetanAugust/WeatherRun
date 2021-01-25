@@ -1,10 +1,11 @@
 import React from 'react'
-import '../App.css';
+import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import '../styles/index.scss'
+
 import ResultsPage from "./ResultsPage";
 import Search from "./Search";
 import NotFound from './NotFound';
-import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 
 function App() {
   return (

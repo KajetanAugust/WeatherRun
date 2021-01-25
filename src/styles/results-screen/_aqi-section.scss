@@ -1,0 +1,35 @@
+/*///////*/
+/*  AQI  */
+/*///////*/
+
+$font-weight-200: 200;
+
+.aqi-div {
+  @include results-section-dimensions;
+  @include flex(column, center);
+  position: relative;
+  color: $gray;
+}
+
+.aqi-details {
+  margin: 5px;
+}
+
+.aqi-face {
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+}
+
+.aqi-city {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: $font-weight-200;
+}
+
+.aqi-title, .weather-title {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: $font-weight-200;
+}
+

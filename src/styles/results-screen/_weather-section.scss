@@ -1,0 +1,19 @@
+/*///////////*/
+/*  WEATHER  */
+/*///////////*/
+
+.weather-div {
+  @include results-section-dimensions;
+  @include flex(column, center);
+  position: relative;
+  color: $gray;
+}
+
+.weather-icon {
+  width: 150px;
+  height: 150px;
+}
+
+.weather-details {
+  margin: 5px;
+}

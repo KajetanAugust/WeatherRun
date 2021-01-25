@@ -52,11 +52,11 @@ export default class Search extends React.Component {
                         this.state.city !== ''
                             ?
                             <Link to={`/results?search=${this.state.city}`}>
-                                <button>Search</button>
+                                <button className='search-form-button'>Search</button>
                             </Link>
                             :
                             <button
-                                style={{'color': 'rgba(115, 130, 144, 0.8)', 'backgroundColor': 'white'}}
+                                disabled
                                 onClick={() => this.setState({
                                     warning: true
                                 })}

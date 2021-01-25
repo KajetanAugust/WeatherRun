@@ -1,0 +1,44 @@
+/*//////////*/
+/*  SEARCH  */
+/*//////////*/
+
+$font-size: 1.1rem;
+
+.search-page {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 10%;
+}
+
+.search-form {
+  width: 100%;
+  @include flex(row, center);
+  input {
+    width: 25%;
+    height: 40px;
+    padding-left: 15px;
+    @include border($gray);
+    background-color: transparent;
+    color: $gray;
+    font-size: $font-size;
+    font-weight: 400;
+    &::placeholder {
+      color: rgba(115, 130, 144, 0.8);
+    }
+  }
+}
+
+.search-form button {
+  height: 40px;
+  width: 150px;
+  margin-left: 15px;
+  background-color: $gray;
+  @include border($gray);
+  color: white;
+  font-size: $font-size;
+  &:disabled {
+    color: rgba(115, 130, 144, 0.8);
+    background-color: white;
+  }
+}

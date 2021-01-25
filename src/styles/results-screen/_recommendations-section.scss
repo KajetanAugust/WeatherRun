@@ -1,0 +1,24 @@
+/*///////////////////*/
+/*  RECOMMENDATIONS  */
+/*///////////////////*/
+
+.running-tips-title {
+  color: $gray;
+  text-align: center;
+  font-weight: 200;
+}
+
+.recommendations-div {
+  color: var(--gray);
+  @include flex(row, center);
+  width: 800px;
+  height: 250px;
+}
+
+.conditions-desc, .clothing-desc {
+  width: 40%;
+  padding: 0 30px;
+  height: 100%;
+  text-align: center;
+  margin-top: 25px;
+}
