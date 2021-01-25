@@ -66,7 +66,7 @@ export default class ResultsPage extends React.Component<any, StateData> {
                                 ?
                                 <div className='results-page'>
                                     {
-                                        weather.cod !== '404'
+                                        weather.cod === 200
                                             ?
                                             <React.Fragment>
                                                 <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
@@ -74,13 +74,14 @@ export default class ResultsPage extends React.Component<any, StateData> {
                                                     <AirQuality pollution={pollution}/>
                                                     <Weather weather={weather}/>
                                                 </div>
+                                                <hr/>
+                                                <RunRecommendation aqi={pollution.aqi} weather={weather}/>
                                             </React.Fragment>
                                             :
                                             <NotFound
                                                 text={weather.cod === '404' ? 'City not found, please try again.' : 'There was an error, please try again.'}/>
                                     }
-                                    <hr/>
-                                    <RunRecommendation aqi={pollution.aqi} weather={weather}/>
+
                                 </div>
                                 :
                                 <Loading/>
