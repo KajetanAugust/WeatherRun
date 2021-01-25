@@ -1,6 +1,7 @@
 import React from "react";
 
 import { openWeatherToken, aqiToken } from "../tokens/tokens";
+import { fetchWeather, fetchAqi } from "../utils/fetchFunctions";
 import RunRecommendation from './RunRecommendation';
 
 import AirQuality from "./AirQuality";
@@ -10,24 +11,19 @@ import Loading from "./Loading";
 import Nav from './Nav'
 import NotFound from './NotFound';
 
-interface PropsData {
-    weather: Record<any, any>
-
-}
-
 interface StateData {
     location: string
-    weather: any,
+    weather: Record<any, any>,
+    pollution: Record<any, any>,
     loading: boolean,
-    pollution: any,
     err?: any
 }
 
-export default class ResultsPage extends React.Component<PropsData, StateData> {
+export default class ResultsPage extends React.Component<any, StateData> {
     state: StateData = {
         location: '',
-        weather: null,
-        pollution: null,
+        weather: {},
+        pollution: {},
         loading: true,
     }
 
@@ -35,28 +31,26 @@ export default class ResultsPage extends React.Component<PropsData, StateData> {
 
         const searchValue = queryString.parse((this.props as any).location.search)
 
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue.search}&appid=${openWeatherToken}&units=metric`)
-            .then(res => res.json())
-            .then(data => {
+        fetchWeather(searchValue, openWeatherToken)
+            .then(weatherData => {
                 this.setState({
-                    weather: data,
+                    weather: weatherData,
                     loading: true,
                 })
-                fetch(`https://api.waqi.info/feed/geo:${data.coord.lat};${data.coord.lon}/?token=${aqiToken}&origin=*`)
-                    .then(res => res.json())
-                    .then(data => this.setState({
-                        pollution: data.data,
+                return fetchAqi(weatherData, aqiToken)
+                    .then(AqiData => this.setState({
+                        pollution: AqiData.data,
                         loading: false
                     }))
-
-            })
-            .catch(err => {
+            }).catch(err => {
+                // if(this.state.weather.cod === '404') {
+                //     console.log('There was an error: ', err)
+                // }
                 this.setState({
-                    err: err.status,
+                    err: err,
                     loading: false
                 })
-                console.log('There was an error: ', err.status)
-
+                console.log('There was an error: ', err)
             })
     }
 
