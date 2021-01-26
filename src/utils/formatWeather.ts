@@ -1,5 +1,5 @@
 export function formatWeather (weather: string) {
-    let capitalized = ''
+    let capitalized: string
 
     if(weather.includes(' ')) {
 

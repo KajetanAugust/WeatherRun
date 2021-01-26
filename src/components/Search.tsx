@@ -51,16 +51,21 @@ export default class Search extends React.Component {
                     {
                         this.state.city !== ''
                             ?
-                            <Link to={`/results?search=${this.state.city}`}>
-                                <button className='search-form-button'>Search</button>
-                            </Link>
+                                <Link to={`/results?search=${this.state.city}`}>
+                                    <button className='search-form-button'>Search</button>
+                                </Link>
                             :
-                            <button
-                                disabled
-                                onClick={() => this.setState({
-                                    warning: true
-                                })}
-                            >Search</button>
+                                <button
+                                    style={{
+                                        color: 'rgba(115, 130, 144, 0.8)',
+                                        backgroundColor: 'white'
+                                    }}
+                                    onClick={() => this.setState({
+                                        warning: true
+                                    })}
+                                >
+                                    Search
+                                </button>
                     }
                 </div>
                 <p
@@ -68,10 +73,11 @@ export default class Search extends React.Component {
                         !this.state.warning
                             ? {'display': 'none'}
                             : {
-                                color: '#DB5461',
-                                'textAlign': 'center',
-                                'fontWeight': 400,
-                                'width': '100%'
+                                color: '#db5461',
+                                textAlign: 'center',
+                                fontWeight: 400,
+                                width: '100%',
+                                'position': "absolute"
                             }}
                 >
                     Search field can't be empty. Please enter the city name.

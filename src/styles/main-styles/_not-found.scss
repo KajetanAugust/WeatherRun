@@ -5,6 +5,7 @@
 .not-found-div {
   @include flex(column, center);
   margin-top:0;
+
   h1 {
     font-weight: 600;
     font-size: 3rem;
@@ -18,6 +19,7 @@
   @include flex(row);
   color: $gray;
   text-decoration: none;
+
   &:hover {
     color: $gray;
   }

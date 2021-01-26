@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import { weatherIconChecker } from "../utils/weatherIconChecker";
 import { formatWeather } from "../utils/formatWeather";
@@ -7,43 +7,26 @@ interface WeatherPropsData {
     weather: Record<any, any>
 }
 
-interface WeatherStateData {
-    weatherData: any,
-    loading: boolean
-}
+export default function Weather (props: WeatherPropsData) {
 
-export default class Weather extends React.Component<WeatherPropsData, WeatherStateData> {
+    const [weatherData, setWeatherData] = useState(props.weather)
 
-    state: WeatherStateData = {
-        weatherData: null,
-        loading: true,
-    }
-
-    componentDidMount() {
-        this.setState({
-            weatherData: this.props.weather,
-            loading: false
-        })
-    }
-
-    render() {
-        const {weatherData, loading} = this.state
         return (
             <React.Fragment>
                 {
-                    !loading
+                    weatherData !== {}
                         ?
-                            <div className='weather-div'>
-                                <p className='weather-title'>{formatWeather(weatherData.weather[0].description)}</p>
-                                {weatherIconChecker(weatherData.weather[0].icon)}
-                                <p className='weather-details'>Temperature: {Math.round(weatherData.main.temp)}&deg;C</p>
-                                <p className='weather-details'>Feels Like: {Math.round(weatherData.main.feels_like)}&deg;C</p>
-                                <p className='weather-details'>Wind: {Math.ceil((weatherData.wind.speed * 3.6))} km/h</p>
-                            </div>
+                        <div className='weather-div'>
+                            <p className='weather-title'>{formatWeather(weatherData.weather[0].description)}</p>
+                            {weatherIconChecker(weatherData.weather[0].icon)}
+                            <p className='weather-details'>Temperature: {Math.round(weatherData.main.temp)}&deg;C</p>
+                            <p className='weather-details'>Feels Like: {Math.round(weatherData.main.feels_like)}&deg;C</p>
+                            <p className='weather-details'>Wind: {Math.ceil((weatherData.wind.speed * 3.6))} km/h</p>
+                        </div>
                         :
-                            <p className='weather-title'>Loading...</p>
+                        <p className='weather-title'>Loading...</p>
                 }
             </React.Fragment>
         )
     }
-}
+

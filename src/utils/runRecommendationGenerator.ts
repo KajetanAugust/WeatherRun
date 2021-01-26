@@ -16,7 +16,7 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
         tip += recommendations.aqi.veryPoor
     } else if (aqi >= 300) {
         tip += recommendations.aqi.hazardous
-    } else if (typeof aqi !== 'number') {
+    } else {
         tip += recommendations.aqi.noInfo
     }
 
