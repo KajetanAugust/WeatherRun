@@ -3,11 +3,13 @@
 /*///////////*/
 
 .weather-div {
+  grid-area: weather;
   @include results-section-dimensions;
   @include flex(column);
   position: relative;
   color: $gray;
 }
+
 
 .weather-icon {
   width: 150px;
@@ -17,3 +19,5 @@
 .weather-details {
   margin: 5px;
 }
+
+

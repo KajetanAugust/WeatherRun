@@ -2,23 +2,14 @@
 /*  RECOMMENDATIONS  */
 /*///////////////////*/
 
-.running-tips-title {
-  color: $gray;
-  text-align: center;
-  font-weight: 200;
-  margin-bottom: 0;
+.conditions-div, .clothing-div {
+  @include flex(column)
 }
 
-.recommendations-div {
-  color: $gray;
-  //@include flex(column);
-  height: auto;
+.conditions-div {
+  grid-area: conditions;
 }
-//
-//.conditions-desc, .clothing-desc {
-//  width: 400px;
-//  height: 275px;
-//  padding: 0 30px;
-//  text-align: center;
-//  //margin: 25px 0 0 0;
-//}
+
+.clothing-div {
+  grid-area: clothing;
+}

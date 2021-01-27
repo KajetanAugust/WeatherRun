@@ -5,6 +5,7 @@
 $font-weight-200: 200;
 
 .aqi-div {
+  grid-area: aqi;
   @include results-section-dimensions;
   @include flex(column);
   color: $gray;
