@@ -24,7 +24,7 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
         tip += recommendations.weather.rainy
     } else if (weather.main.temp < 5 && weather.main.temp > -10 && weather.wind.speed > 3) {
         tip += recommendations.weather.coldAndWindy
-    } else if (weather.main.temp < 5 && weather.main.temp > -10) {
+    } else if (weather.main.temp < 5 && weather.main.temp > -10 && weather.wind.speed <= 3) {
         tip += recommendations.weather.cold
     } else if (weather.main.temp < -10) {
         tip += recommendations.weather.freezingCold

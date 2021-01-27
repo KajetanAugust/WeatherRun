@@ -1,0 +1,17 @@
+/*/////////////////////*/
+/* DATA SOURCES SCREEN */
+/*/////////////////////*/
+
+.data-sources-info {
+  @include flex(column);
+  width: 100%;
+  text-align: center;
+  div {
+    width: 45%;
+    margin-bottom: 25px;
+  }
+  img {
+    height: 75px;
+  }
+}
+

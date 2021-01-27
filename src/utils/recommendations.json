@@ -9,9 +9,9 @@
         "noInfo": "We could not provide air quality tips at the moment."
     },
     "weather": {
-        "moderate": " The temperature is moderate, see clothing tips to know what to wear.",
+        "moderate": " temperature is moderate, see clothing tips to know what to wear.",
         "hot": " It's quite hot outside, see clothing tips to know what to wear.",
-        "veryHot": " It's very hot outside, avoid overheating , see clothing tips to know what to wear.",
+        "veryHot": " It's very hot outside, avoid overheating, see clothing tips to know what to wear.",
         "cold": " It's cold outside, see clothing tips to know what to wear.",
         "coldAndWindy": " It's cold and windy outside, see clothing tips to know what to wear.",
         "freezingCold": " It's freezing cold outside, see clothing tips to know what to wear.",
@@ -20,8 +20,6 @@
     },
     "clothes": {
 
-    },
-    "search": {
-
     }
 }
+

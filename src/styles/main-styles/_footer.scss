@@ -1,0 +1,28 @@
+/*////////*/
+/* FOOTER */
+/*////////*/
+
+.footer {
+  //width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  button {
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.info-button {
+  height: 25px;
+  width: 25px;
+  margin: 15px;
+  //padding: 1px;
+  border-radius: 50px;
+  color: $gray;
+  &:hover {
+    background-color: $gray;
+    color: white;
+  }
+}

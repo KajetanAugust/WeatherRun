@@ -1,15 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 
-import {AiOutlineArrowLeft} from 'react-icons/ai';
+import {FiArrowLeftCircle} from 'react-icons/fi';
 
-export default function Nav () {
+interface NavProps {
+    location: string
+}
+
+export default function Nav (props: NavProps) {
     return(
         <div className='nav'>
             <Link to='/' className='back-button'>
-                <AiOutlineArrowLeft className='back-arrow'/>
-                <p className='back-text'>BACK</p>
+                <FiArrowLeftCircle className='back-arrow'/>
             </Link>
+            <h1>{props.location !== '' ? props.location : null}</h1>
             <h2 className='nav-title'>WeatherRun</h2>
         </div>
     )

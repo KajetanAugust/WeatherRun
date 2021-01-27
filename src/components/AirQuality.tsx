@@ -8,7 +8,7 @@ interface PropsData {
 
 export default function AirQuality (props:PropsData){
 
-    const [pollutionData, setPollutionData] = useState(props.pollution)
+    const [pollutionData, setPollutionData] = useState<Record<any, any>>(props.pollution)
 
         return (
             <React.Fragment>

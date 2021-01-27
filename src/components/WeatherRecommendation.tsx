@@ -9,13 +9,10 @@ interface WeatherRecommendationPropsData {
 
 export default function WeatherRecommendation (props: WeatherRecommendationPropsData) {
     return (
-        <React.Fragment>
-                <div className='conditions-desc'>
-                    {
-                        <p>{RunRecommendationGenerator(props.aqi, props.weather)}</p>
-                    }
-                </div>
-
-        </React.Fragment>
+        <div className='conditions-div'>
+            {
+                <p>{RunRecommendationGenerator(props.aqi, props.weather)}</p>
+            }
+        </div>
     )
 }

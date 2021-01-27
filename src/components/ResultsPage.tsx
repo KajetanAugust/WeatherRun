@@ -1,16 +1,16 @@
 import React from "react";
+import queryString from "query-string";
 
 import { openWeatherToken, aqiToken } from "../tokens/tokens";
 import { fetchWeather, fetchAqi } from "../utils/fetchFunctions";
 
 import AirQuality from "./AirQuality";
-import queryString from "query-string";
 import Weather from "./Weather";
 import Loading from "./Loading";
 import Nav from './Nav'
 import NotFound from './NotFound';
-import Recommendations from "./Recommendations";
-
+import WeatherRecommendation from "./WeatherRecommendation";
+import ClothesRecommendation from "./ClothesRecommendation";
 
 interface PropsData {
     aqi: number
@@ -34,9 +34,12 @@ export default class ResultsPage extends React.Component<PropsData, StateData> {
 
     componentDidMount() {
 
-        const searchValue = queryString.parse((this.props as any).location.search)
+        const locationFromQuery = queryString.parse((this.props as any).location.search)
+        this.setState({
+            location: String(locationFromQuery.search),
+        })
 
-        fetchWeather(searchValue, openWeatherToken)
+        fetchWeather(locationFromQuery, openWeatherToken)
             .then(weatherData => {
                 this.setState({
                     weather: weatherData,
@@ -57,38 +60,36 @@ export default class ResultsPage extends React.Component<PropsData, StateData> {
     }
 
     render() {
-        const {loading, weather, pollution} = this.state
+        const {loading, weather, pollution, location} = this.state
         return (
             <React.Fragment>
-                <Nav />
-                    <React.Fragment>
-                        {
-                            !loading
-                                ?
-                                    <div className='results-page'>
-                                        {
-                                            weather.cod === 200
-                                                ?
-                                                <React.Fragment>
-                                                    <h1 className='city-name'>{weather.name}, {weather.sys.country}</h1>
-                                                    <div className='results-container'>
-                                                        <AirQuality pollution={pollution}/>
-                                                        <Weather weather={weather}/>
-                                                    </div>
-                                                    <hr/>
-                                                    <Recommendations aqi={pollution.aqi} weather={weather}/>
-                                                </React.Fragment>
-                                                :
-                                                <NotFound
-                                                    text={weather.cod === '404' ? 'City not found, please try again.' : 'There was an error, please try again.'}
-                                                />
-                                        }
+                {
+                    !loading
+                        ?
+                            <React.Fragment>
+                                <Nav location={`${weather.name}, ${weather.sys.country}`}/>
+                                    {
+                                        weather.cod === 200
+                                            ?
+                                            <React.Fragment>
+                                                <div className='results-page'>
+                                                    <AirQuality pollution={pollution}/>
+                                                    <Weather weather={weather}/>
+                                                    <WeatherRecommendation aqi={pollution.aqi} weather={weather} />
+                                                    <ClothesRecommendation />
+                                                    {/*<Recommendations aqi={pollution.aqi} weather={weather}/>*/}
+                                                </div>
+                                            </React.Fragment>
+                                            :
+                                            <NotFound
+                                                text={weather.cod === '404' ? 'City not found, please try again.' : 'There was an error, please try again.'}
+                                            />
+                                    }
+                            </React.Fragment>
 
-                                    </div>
-                                :
-                                    <Loading />
-                        }
-                    </React.Fragment>
+                        :
+                            <Loading />
+                }
             </React.Fragment>
         );
     }
