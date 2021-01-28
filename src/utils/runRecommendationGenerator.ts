@@ -22,19 +22,19 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
 
     if (weather.rain) {
         tip += recommendations.weather.rainy
-    } else if (weather.main.temp < 5 && weather.main.temp > -10 && weather.wind.speed > 3) {
+    } else if (weather.temp < 5 && weather.temp > -10 && weather.wind_speed > 3) {
         tip += recommendations.weather.coldAndWindy
-    } else if (weather.main.temp < 5 && weather.main.temp > -10 && weather.wind.speed <= 3) {
+    } else if (weather.temp < 5 && weather.temp > -10 && weather.wind_speed <= 3) {
         tip += recommendations.weather.cold
-    } else if (weather.main.temp < -10) {
+    } else if (weather.temp < -10) {
         tip += recommendations.weather.freezingCold
-    } else if (weather.main.temp > 5 && weather.main.temp < 18) {
+    } else if (weather.temp > 5 && weather.temp < 18) {
         tip += recommendations.weather.moderate
-    } else if (weather.main.temp > 18 && weather.main.temp < 25) {
+    } else if (weather.temp > 18 && weather.temp < 25) {
         tip += recommendations.weather.hot
-    } else if (weather.main.temp > 25) {
+    } else if (weather.temp > 25) {
         tip += recommendations.weather.veryHot
-    } else if (weather.wind.speed > 3) {
+    } else if (weather.wind_speed > 3) {
         tip += recommendations.weather.windy
     }
 

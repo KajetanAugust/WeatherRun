@@ -12,10 +12,10 @@
   padding-top: 25px;
   display: grid;
   grid-template-columns: 400px 1fr;
-  grid-template-rows: repeat(4, 200px);
+  grid-template-rows: repeat(4, 215px);
   grid-template-areas:
+          'aqi forecast'
           'aqi conditions'
-          'aqi clothing'
           'weather clothing'
           'weather clothing'
   ;

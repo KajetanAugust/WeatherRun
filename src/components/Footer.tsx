@@ -5,7 +5,6 @@ import { AiOutlineInfoCircle } from 'react-icons/ai';
 export default function Footer () {
     let history = useHistory()
     let location = useLocation()
-    console.log(location.pathname)
 
     return (
         location.pathname !== '/info'
