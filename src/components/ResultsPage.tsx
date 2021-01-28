@@ -24,7 +24,7 @@ interface StateData {
     pollution: Record<any, any>,
     locationInfo: Record<any, any>,
     loading: boolean,
-    err?: any
+    err: any
 }
 
 export default class ResultsPage extends React.Component<PropsData, StateData> {
@@ -33,6 +33,7 @@ export default class ResultsPage extends React.Component<PropsData, StateData> {
         weather: {},
         pollution: {},
         locationInfo: {},
+        err: '',
         loading: true,
     }
 
@@ -46,38 +47,47 @@ export default class ResultsPage extends React.Component<PropsData, StateData> {
         fetchCoordinates(String(locationFromQuery.search), mapboxToken)
             .then(coordinates => {
                 this.setState({
-                    locationInfo: coordinates.features[0]
+                    locationInfo: coordinates.features[0],
                 })
-                return fetchForecast(coordinates.features[0].center, openWeatherToken)
-                    .then(weather => {
-                            this.setState({
-                                weather: weather
-                            })
-                        return fetchAqi(weather.lat, weather.lon, aqiToken)
-                            .then(aqiData =>
+                if (coordinates.features.length) {
+                    return fetchForecast(coordinates.features[0].center, openWeatherToken)
+                        .then(weather => {
                                 this.setState({
-                                    pollution: aqiData,
-                                    loading: false
+                                    weather: weather,
+                                    loading: true
                                 })
-                            )
-                        }
-                    )
+                                return fetchAqi(weather.lat, weather.lon, aqiToken)
+                                    .then(aqiData =>
+                                        this.setState({
+                                            pollution: aqiData,
+                                            loading: false
+                                        })
+                                    )
+                            }
+                        )
+                } else {
+                    this.setState({
+                        err: 'City not found, please try again.',
+                        loading: false,
+                    })
+                }
             })
     }
 
     render() {
-        const {loading, weather, pollution, locationInfo} = this.state
+        const {loading, weather, pollution, locationInfo, err} = this.state
         return (
             <React.Fragment>
                 {
                     !loading
                         ?
                         <React.Fragment>
-                            <Nav location={formatLocation(locationInfo)}/>
+                            <Nav location={err === '' ? formatLocation(locationInfo) : ''}/>
                             {
-                                pollution.status === 'ok'
+                                err === ''
                                     ?
                                     <React.Fragment>
+
                                         <div className='results-page'>
                                             <AirQuality pollution={pollution.data}/>
                                             <Weather weather={weather.current}/>
@@ -88,7 +98,7 @@ export default class ResultsPage extends React.Component<PropsData, StateData> {
                                     </React.Fragment>
                                     :
                                     <NotFound
-                                        text={weather.cod === '404' ? 'City not found, please try again.' : 'There was an error, please try again.'}
+                                        text={this.state.err}
                                     />
                             }
                         </React.Fragment>

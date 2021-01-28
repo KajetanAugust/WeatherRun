@@ -5,6 +5,7 @@
 .data-sources-info {
   @include flex(column);
   width: 100%;
+  margin-top: 300px;
   text-align: center;
   div {
     width: 45%;
