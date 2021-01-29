@@ -17,45 +17,45 @@ import {
     WiDayThunderstorm
 } from "react-icons/wi";
 
-export function weatherIconChecker (weatherCode: string) {
+export function weatherIconChecker (weatherCode: string, size:string = '') {
     switch (weatherCode) {
         case '01d' :
-            return <WiDaySunny className='weather-icon'/>
+            return <WiDaySunny className={`weather-icon${size}`} />
         case '01n' :
-            return <WiNightClear className='weather-icon' />
+            return <WiNightClear className={`weather-icon${size}`} />
         case '02d' :
-            return <WiDayCloudy className='weather-icon'/>
+            return <WiDayCloudy className={`weather-icon${size}`}/>
         case '02n' :
-            return <WiNightAltCloudy className='weather-icon' />
+            return <WiNightAltCloudy className={`weather-icon${size}`} />
         case '03d' :
-            return <WiCloud className='weather-icon' />
+            return <WiCloud className={`weather-icon${size}`} />
         case '03n' :
-            return <WiCloud className='weather-icon' />
+            return <WiCloud className={`weather-icon${size}`} />
         case '04d' :
-            return <WiCloudy className='weather-icon' />
+            return <WiCloudy className={`weather-icon${size}`} />
         case '04n' :
-            return <WiCloudy className='weather-icon' />
+            return <WiCloudy className={`weather-icon${size}`} />
         case '09d' :
-            return <WiDayShowers className='weather-icon' />
+            return <WiDayShowers className={`weather-icon${size}`} />
         case '09n' :
-            return <WiNightShowers className='weather-icon' />
+            return <WiNightShowers className={`weather-icon${size}`} />
         case '10d' :
-            return <WiDayRain className='weather-icon' />
+            return <WiDayRain className={`weather-icon${size}`} />
         case '10n' :
-            return <WiNightRain className='weather-icon' />
+            return <WiNightRain className={`weather-icon${size}`} />
         case '11d' :
-            return <WiDayThunderstorm className='weather-icon' />
+            return <WiDayThunderstorm className={`weather-icon${size}`} />
         case '11n' :
-            return <WiNightThunderstorm className='weather-icon' />
+            return <WiNightThunderstorm className={`weather-icon${size}`} />
         case '13d' :
-            return <WiSnow className='weather-icon' />
+            return <WiSnow className={`weather-icon${size}`} />
         case '13n' :
-            return <WiSnow className='weather-icon' />
+            return <WiSnow className={`weather-icon${size}`} />
         case '50d' :
-            return <WiDayFog className='weather-icon' />
+            return <WiDayFog className={`weather-icon${size}`} />
         case '50n' :
-            return <WiNightFog className='weather-icon' />
+            return <WiNightFog className={`weather-icon${size}`} />
         default :
-            return <WiNa className='weather-icon'/>
+            return <WiNa className={`weather-icon${size}`}/>
     }
 }
