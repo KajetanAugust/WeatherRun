@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import { FaRunning } from "react-icons/fa";
@@ -34,38 +35,42 @@ export default class Search extends React.Component {
     render() {
         return (
             <div className='search-page'>
-                <div className='app-logo'>
-                    <FaRunning className='app-logo-runner'/>
-                    <WiDayRainWind className='app-logo-cloud'/>
+                <div className='logo-wrapper'>
+                    <h1 className='app-title'>WeatherRun</h1>
+                    <div className='app-logo'>
+                        <FaRunning className='app-logo-runner'/>
+                        <WiDayRainWind className='app-logo-cloud'/>
+                    </div>
                 </div>
-                <h1 className='app-title'>WeatherRun</h1>
-                <div className='search-form' onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => this.handleKeyPress(e as any as KeyboardEvent)}>
-
-                    <input
-                        type='text'
-                        placeholder='Enter city name'
+                <div
+                    className='search-form'
+                    onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => this.handleKeyPress(e as any as KeyboardEvent)}>
+                    <TextField
+                        size='small'
+                        style={{width: '25%'}}
+                        id="outlined-basic"
+                        autoComplete="off"
+                        label="Enter city name"
+                        variant="outlined"
                         value={this.state.city}
                         onChange={(e) => this.handleInput(e)}
-                        autoFocus
                     />
                     {
                         this.state.city !== ''
                             ?
-                                <Link to={`/results?search=${this.state.city}`}>
-                                    <button className='search-form-button'>Search</button>
+                                <Link to={`/results?search=${this.state.city}`} style={{textDecoration: 'none'}} >
+                                    <Button variant="contained" disableElevation>SEARCH</Button>
                                 </Link>
                             :
-                                <button
-                                    style={{
-                                        color: 'rgba(115, 130, 144, 0.8)',
-                                        backgroundColor: 'white'
-                                    }}
+                                <Button
+                                    variant="outlined"
+                                    disabled
                                     onClick={() => this.setState({
-                                        warning: true
-                                    })}
+                                                warning: true
+                                            })}
                                 >
-                                    Search
-                                </button>
+                                    SEARCH
+                                </Button>
                     }
                 </div>
                 <p

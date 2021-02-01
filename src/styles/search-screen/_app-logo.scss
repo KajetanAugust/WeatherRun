@@ -2,40 +2,45 @@
 /*  APP LOGO  */
 /*////////////*/
 
+.logo-wrapper {
+  @include flex(row);
+}
+
 .app-title {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 200;
   color: $gray;
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 0;
   text-align: center;
 }
 
 .app-logo {
   padding-bottom: 15px;
-  margin: auto;
+  margin: auto 0 45px 0;
   color: $gray;
   position: relative;
-  width: 400px;
-  height: 400px;
-  justify-self: center;
-  text-align: center;
+  width: 100px;
+  height: 100px;
+  //justify-self: center;
+  //text-align: center;
 }
 
 .app-logo-runner, .app-logo-cloud {
-  width: 200px;
-  height: 200px;
   position: absolute;
 }
 
 .app-logo-runner {
-  top: 200px;
-  left: 45px;
+  //top: 25%;
+  bottom: 0;
+  left: 5%;
+  width: 60%;
+  height: 60%;
 }
 
 .app-logo-cloud {
-  top: 75px;
-  right: 55px;
-  width: 175px;
-  height: 175px;
+  top: 5%;
+  right: 10%;
+  width: 45%;
+  height: 45%;
 }

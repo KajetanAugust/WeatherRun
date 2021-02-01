@@ -19,7 +19,7 @@
 .forecast-tile {
   @include flex(row, space-evenly);
   font-size: 0.8rem;
-  border: 2px solid $gray;
+  border: 1px solid $gray;
   border-radius: 5px;
   padding:0;
   width: 100%;

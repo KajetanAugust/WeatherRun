@@ -14,7 +14,7 @@ export default function Forecast (props: ForecastProps) {
                     <ForecastTile
                         pm10={pm10pollution}
                         pm25={props.pollution.forecast.daily.pm25[index]}
-                        forecast={props.weather.daily[index]}
+                        forecast={props.weather.daily[index + 1]}
                         key={`forecastTile${index}`}
                     />
                 ))

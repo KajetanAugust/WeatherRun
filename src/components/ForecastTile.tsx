@@ -2,6 +2,7 @@ import React from "react";
 
 import { aqiFaceChecker } from "../utils/aqiFaceChecker";
 import { weatherIconChecker } from "../utils/weatherIconChecker";
+import { getFormattedDay } from "../utils/getFormattedDay";
 
 interface ForecastTileProps {
     pm10: any,
@@ -13,7 +14,7 @@ export default function ForecastTile (props: ForecastTileProps) {
     console.log(props.forecast)
     return (
         <div className='forecast-tile-wrapper'>
-            <h3>Day</h3>
+            <h3>{getFormattedDay(props.forecast.dt)}</h3>
             <div className='forecast-tile'>
                 <div className='forecast-weather-data'>
                     {weatherIconChecker(props.forecast.weather[0].icon, '-small')}
@@ -23,8 +24,9 @@ export default function ForecastTile (props: ForecastTileProps) {
                 </div>
                 <div className='forecast-aqi-data'>
                     {aqiFaceChecker(props.pm25.avg, '-small')}
-                    <p>pm10: {props.pm10.avg ? props.pm10.avg : 'N/A '}&micro;g/m&sup3;</p>
-                    <p>pm2.5: {props.pm25.avg ? props.pm25.avg : 'N/A '}&micro;g/m&sup3;</p>
+                    <p className='aqi-details'>pm10: {props.pm10.avg ? props.pm10.avg : 'N/A '}&micro;g/m&sup3;</p>
+                    <p className='aqi-details'>pm2.5: {props.pm25.avg ? props.pm25.avg : 'N/A '}&micro;g/m&sup3;</p>
+                    <p className='aqi-details'>AQI: {props.pm25.avg ? props.pm25.avg : 'N/A '}</p>
                 </div>
             </div>
         </div>
