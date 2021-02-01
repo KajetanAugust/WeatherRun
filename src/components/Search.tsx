@@ -1,38 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button, TextField, Tooltip } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import { FaRunning } from "react-icons/fa";
 import { WiDayRainWind } from 'react-icons/wi';
 
-export default class Search extends React.Component {
+export default function Search (props: any) {
 
-    state = {
-        city: '',
-        warning: false
-    }
+    const [city, setCity ] = useState('')
 
-    componentWillUnmount() {
-        this.setState({
-            warning: false
-        })
-    }
-
-    handleInput = (e:any) => {
-        const value = e.target.value
-        this.setState({
-            city: value,
-            warning: false
-        })
-    }
-
-    handleKeyPress = (e: KeyboardEvent) => {
-        if (e.keyCode === 13 && this.state.city !== '') {
-            (this.props as any).history.push(`/results?search=${this.state.city}`)
-        }
-    }
-
-    render() {
         return (
             <div className='search-page'>
                 <div className='logo-wrapper'>
@@ -44,7 +20,8 @@ export default class Search extends React.Component {
                 </div>
                 <div
                     className='search-form'
-                    onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => this.handleKeyPress(e as any as KeyboardEvent)}>
+                    onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => e.keyCode === 13 && city !== '' && props.history.push(`/results?search=${city}`)}
+                >
                     <TextField
                         size='small'
                         style={{width: '25%'}}
@@ -52,15 +29,15 @@ export default class Search extends React.Component {
                         autoComplete="off"
                         label="City name"
                         variant="outlined"
-                        value={this.state.city}
-                        onChange={(e) => this.handleInput(e)}
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
                     />
                     {
-                        this.state.city !== ''
+                        city !== ''
                             ?
-                                <Link to={`/results?search=${this.state.city}`} style={{textDecoration: 'none'}} >
-                                    <Button variant="contained" disableElevation>SEARCH</Button>
-                                </Link>
+                            <Link to={`/results?search=${city}`} style={{textDecoration: 'none'}} >
+                                <Button variant="contained" disableElevation>SEARCH</Button>
+                            </Link>
                             :
                             <Tooltip title="Please enter city name" placement="right" arrow>
                                 <span>
@@ -77,5 +54,4 @@ export default class Search extends React.Component {
                 </div>
             </div>
         )
-    }
 }

@@ -2,14 +2,10 @@
 /*  RECOMMENDATIONS  */
 /*///////////////////*/
 
-.conditions-div, .clothing-div {
+.recommendations-div {
   @include flex(column)
 }
 
-.conditions-div {
-  grid-area: conditions;
-}
-
-.clothing-div {
-  grid-area: clothing;
+.recommendations-div {
+  grid-area: recommendations;
 }
