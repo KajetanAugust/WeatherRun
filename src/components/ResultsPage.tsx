@@ -11,7 +11,7 @@ import Loading from "./Loading";
 import Nav from './Nav'
 import NotFound from './NotFound';
 import WeatherRecommendation from "./WeatherRecommendation";
-import ClothesRecommendation from "./ClothesRecommendation";
+
 import Forecast from "./Forecast";
 
 interface PropsData {
@@ -87,12 +87,11 @@ export default class ResultsPage extends React.Component<PropsData, StateData> {
                                 err === ''
                                     ?
                                     <React.Fragment>
-
                                         <div className='results-page'>
-                                            <AirQuality pollution={pollution.data}/>
                                             <Weather weather={weather.current}/>
+                                            <AirQuality pollution={pollution.data}/>
                                             <WeatherRecommendation aqi={pollution.data.aqi} weather={weather.current}/>
-                                            <ClothesRecommendation/>
+                                            {/*<ClothesRecommendation/>*/}
                                             <Forecast weather={weather} pollution={pollution.data}/>
                                         </div>
                                     </React.Fragment>

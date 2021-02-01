@@ -1,16 +1,15 @@
 import React from "react";
-import { Link } from 'react-router-dom'
 
 import aqicnLogo from '../logos/aqilogo.png'
 import openWeatherLogo from '../logos/openweatherlogo-dark.png'
 
 import Nav from "./Nav";
 
-
 export default function DataSourcesInfo () {
+
     return (
         <React.Fragment>
-            <Nav location={''} />
+            <Nav location={''}/>
             <div className='data-sources-info'>
                 <div>
                     <h3>Weather information were provided by OpenWeatherMap</h3>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, TextField } from "@material-ui/core";
+import { Button, TextField, Tooltip } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import { FaRunning } from "react-icons/fa";
@@ -50,7 +50,7 @@ export default class Search extends React.Component {
                         style={{width: '25%'}}
                         id="outlined-basic"
                         autoComplete="off"
-                        label="Enter city name"
+                        label="City name"
                         variant="outlined"
                         value={this.state.city}
                         onChange={(e) => this.handleInput(e)}
@@ -62,31 +62,19 @@ export default class Search extends React.Component {
                                     <Button variant="contained" disableElevation>SEARCH</Button>
                                 </Link>
                             :
-                                <Button
-                                    variant="outlined"
-                                    disabled
-                                    onClick={() => this.setState({
-                                                warning: true
-                                            })}
-                                >
+                            <Tooltip title="Please enter city name" placement="right" arrow>
+                                <span>
+                                    <Button
+                                        variant="outlined"
+                                        disabled
+                                    >
                                     SEARCH
                                 </Button>
+                                </span>
+                            </Tooltip>
+
                     }
                 </div>
-                <p
-                    style={
-                        !this.state.warning
-                            ? {'display': 'none'}
-                            : {
-                                color: '#db5461',
-                                textAlign: 'center',
-                                fontWeight: 400,
-                                width: '100%',
-                                'position': "absolute"
-                            }}
-                >
-                    Search field can't be empty. Please enter the city name.
-                </p>
             </div>
         )
     }

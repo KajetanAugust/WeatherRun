@@ -9,3 +9,4 @@ export default class ClothesRecommendation extends React.Component<any, any> {
         );
     }
 }
+

@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "@material-ui/core";
 
 import { aqiFaceChecker } from "../utils/aqiFaceChecker";
 import { weatherIconChecker } from "../utils/weatherIconChecker";
@@ -13,7 +14,7 @@ interface ForecastTileProps {
 export default function ForecastTile (props: ForecastTileProps) {
     console.log(props.forecast)
     return (
-        <div className='forecast-tile-wrapper'>
+        <Card className='forecast-tile-wrapper' >
             <h3>{getFormattedDay(props.forecast.dt)}</h3>
             <div className='forecast-tile'>
                 <div className='forecast-weather-data'>
@@ -29,7 +30,7 @@ export default function ForecastTile (props: ForecastTileProps) {
                     <p className='aqi-details'>AQI: {props.pm25.avg ? props.pm25.avg : 'N/A '}</p>
                 </div>
             </div>
-        </div>
+        </Card>
 
     )
 }

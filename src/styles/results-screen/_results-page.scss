@@ -11,10 +11,12 @@
   justify-self: center;
   padding-top: 25px;
   display: grid;
-  grid-template-columns: 400px 70%;
-  grid-template-rows: repeat(2, 430px);
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 350px 80px repeat(2, 215px);
   grid-template-areas:
           'aqi forecast'
-          'weather clothing'
+          'aqi conditions'
+          'weather conditions'
+          'weather conditions'
   ;
 }
