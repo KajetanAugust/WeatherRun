@@ -8,7 +8,7 @@ $font-weight-200: 200;
   grid-area: aqi;
   @include results-section-dimensions;
   @include flex(column);
-  color: $gray;
+  //color: $gray;
   border-right: 1px solid lightgray;
 }
 

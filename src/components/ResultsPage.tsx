@@ -4,6 +4,7 @@ import queryString from "query-string";
 import {openWeatherToken, aqiToken, mapboxToken} from "../tokens/tokens";
 import {fetchAqi, fetchCoordinates, fetchForecast} from "../utils/fetchFunctions";
 import formatLocation from '../utils/formatLocation'
+import { ThemeContext } from "../contexts";
 
 import AirQuality from "./AirQuality";
 import Weather from "./Weather";
@@ -76,34 +77,38 @@ export default class ResultsPage extends React.Component<PropsData, StateData> {
     render() {
         const {loading, weather, pollution, locationInfo, err} = this.state
         return (
-            <React.Fragment>
-                {
-                    !loading
-                        ?
-                        <React.Fragment>
-                            <Nav location={err === '' ? formatLocation(locationInfo) : ''}/>
-                            {
-                                err === ''
-                                    ?
-                                    <React.Fragment>
-                                        <div className='results-page'>
-                                            <Weather weather={weather.current}/>
-                                            <AirQuality pollution={pollution.data}/>
-                                            <Recommendations aqi={pollution.data.aqi} weather={weather.current}/>
-                                            <Forecast weather={weather} pollution={pollution.data}/>
-                                        </div>
-                                    </React.Fragment>
-                                    :
-                                    <NotFound
-                                        text={this.state.err}
-                                    />
-                            }
-                        </React.Fragment>
+            <ThemeContext.Consumer>
+                {({theme}) => (
+                    <React.Fragment>
+                        {
+                            !loading
+                                ?
+                                <React.Fragment>
+                                    <Nav location={err === '' ? formatLocation(locationInfo) : ''}/>
+                                    {
+                                        err === ''
+                                            ?
+                                            <React.Fragment>
+                                                <div className={`results-page ${theme}`}>
+                                                    <Weather weather={weather.current}/>
+                                                    <AirQuality pollution={pollution.data}/>
+                                                    <Recommendations aqi={pollution.data.aqi} weather={weather.current}/>
+                                                    <Forecast weather={weather} pollution={pollution.data}/>
+                                                </div>
+                                            </React.Fragment>
+                                            :
+                                            <NotFound
+                                                text={this.state.err}
+                                            />
+                                    }
+                                </React.Fragment>
 
-                        :
-                        <Loading/>
-                }
-            </React.Fragment>
+                                :
+                                <Loading/>
+                        }
+                    </React.Fragment>
+                )}
+            </ThemeContext.Consumer>
         );
     }
 }

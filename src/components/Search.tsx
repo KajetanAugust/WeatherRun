@@ -1,17 +1,25 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { Button, TextField, Tooltip } from "@material-ui/core";
+import {lightBlue} from "@material-ui/core/colors";
 import { Link } from "react-router-dom";
 
 import { FaRunning } from "react-icons/fa";
 import { WiDayRainWind } from 'react-icons/wi';
+import ThemeSwitch from "./ThemeSwitch";
+import {ThemeContext} from "../contexts";
+
 
 export default function Search (props: any) {
 
     const [city, setCity ] = useState('')
+    const {theme, setTheme} = useContext(ThemeContext);
 
         return (
-            <div className='search-page'>
-                <div className='logo-wrapper'>
+            <div className={`search-page ${theme}`}>
+                <div className={`theme-switch ${theme}`}>
+                    <ThemeSwitch theme={theme} setTheme={setTheme} />
+                </div>
+                <div className={`logo-wrapper ${theme}`}>
                     <h1 className='app-title'>WeatherRun</h1>
                     <div className='app-logo'>
                         <FaRunning className='app-logo-runner'/>
@@ -19,12 +27,14 @@ export default function Search (props: any) {
                     </div>
                 </div>
                 <div
-                    className='search-form'
+                    className={`search-form ${theme}`}
                     onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => e.keyCode === 13 && city !== '' && props.history.push(`/results?search=${city}`)}
                 >
                     <TextField
                         size='small'
-                        style={{width: '25%'}}
+                        className={`search-text-field-${theme}`}
+                        // color="primary"
+                        style={theme === "dark" ? {color: 'white', borderColor: 'white', width: '25%'} : {width: '25%'}}
                         id="outlined-basic"
                         autoComplete="off"
                         label="City name"
@@ -36,7 +46,10 @@ export default function Search (props: any) {
                         city !== ''
                             ?
                             <Link to={`/results?search=${city}`} style={{textDecoration: 'none'}} >
-                                <Button variant="contained" disableElevation>SEARCH</Button>
+                                <Button
+                                    variant="contained"
+                                    disableElevation
+                                >SEARCH</Button>
                             </Link>
                             :
                             <Tooltip title="Please enter city name" placement="right" arrow>
@@ -44,6 +57,7 @@ export default function Search (props: any) {
                                     <Button
                                         variant="outlined"
                                         disabled
+                                        style={theme === "dark" ? {color: 'white', borderColor: 'white'} : {}}
                                     >
                                     SEARCH
                                 </Button>

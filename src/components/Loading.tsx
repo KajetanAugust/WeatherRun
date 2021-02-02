@@ -1,7 +1,12 @@
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import {useContext} from "react";
+import {ThemeContext} from "../contexts";
 
 export default function Loading () {
+    const {theme} = useContext(ThemeContext);
     return (
-        <AiOutlineLoading3Quarters className='loading-indicator' />
+        <div className={`loading-indicator-div ${theme}`}>
+            <AiOutlineLoading3Quarters className={`loading-indicator`} />
+        </div>
     )
 }

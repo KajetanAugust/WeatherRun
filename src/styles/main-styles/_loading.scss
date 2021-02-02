@@ -2,11 +2,17 @@
 /*  LOADING  */
 /*///////////*/
 
+.loading-indicator-div {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
 .loading-indicator {
+  margin-top: 45vh;
   width: 120px;
   height: 120px;
-  margin-top: 400px;
-  color: $gray;
   animation: roll 3s infinite;
   transform: rotate(360deg);
 }

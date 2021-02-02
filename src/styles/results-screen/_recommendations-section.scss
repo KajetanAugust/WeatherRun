@@ -3,7 +3,8 @@
 /*///////////////////*/
 
 .recommendations-div {
-  @include flex(column)
+  @include flex(row);
+  height: 100%;
 }
 
 .recommendations-div {

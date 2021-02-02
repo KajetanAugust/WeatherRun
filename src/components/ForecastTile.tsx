@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Card } from "@material-ui/core";
 
 import { aqiFaceChecker } from "../utils/aqiFaceChecker";
 import { weatherIconChecker } from "../utils/weatherIconChecker";
 import { getFormattedDay } from "../utils/getFormattedDay";
+import {ThemeContext} from "../contexts";
 
 interface ForecastTileProps {
     pm10: any,
@@ -12,11 +13,19 @@ interface ForecastTileProps {
 }
 
 export default function ForecastTile (props: ForecastTileProps) {
-    console.log(props.forecast)
+    const {theme} = useContext(ThemeContext);
     return (
-        <Card className='forecast-tile-wrapper' >
-            <h3>{getFormattedDay(props.forecast.dt)}</h3>
-            <div className='forecast-tile'>
+        <Card
+            className={`forecast-tile-wrapper-${theme}`}
+            style={theme === "dark" ? {backgroundColor: 'rgba(30,33,40, 1)'} : {backgroundColor: "white"}}
+        >
+            <h3
+                className={`${theme}`}
+                style={theme === "dark" ? {backgroundColor: 'rgba(30,33,40, 1)'} : {backgroundColor: "white"}}
+            >{getFormattedDay(props.forecast.dt)}</h3>
+            <div
+                className={`forecast-tile  ${theme} `}
+                style={theme === "dark" ? {backgroundColor: 'rgba(30,33,40, 1)'} : {backgroundColor: "white"}}>
                 <div className='forecast-weather-data'>
                     {weatherIconChecker(props.forecast.weather[0].icon, '-small')}
                     <p className='weather-details'>Temperature: {Math.round(props.forecast.temp.day)}&deg;C</p>

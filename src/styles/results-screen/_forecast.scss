@@ -7,7 +7,7 @@
   border-bottom: 1px solid lightgray;
 }
 
-.forecast-tile-wrapper {
+.forecast-tile-wrapper-light, .forecast-tile-wrapper-dark {
   width: 275px;
   height: auto;
   text-align: center;
@@ -19,10 +19,13 @@
   }
 }
 
+.forecast-tile-wrapper-dark {
+  background-color: $light-gray;
+}
+
 .forecast-tile {
   @include flex(row, space-evenly);
   font-size: 0.8rem;
-  //border: 1px solid $gray;
   border-radius: 5px;
   padding: 20px 0;
   width: 100%;

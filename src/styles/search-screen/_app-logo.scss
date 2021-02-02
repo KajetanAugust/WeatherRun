@@ -9,7 +9,6 @@
 .app-title {
   font-size: 4.5rem;
   font-weight: 100;
-  color: $gray;
   margin-top: 0;
   margin-bottom: 0;
   text-align: center;
@@ -18,12 +17,9 @@
 .app-logo {
   padding-bottom: 15px;
   margin: auto 0 45px 0;
-  color: $gray;
   position: relative;
   width: 100px;
   height: 100px;
-  //justify-self: center;
-  //text-align: center;
 }
 
 .app-logo-runner, .app-logo-cloud {
@@ -31,7 +27,6 @@
 }
 
 .app-logo-runner {
-  //top: 25%;
   bottom: 0;
   left: 5%;
   width: 60%;
