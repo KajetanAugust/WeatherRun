@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
 
-import {AiOutlineArrowLeft} from 'react-icons/ai';
+import GoBackButton from "./GoBackButton";
+import Nav from "./Nav";
 
 interface NotFoundProps {
     text: string
@@ -10,11 +10,9 @@ interface NotFoundProps {
 export default function NotFound (props: NotFoundProps) {
     return (
         <div className='not-found-div'>
+            <Nav location=''/>
             <h1 className='not-found-title'>{props.text}</h1>
-            <Link to='/' className='not-found-back-button'>
-                <AiOutlineArrowLeft className='back-arrow'/>
-                <p className='back-text'>BACK</p>
-            </Link>
+            <GoBackButton location=''/>
         </div>
     );
 }

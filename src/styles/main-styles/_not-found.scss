@@ -3,24 +3,7 @@
 /*/////////////*/
 
 .not-found-div {
+  height: 100vh;
   @include flex(column, center);
-  margin-top:400px;
-
-  h1 {
-    font-weight: 600;
-    font-size: 3rem;
-    color: $gray;
-    margin-bottom: 25px;
-  }
-}
-
-.not-found-back-button {
-  @include flex(row);
-  color: $gray;
-  text-decoration: none;
-
-  &:hover {
-    color: $gray;
-  }
 }
 

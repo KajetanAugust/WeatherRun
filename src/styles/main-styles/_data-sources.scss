@@ -3,12 +3,13 @@
 /*/////////////////////*/
 
 .data-sources-info {
-  @include flex(column);
+  @include flex(row, center);
   width: 100%;
-  margin-top: 300px;
+  height: 100vh;
+  //margin-top: 150px;
   text-align: center;
   div {
-    width: 45%;
+    width: 33%;
     margin-bottom: 25px;
   }
   img {
