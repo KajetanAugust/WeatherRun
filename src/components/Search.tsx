@@ -10,7 +10,7 @@ import {ThemeContext} from "../contexts";
 
 export default function Search (props: any) {
 
-    const [city, setCity ] = useState('')
+    const [city, setCity] = useState('')
     const {theme, setTheme} = useContext(ThemeContext);
 
         return (
@@ -32,7 +32,6 @@ export default function Search (props: any) {
                     <TextField
                         size='small'
                         className={`search-text-field-${theme}`}
-                        // color="primary"
                         style={theme === "dark" ? {color: 'white', borderColor: 'white', width: '25%'} : {width: '25%'}}
                         id="outlined-basic"
                         autoComplete="off"

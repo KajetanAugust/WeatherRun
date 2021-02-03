@@ -17,11 +17,11 @@ export default function Weather (props: WeatherPropsData) {
                     weatherData !== {}
                         ?
                         <div className='weather-div'>
-                            <p className='weather-title'>{formatWeather(weatherData.weather[0].description)}</p>
-                            {weatherIconChecker(weatherData.weather[0].icon)}
-                            <p className='weather-details'>Temperature: {Math.round(weatherData.temp)}&deg;C</p>
-                            <p className='weather-details'>Feels Like: {Math.round(weatherData.feels_like)}&deg;C</p>
-                            <p className='weather-details'>Wind: {Math.ceil((weatherData.wind_speed * 3.6))} km/h</p>
+                            <p className='weather-title'>{formatWeather(weatherData.current.weather[0].description)}</p>
+                            {weatherIconChecker(weatherData.current.weather[0].icon)}
+                            <p className='weather-details'>Temperature: {Math.round(weatherData.current.temp)}&deg;C</p>
+                            <p className='weather-details'>Feels Like: {Math.round(weatherData.current.feels_like)}&deg;C</p>
+                            <p className='weather-details'>Wind: {Math.ceil((weatherData.current.wind_speed * 3.6))} km/h</p>
                         </div>
                         :
                         <p className='weather-title'>Loading...</p>
