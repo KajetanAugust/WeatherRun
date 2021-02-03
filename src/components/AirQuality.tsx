@@ -8,7 +8,7 @@ interface PropsData {
 
 export default function AirQuality (props:PropsData){
 
-    const [pollutionData, setPollutionData] = useState<Record<any, any>>(props.pollution)
+    const [pollutionData, setPollutionData] = useState(props.pollution)
 
         return (
             <React.Fragment>
@@ -17,7 +17,7 @@ export default function AirQuality (props:PropsData){
                         ?
                         <div className='aqi-div'>
                             <p className='aqi-title'>Air Quality</p>
-                            {pollutionData.aqi && aqiFaceChecker(pollutionData.data.aqi)}
+                            {pollutionData.data.aqi && aqiFaceChecker(pollutionData.data.aqi)}
                             <p className='aqi-details'>AQI: {typeof pollutionData.data.aqi === 'number' ? pollutionData.data.aqi : 'N/A'}</p>
                             <p className='aqi-details'>PM10: {pollutionData.data.iaqi.pm10 ? pollutionData.data.iaqi.pm10.v : 'N/A '}&micro;g/m&sup3;</p>
                             <p className='aqi-details'>PM2.5: {pollutionData.data.iaqi.pm25 ? pollutionData.data.iaqi.pm25.v : 'N/A '}&micro;g/m&sup3;</p>

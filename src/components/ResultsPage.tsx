@@ -1,8 +1,7 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import queryString from "query-string";
 
-import {openWeatherToken, aqiToken, mapboxToken} from "../tokens/tokens";
-import {fetchAqi, fetchCoordinates, fetchForecast} from "../utils/fetchFunctions";
+import { fetchAll } from "../utils/fetchFunctions";
 import formatLocation from '../utils/formatLocation'
 import { ThemeContext } from "../contexts";
 
@@ -17,7 +16,6 @@ import Recommendations from "./Recommendations";
 export default function ResultsPage (props: any) {
 
     const [ loading, setLoading ] = useState(true)
-    const [ location, setLocation ] = useState('')
     const [ weather, setWeather ] = useState({})
     const [ pollution, setPollution ] = useState({})
     const [ locationInfo, setLocationInfo ] = useState({})
@@ -27,30 +25,9 @@ export default function ResultsPage (props: any) {
 
     useEffect(() => {
         const locationFromQuery = queryString.parse(props.location.search)
-        setLocation(String(locationFromQuery.search))
 
-        fetchCoordinates(String(locationFromQuery.search), mapboxToken)
-            .then(coordinates => {
-                setLocationInfo(coordinates.features[0])
+        fetchAll(String(locationFromQuery.search), setLocationInfo, setWeather, setPollution, setLoading, setErr)
 
-                if (coordinates.features.length) {
-                    return fetchForecast(coordinates.features[0].center, openWeatherToken)
-                        .then(weather => {
-                                setWeather(weather)
-                                setLoading(true)
-
-                                return fetchAqi(weather.lat, weather.lon, aqiToken)
-                                    .then(aqiData => {
-                                            setPollution(aqiData)
-                                            setLoading(false)
-                                        })
-                            }
-                        )
-                } else {
-                    setErr('City not found, please try again.')
-                    setLoading(false)
-                }
-            })
     },[]);
 
     return (
