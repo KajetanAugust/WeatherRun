@@ -17,16 +17,14 @@
   margin: 0;
 }
 
-//.container-dark {
-//  background-color: $gray;
-//}
-
 .dark {
-  background-color: $gray;
-  color: white;
+  background-color: rgb(19,19,19);
+  color: rgb(255, 255, 255);
+  border-color: rgb(37, 37, 37);
 }
 
 .light {
   background-color: transparent;
   color: $gray;
+  border-color: rgb(125, 125, 125);
 }

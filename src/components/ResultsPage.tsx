@@ -21,7 +21,7 @@ export default function ResultsPage (props: any) {
     const [ locationInfo, setLocationInfo ] = useState({})
     const [ err, setErr ] = useState('')
 
-    const {theme} = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         const locationFromQuery = queryString.parse(props.location.search)
@@ -54,7 +54,6 @@ export default function ResultsPage (props: any) {
                                     />
                             }
                         </React.Fragment>
-
                         :
                         <Loading/>
                 }

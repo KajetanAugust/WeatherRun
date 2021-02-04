@@ -17,15 +17,16 @@ export default function ForecastTile (props: ForecastTileProps) {
     return (
         <Card
             className={`forecast-tile-wrapper-${theme}`}
-            style={theme === "dark" ? {backgroundColor: 'rgba(30,33,40, 1)'} : {backgroundColor: "white"}}
+            style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)', borderColor: 'rgb(37, 37, 37)'} : {backgroundColor: "white"}}
+            variant={theme === 'dark' ? 'outlined' : 'elevation'}
         >
             <h3
                 className={`${theme}`}
-                style={theme === "dark" ? {backgroundColor: 'rgba(30,33,40, 1)'} : {backgroundColor: "white"}}
+                style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)'} : {backgroundColor: "white"}}
             >{getFormattedDay(props.forecast.dt)}</h3>
             <div
-                className={`forecast-tile  ${theme} `}
-                style={theme === "dark" ? {backgroundColor: 'rgba(30,33,40, 1)'} : {backgroundColor: "white"}}>
+                className={`forecast-tile ${theme} `}
+                style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)'} : {backgroundColor: "white"}}>
                 <div className='forecast-weather-data'>
                     {weatherIconChecker(props.forecast.weather[0].icon, '-small')}
                     <p className='weather-details'>Temperature: {Math.round(props.forecast.temp.day)}&deg;C</p>
