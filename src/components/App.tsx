@@ -16,7 +16,7 @@ export default function App() {
 
     useEffect(() => {
         setTheme(localStorage.theme)
-    });
+    }, []);
 
       return (
           <ThemeContext.Provider value={{theme, setTheme}}>

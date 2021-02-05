@@ -18,13 +18,13 @@
 }
 
 .dark {
-  background-color: rgb(19,19,19);
-  color: rgb(255, 255, 255);
-  border-color: rgb(37, 37, 37);
+  background-color: $dark-background;
+  color: $dark-font-color;
+  border-color: $dark-borders !important;
 }
 
 .light {
   background-color: transparent;
   color: $gray;
-  border-color: rgb(125, 125, 125);
+  border-color: $light-borders !important;
 }

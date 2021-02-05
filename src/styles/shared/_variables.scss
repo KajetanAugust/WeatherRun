@@ -2,7 +2,7 @@
 /*  VARIABLES  */
 /*/////////////*/
 
-$light-gray: rgba(30,33,40, 0.5);
+$light-gray: rgb(217, 217, 217);
 $gray: #141414;
 $green: #9CDE9F;
 $yellow: #F5B82E;
@@ -11,4 +11,12 @@ $red: #DB5461;
 $violet: #593959;
 $dark-red: #2D1115;
 
+//LIGHT MODE COLORS
+$light-borders: rgb(217, 217, 217);
 
+//DARK MODE COLORS
+
+$dark-background: rgb(19,19,19);
+$dark-card-background: rgb(24, 24, 24);
+$dark-borders: rgb(37, 37, 37);
+$dark-font-color: rgb(255, 255, 255);

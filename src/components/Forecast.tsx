@@ -1,5 +1,7 @@
 
 import ForecastTile from "./ForecastTile";
+import {useContext} from "react";
+import {ThemeContext} from "../contexts";
 
 interface ForecastProps {
     weather: Record<any, any>,
@@ -7,8 +9,10 @@ interface ForecastProps {
 }
 
 export default function Forecast (props: ForecastProps) {
+    const { theme } = useContext(ThemeContext);
     return (
-        <div className='forecast'>
+
+        <div className={`forecast ${theme}`}>
             {
                 props.pollution.data.forecast.daily.pm10.slice(0, 5).map((pm10pollution: number, index: number) => (
                     <ForecastTile

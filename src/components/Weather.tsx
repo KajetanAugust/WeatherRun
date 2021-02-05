@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 
 import { weatherIconChecker } from "../utils/weatherIconChecker";
 import { formatWeather } from "../utils/formatWeather";
+import {ThemeContext} from "../contexts";
 
 interface WeatherPropsData {
     weather: Record<any, any>
@@ -9,6 +10,7 @@ interface WeatherPropsData {
 
 export default function Weather (props: WeatherPropsData) {
 
+    const { theme } = useContext(ThemeContext);
     const [weatherData, setWeatherData] = useState(props.weather)
 
         return (
@@ -16,7 +18,7 @@ export default function Weather (props: WeatherPropsData) {
                 {
                     weatherData !== {}
                         ?
-                        <div className='weather-div'>
+                        <div className={`weather-div ${theme}`}>
                             <p className='weather-title'>{formatWeather(weatherData.current.weather[0].description)}</p>
                             {weatherIconChecker(weatherData.current.weather[0].icon)}
                             <p className='weather-details'>Temperature: {Math.round(weatherData.current.temp)}&deg;C</p>

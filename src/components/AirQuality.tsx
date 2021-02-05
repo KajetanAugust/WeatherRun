@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 
 import { aqiFaceChecker } from '../utils/aqiFaceChecker';
+import {ThemeContext} from "../contexts";
 
 interface PropsData {
     pollution: Record<any, any>
@@ -8,6 +9,7 @@ interface PropsData {
 
 export default function AirQuality (props:PropsData){
 
+    const { theme } = useContext(ThemeContext);
     const [pollutionData, setPollutionData] = useState(props.pollution)
 
         return (
@@ -15,7 +17,7 @@ export default function AirQuality (props:PropsData){
                 {
                     pollutionData !== {}
                         ?
-                        <div className='aqi-div'>
+                        <div className={`aqi-div ${theme}`}>
                             <p className='aqi-title'>Air Quality</p>
                             {pollutionData.data.aqi && aqiFaceChecker(pollutionData.data.aqi)}
                             <p className='aqi-details'>AQI: {typeof pollutionData.data.aqi === 'number' ? pollutionData.data.aqi : 'N/A'}</p>

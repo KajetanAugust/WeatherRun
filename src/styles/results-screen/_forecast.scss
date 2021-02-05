@@ -4,7 +4,7 @@
   @include flex(row, space-evenly);
   height: 100%;
   width: 100%;
-  border-bottom: 1px solid rgb(37, 37, 37);
+  border-bottom: 1px solid $dark-borders;
 }
 
 .forecast-tile-wrapper-light, .forecast-tile-wrapper-dark {
@@ -35,7 +35,7 @@
 .forecast-aqi-data {
   margin: auto 0;
   width: 100%;
-  border-left: 1px solid lightgray;
+  border-left: 1px solid $light-borders;
 }
 
 .aqi-face-small, .weather-icon-small {

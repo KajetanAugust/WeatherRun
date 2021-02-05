@@ -4,6 +4,7 @@ import queryString from "query-string";
 import { fetchAll } from "../utils/fetchFunctions";
 import formatLocation from '../utils/formatLocation'
 import { ThemeContext } from "../contexts";
+import saveToLocalStorage from "../utils/saveToLocalStorage";
 
 import AirQuality from "./AirQuality";
 import Weather from "./Weather";
@@ -12,6 +13,7 @@ import Nav from './Nav'
 import NotFound from './NotFound';
 import Forecast from "./Forecast";
 import Recommendations from "./Recommendations";
+
 
 export default function ResultsPage (props: any) {
 
@@ -25,7 +27,7 @@ export default function ResultsPage (props: any) {
 
     useEffect(() => {
         const locationFromQuery = queryString.parse(props.location.search)
-
+        saveToLocalStorage(String(locationFromQuery.search))
         fetchAll(String(locationFromQuery.search), setLocationInfo, setWeather, setPollution, setLoading, setErr)
 
     },[]);

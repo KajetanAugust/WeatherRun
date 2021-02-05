@@ -1,0 +1,15 @@
+.last-searches-div {
+  @include flex(column);
+  margin-top: 75px;
+  h2 {
+    font-weight: 400;
+  }
+}
+
+.last-searches-tiles {
+  @include flex(row);
+}
+
+.last-search-element {
+  margin: 0 15px;
+}

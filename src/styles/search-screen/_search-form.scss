@@ -5,9 +5,9 @@
 $font-size: 1.1rem;
 
 .search-page {
-  margin-top: 300px;
   width: 100vw;
   height: 100vh;
+  @include flex(column)
 }
 
 .search-form {
@@ -25,24 +25,15 @@ $font-size: 1.1rem;
 }
 
 .search-text-field-dark fieldset, .search-text-field-dark fieldset:active {
-  border-color: white !important;
-  color: white !important;
+  border-color: $dark-font-color !important;
+  color: $dark-font-color !important;
 }
 
 .search-text-field-dark label, .search-text-field-dark label:active {
-  color: white;
+  color: $dark-font-color;
 }
 
 .search-text-field-dark input {
-  color: white;
+  color: $dark-font-color;
 }
 
-//.PrivateNotchedOutline-root-5 {
-//  border-color: white;
-//}
-//
-//.MuiInput-input {
-//  border-color: white;
-//  color: white;
-//  background-color: white;
-//}
