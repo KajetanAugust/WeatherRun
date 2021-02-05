@@ -4,7 +4,6 @@ import queryString from "query-string";
 import { fetchAll } from "../utils/fetchFunctions";
 import formatLocation from '../utils/formatLocation'
 import { ThemeContext } from "../contexts";
-import saveToLocalStorage from "../utils/saveToLocalStorage";
 
 import AirQuality from "./AirQuality";
 import Weather from "./Weather";
@@ -27,9 +26,7 @@ export default function ResultsPage (props: any) {
 
     useEffect(() => {
         const locationFromQuery = queryString.parse(props.location.search)
-        saveToLocalStorage(String(locationFromQuery.search))
         fetchAll(String(locationFromQuery.search), setLocationInfo, setWeather, setPollution, setLoading, setErr)
-
     },[]);
 
     return (

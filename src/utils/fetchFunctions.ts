@@ -1,4 +1,5 @@
 import {aqiToken, mapboxToken, openWeatherToken} from "../tokens/tokens";
+import {saveToLocalStorage} from "./localStorageManagement";
 
 function fetchForecast (locationData: Record<any, any>, openWeatherToken: String) {
     return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${locationData[1]}&lon=${locationData[0]}&exclude=minutely,hourly,alerts&appid=${openWeatherToken}&units=metric`)
@@ -20,8 +21,10 @@ export function fetchAll (cityName: string, setLocationInfo: any, setWeather: an
     fetchCoordinates(cityName, mapboxToken)
         .then(coordinates => {
             setLocationInfo(coordinates.features[0])
-
             if (coordinates.features.length) {
+
+                saveToLocalStorage(coordinates.features[0].text) //adding search query to last searches.
+
                 return fetchForecast(coordinates.features[0].center, openWeatherToken)
                     .then(weather => {
                             setWeather(weather)
