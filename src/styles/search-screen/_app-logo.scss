@@ -4,6 +4,7 @@
 
 .logo-wrapper {
   @include flex(row);
+  width: 100%;
 }
 
 .app-title {

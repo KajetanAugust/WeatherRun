@@ -25,8 +25,8 @@ $font-size: 1.1rem;
 }
 
 .search-text-field-dark fieldset, .search-text-field-dark fieldset:active {
-  border-color: $dark-font-color !important;
-  color: $dark-font-color !important;
+  border-color: $dark-font-color;
+  color: $dark-font-color ;
 }
 
 .search-text-field-dark label, .search-text-field-dark label:active {

@@ -20,11 +20,15 @@
 .dark {
   background-color: $dark-background;
   color: $dark-font-color;
-  border-color: $dark-borders !important;
+  .aqi-div, .forecast, .weather-div, .nav {
+    border-color: $dark-borders;
+  }
 }
 
 .light {
   background-color: transparent;
   color: $gray;
-  border-color: $light-borders !important;
+  div.aqi-div, div.forecast, div.weather-div, div.nav {
+    border-color: $light-borders;
+  }
 }

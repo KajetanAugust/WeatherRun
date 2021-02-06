@@ -8,7 +8,6 @@
   border-radius: 5px;
 }
 
-
 @mixin flex($direction, $justify: center) {
   display: flex;
   flex-direction: $direction;
