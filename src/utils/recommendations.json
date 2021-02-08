@@ -19,7 +19,35 @@
         "rainy": " It's raining outside, see clothing tips to know what to wear."
     },
     "clothes": {
-
+        "head": {
+            "moderate": "Wear light buff or headband if you like.",
+            "hot": "Wear something light to protect from the sun.",
+            "cold": "Wear light running beanie headband or buff.",
+            "coldAndWindy": "Wear warm windproof beanie.",
+            "freezingCold": "Wear extra warm beanie or buff."
+        },
+        "body": {
+            "moderate": "Wear tee or long sleeve if you need.",
+            "hot": "Breathable material light tee is enough, wear light colors to protect from the sun.",
+            "cold": "Warm long sleeve or midlayer.",
+            "coldAndWindy": "Warm long sleeve and windproof jacket will be perfect.",
+            "freezingCold": "Wear baselayer, midlayer or softshell jacket.",
+            "rainy": "Put on waterproof jacket on top!",
+            "windy": "Put on windproof jacket on top if you need."
+        },
+        "legs": {
+            "hot": "Light shorts or short tights should be enough.",
+            "moderate": "Light shorts or short tights should be enough.",
+            "cold": "Wear long tights.",
+            "coldAndWindy": "Wear long tights, consider choosing windproof one if you get cold easily.",
+            "freezingCold": "Wear warm winter tights, consider adding extra layer if you get cold easily.",
+            "rainy": ""
+        },
+        "shoes": {
+            "hot": "Wear normal running shoes.",
+            "cold": "Wear running shoes with good grip. If your feets get cold easily consider shoes with membrane.",
+            "rainy": "If you don't like getting wet consider wearing shoes with waterproof membrane."
+        }
     }
 }
 

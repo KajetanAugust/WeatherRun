@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { FaRunning } from "react-icons/fa";
 import { WiDayRainWind } from 'react-icons/wi';
+
 import ThemeSwitch from "./ThemeSwitch";
 import {ThemeContext} from "../contexts";
 import LastSearches from "./LastSearches";
@@ -65,7 +66,6 @@ export default function Search (props: any) {
 
                     }
                 </div>
-                {/*TODO: add tenary checking if localStorage savedSearches exists*/}
                 <LastSearches />
             </div>
         )

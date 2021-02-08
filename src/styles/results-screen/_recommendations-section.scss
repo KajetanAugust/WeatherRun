@@ -3,10 +3,20 @@
 /*///////////////////*/
 
 .recommendations-div {
-  @include flex(row);
+  @include flex(column);
   height: 100%;
 }
 
 .recommendations-div {
   grid-area: recommendations;
+}
+
+.recommendations-div div {
+  @include flex(row);
+}
+
+.recommendations-icon {
+  height: 75%;
+  width: auto;
+  color: $light-gray;
 }
