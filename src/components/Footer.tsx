@@ -3,12 +3,12 @@ import { useHistory, useLocation } from 'react-router-dom'
 
 import { Tooltip } from "@material-ui/core";
 import { AiOutlineInfoCircle } from 'react-icons/ai';
-import {ThemeContext} from "../contexts";
+import { ThemeContext } from "../contexts";
 
 export default function Footer () {
     let history = useHistory()
     let location = useLocation()
-    const {theme} = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
     return (
         location.pathname !== '/info'

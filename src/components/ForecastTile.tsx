@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Card } from "@material-ui/core";
 
 import { aqiFaceChecker } from "../utils/aqiFaceChecker";
 import { weatherIconChecker } from "../utils/weatherIconChecker";
 import { getFormattedDay } from "../utils/getFormattedDay";
-import {ThemeContext} from "../contexts";
+import { ThemeContext } from "../contexts";
 
 interface ForecastTileProps {
     pm10: any,
@@ -13,7 +13,7 @@ interface ForecastTileProps {
 }
 
 export default function ForecastTile (props: ForecastTileProps) {
-    const {theme} = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
     return (
         <Card
             className={`forecast-tile-wrapper-${theme}`}

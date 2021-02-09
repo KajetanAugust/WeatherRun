@@ -1,7 +1,7 @@
-import React, {useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 
 import { aqiFaceChecker } from '../utils/aqiFaceChecker';
-import {ThemeContext} from "../contexts";
+import { ThemeContext } from "../contexts";
 
 interface PropsData {
     pollution: Record<any, any>
@@ -10,7 +10,7 @@ interface PropsData {
 export default function AirQuality (props:PropsData){
 
     const { theme } = useContext(ThemeContext);
-    const [pollutionData, setPollutionData] = useState(props.pollution)
+    const [ pollutionData, setPollutionData ] = useState(props.pollution)
 
         return (
             <React.Fragment>

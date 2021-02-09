@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 import aqicnLogo from '../logos/aqilogo.png'
 import openweatherdark from '../logos/openweatherlogo-dark.png'
@@ -6,13 +6,14 @@ import openweatherlight from '../logos/openweatherlogo-light.png'
 import mapboxdark from '../logos/mapbox-dark.svg'
 import mapboxlight from '../logos/mapbox-light.svg'
 
-import {ThemeContext} from "../contexts";
+import { ThemeContext } from "../contexts";
 
 import Nav from "./Nav";
 
-
 export default function DataSourcesInfo () {
+
     const { theme } = useContext(ThemeContext);
+
     return (
         <React.Fragment>
             <Nav location={''}/>
