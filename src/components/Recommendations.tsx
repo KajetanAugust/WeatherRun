@@ -19,19 +19,19 @@ export default function Recommendations (props: recommendationsPropsData) {
             <div className='recommendations-text'>
                 <p className='recommendations-title'>Recommendations</p>
                 <div>
-                    <h3>AirQuality: </h3><p> {recommendations.aqi}</p>
+                    <p><b>AirQuality:</b> {recommendations.aqi}</p>
                 </div>
                 <div>
-                    <h3>Head: </h3><p> {recommendations.clothes.head}</p>
+                    <p><b>Head:</b> {recommendations.clothes.head}</p>
                 </div>
                 <div>
-                    <h3>Body: </h3><p> {recommendations.clothes.body}</p>
+                    <p><b>Body:</b> {recommendations.clothes.body}</p>
                 </div>
                 <div>
-                    <h3>Legs: </h3><p> {recommendations.clothes.legs}</p>
+                    <p><b>Legs:</b> {recommendations.clothes.legs}</p>
                 </div>
                 <div>
-                    <h3>Shoes: </h3><p> {recommendations.clothes.shoes}</p>
+                    <p><b>Shoes:</b> {recommendations.clothes.shoes}</p>
                 </div>
             </div>
         </div>
