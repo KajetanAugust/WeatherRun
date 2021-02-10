@@ -3,11 +3,10 @@
 /*///////*/
 
 .nav {
-  height: 50px;
+  height: 75px;
   width: 100%;
   @include flex(row, space-between);
-  padding: 0 25px 0 5px;
-  border-bottom: 1px solid $dark-borders;
+  padding: 5px 25px 5px 5px;
   position: absolute;
   top: 0;
   z-index: 10;

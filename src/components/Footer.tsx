@@ -18,9 +18,11 @@ export default function Footer () {
                     <Tooltip title="Show info" placement="left" arrow>
                         <button
                             onClick={() => history.push('/info')}
-
+                            style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)'} : {}}
                         >
-                            <AiOutlineInfoCircle className={`info-button ${theme}`} />
+                            <AiOutlineInfoCircle
+                                className={`info-button ${theme}`}
+                            />
                         </button>
                     </Tooltip>
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Card } from "@material-ui/core";
+import {Card, Paper} from "@material-ui/core";
 
 import { aqiFaceChecker } from "../utils/aqiFaceChecker";
 import { weatherIconChecker } from "../utils/weatherIconChecker";
@@ -15,7 +15,8 @@ interface ForecastTileProps {
 export default function ForecastTile (props: ForecastTileProps) {
     const { theme } = useContext(ThemeContext);
     return (
-        <Card
+        <Paper
+            elevation={2}
             className={`forecast-tile-wrapper-${theme}`}
             style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)', borderColor: 'rgb(37, 37, 37)'} : {backgroundColor: "white"}}
             variant={theme === 'dark' ? 'outlined' : 'elevation'}
@@ -44,7 +45,7 @@ export default function ForecastTile (props: ForecastTileProps) {
                     <p className='aqi-details'>AQI: {props.pm25.avg ? props.pm25.avg : 'N/A '}</p>
                 </div>
             </div>
-        </Card>
+        </Paper>
 
     )
 }
