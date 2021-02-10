@@ -4,7 +4,7 @@
 
 .recommendations-div {
   @include flex(row, space-evenly);
-  height: 100%;
+  max-height: 100%;
   grid-area: recommendations;
 }
 
@@ -13,20 +13,14 @@
 
   div {
     @include flex(row);
-    margin: 5px auto;
+    //margin: 5px auto;
     padding: 5px 25px;
     width: 100%;
   }
 }
 
-.recommendations-icon {
-  height: 95%;
-  width: auto;
-  color: $light-gray;
-}
-
 .recommendations-title {
   font-size: 2rem;
-  margin: 15px auto 25px auto;
+  margin: 15px auto;
   font-weight: $font-weight-200;
 }

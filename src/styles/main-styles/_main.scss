@@ -21,7 +21,7 @@
 .dark {
   background-color: $dark-background;
   color: $dark-font-color;
-  .aqi-div, .forecast, .weather-div, .nav {
+  .aqi-div, .forecast, .weather-div, .nav, .forecast-aqi-data {
     border-color: $dark-borders;
   }
 }
@@ -29,7 +29,7 @@
 .light {
   background-color: transparent;
   color: $gray;
-  div.aqi-div, div.forecast, div.weather-div, div.nav {
+  div.aqi-div, div.forecast, div.weather-div, div.nav, .forecast-aqi-data {
     border-color: $light-borders;
   }
 }

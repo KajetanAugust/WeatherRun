@@ -15,7 +15,7 @@
   grid-template-rows: 300px 100px repeat(2, 200px);
   grid-template-areas:
           'aqi forecast'
-          'aqi recommendations'
+          'aqi forecast'
           'weather recommendations'
           'weather recommendations'
   ;
