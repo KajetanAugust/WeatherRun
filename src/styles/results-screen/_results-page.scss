@@ -12,36 +12,36 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 350px 1fr;
-  grid-template-rows: 300px 100px repeat(2, 200px);
+  grid-template-rows: repeat(4, 200px);
   grid-template-areas:
-          'aqi forecast'
-          'aqi forecast'
-          'weather recommendations'
-          'weather recommendations'
+          'weather forecast'
+          'weather forecast'
+          'aqi recommendations'
+          'aqi recommendations'
   ;
 
+  @media all and (max-width: 768px) {
+    margin-top: 90px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+            'aqi aqi'
+            'weather weather'
+            'forecast-carousel forecast-carousel'
+            'recommendations recommendations'
+    ;
+  }
 
-
-@media all and(max-width: 768px) {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-          'aqi'
-          'weather'
-          'forecast'
-          'recommendations'
-  ;
-}
-
-@media all and (min-width: 769px) and (max-width: 1200px) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-          'aqi weather'
-          'forecast forecast'
-          'recommendations recommendations'
-;
-}
+  @media all and (min-width: 769px) and (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+            'aqi weather'
+            'forecast forecast'
+            'recommendations recommendations'
+    ;
+  }
 }

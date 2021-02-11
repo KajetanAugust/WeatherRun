@@ -1,0 +1,27 @@
+.forecast-carousel {
+  grid-area: forecast-carousel;
+  width: 100%;
+  display: none;
+
+  .forecast-tile-wrapper-dark, .forecast-tile-wrapper-light {
+    width: 100%;
+    padding: 50px 0;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .forecast-carousel {
+    display: block;
+  }
+
+  .forecast-tile {
+    @include flex(row, space-evenly);
+  }
+
+  .forecast-aqi-data {
+    border-top: none;
+    border-left: 1px solid $light-borders;
+  }
+}

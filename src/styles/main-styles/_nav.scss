@@ -23,9 +23,22 @@
   }
 
   div {
-    @include flex(row)
+    @include flex(row);
   }
 }
 
+@media screen and (max-width: 768px) {
+  .nav {
+    margin: 10px 0;
+    padding: 15px;
+    @include flex(row);
+    justify-content: space-between;
+
+    h2 {
+      display: none;
+    }
+  }
+
+}
 
 
