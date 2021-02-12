@@ -14,6 +14,13 @@ $font-size: 1.1rem;
   width: 100%;
   @include flex(row);
 
+  div {
+    width: 25%;
+    div {
+      width: 100%;
+    }
+  }
+
   button {
     text-decoration: none;
     height: 40px;
@@ -37,3 +44,22 @@ $font-size: 1.1rem;
   color: $dark-font-color;
 }
 
+
+@media screen and (max-width: 768px) {
+
+  .search-page {
+    width: 85%;
+  }
+  .search-form {
+    @include flex(column);
+
+    button {
+      margin-top: 15px;
+    }
+
+    div {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}

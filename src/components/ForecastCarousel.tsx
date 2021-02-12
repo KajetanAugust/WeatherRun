@@ -33,6 +33,8 @@ export default function ForecastCarousel(props: ForecastCarouselProps) {
                         </Carousel.Item>
                     ))
                 }
+                <span aria-hidden="true" className="carousel-control-next-icon" />
+                <span aria-hidden="true" className="carousel-control-prev-icon" />
             </Carousel>
     )
 }

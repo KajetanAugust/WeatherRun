@@ -34,7 +34,7 @@ export default function Search (props: any) {
                     <TextField
                         size='small'
                         className={`search-text-field-${theme}`}
-                        style={theme === "dark" ? {color: 'white', borderColor: 'white', width: '25%'} : {width: '25%'}}
+                        // style={theme === "dark" ? {color: 'white', borderColor: 'white', width: '25%'} : {width: '25%'}}
                         id="outlined-basic"
                         autoComplete="off"
                         label="City name"

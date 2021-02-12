@@ -1,11 +1,9 @@
 import React, {useContext, useState} from 'react'
 
-import { IoIosBody } from "react-icons/io";
-import {Card, Paper} from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 
 import { RunRecommendationGenerator } from '../utils/runRecommendationGenerator'
 import {ThemeContext} from "../contexts";
-
 
 interface recommendationsPropsData {
     aqi: Record<any, any>,

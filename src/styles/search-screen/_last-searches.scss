@@ -8,8 +8,11 @@
 
 .last-searches-tiles {
   @include flex(row);
+  flex-wrap: wrap;
 }
 
 .last-search-element {
-  margin: 0 15px;
+  margin: 15px 15px;
 }
+
+
