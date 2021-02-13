@@ -14,5 +14,17 @@
   img {
     height: 75px;
   }
+
+  @media screen and (max-width: 1200px) {
+    @include flex(column, center);
+
+    div {
+      width: 85%;
+      margin: 25px auto;
+    }
+    text-align: center;
+  }
 }
+
+
 

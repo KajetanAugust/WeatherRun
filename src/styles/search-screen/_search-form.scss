@@ -50,6 +50,7 @@ $font-size: 1.1rem;
   .search-page {
     width: 85%;
   }
+
   .search-form {
     @include flex(column);
 
@@ -60,6 +61,18 @@ $font-size: 1.1rem;
     div {
       width: 80%;
       margin: auto;
+    }
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  .search-page {
+    width: 85%;
+  }
+  .search-form {
+    div {
+      width: 50%;
+      margin: 0;
     }
   }
 }

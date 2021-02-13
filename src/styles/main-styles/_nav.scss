@@ -30,9 +30,17 @@
 @media screen and (max-width: 768px) {
   .nav {
     margin: 10px 0;
-    padding: 15px;
+    padding: 5px;
     @include flex(row);
-    justify-content: space-between;
+    justify-content: left;
+
+    div:last-child {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.7rem;
+    }
 
     h2 {
       display: none;
