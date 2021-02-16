@@ -21,7 +21,6 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
     }
 
     if (weather.rain) {
-        // tip.weather = recommendations.weather.rainy
         tip = [
             ...tip,
             ...[
@@ -33,7 +32,6 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
         ]
 
     } else if (weather.temp < 5 && weather.temp > -10 && weather.wind_speed > 3) {
-        // tip.weather = recommendations.weather.coldAndWindy
         tip = [
             ...tip,
             ...[
@@ -46,7 +44,6 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
 
 
     } else if (weather.temp < 5 && weather.temp > -10 && weather.wind_speed <= 3) {
-        // tip.weather = recommendations.weather.cold
         tip = [
             ...tip,
             ...[
@@ -59,7 +56,6 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
 
 
     } else if (weather.temp < -10) {
-        // tip.weather = recommendations.weather.freezingCold
         tip = [
             ...tip,
             ...[
@@ -71,7 +67,6 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
         ]
 
     } else if (weather.temp > 5 && weather.temp < 18) {
-        // tip.weather = recommendations.weather.moderate
         tip = [
             ...tip,
             ...[
@@ -83,7 +78,6 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
         ]
 
     } else if (weather.temp > 18 && weather.temp < 25) {
-        // tip.weather = recommendations.weather.hot
         tip = [
             ...tip,
             ...[
@@ -95,7 +89,6 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
         ]
 
     } else if (weather.temp > 25) {
-        // tip.weather = recommendations.weather.veryHot
         tip = [
             ...tip,
             ...[

@@ -8,18 +8,18 @@ export function getFormattedDay (timestamp: number) {
 
     switch (day) {
         case 0 :
-            return `Sunday ${fullDate}`
+            return `Sun ${fullDate}`
         case 1 :
-            return `Monday ${fullDate}`
+            return `Mon ${fullDate}`
         case 2 :
-            return `Tuesday ${fullDate}`
+            return `Tue ${fullDate}`
         case 3 :
-            return `Wednesday ${fullDate}`
+            return `Wed ${fullDate}`
         case 4 :
-            return `Thursday ${fullDate}`
+            return `Thu ${fullDate}`
         case 5 :
-            return `Friday ${fullDate}`
+            return `Fri ${fullDate}`
         case 6 :
-            return `Saturday ${fullDate}`
+            return `Sat ${fullDate}`
     }
 }

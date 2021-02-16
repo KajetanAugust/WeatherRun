@@ -5,13 +5,12 @@ import { fetchAll } from "../utils/fetchFunctions";
 import formatLocation from '../utils/formatLocation'
 import { ThemeContext } from "../contexts";
 
-import AirQuality from "./AirQuality";
-import Weather from "./Weather";
 import Loading from "./Loading";
 import Nav from './Nav'
 import NotFound from './NotFound';
 import Forecast from "./Forecast";
 import Recommendations from "./Recommendations";
+import CurrentTilesCreator from "./CurrentTilesCreator";
 
 
 export default function ResultsPage (props: any) {
@@ -41,8 +40,8 @@ export default function ResultsPage (props: any) {
                                     ?
                                     <React.Fragment>
                                         <div className={`results-page ${theme}`}>
-                                            <Weather weather={weather}/>
-                                            <AirQuality pollution={pollution}/>
+                                            <CurrentTilesCreator type='aqi' data={pollution} />
+                                            <CurrentTilesCreator type='weather' data={weather} />
                                             <Recommendations aqi={pollution} weather={weather}/>
                                             <Forecast weather={weather} pollution={pollution}/>
                                         </div>
