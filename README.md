@@ -4,10 +4,10 @@ WeatherRun is the app providing users with current air quality and weather data 
 
 ## Basics
 
-* User can type in city name into the search box on the search page. 
+* User can type in a city name into the search box on the search page. 
 * 5 last searches are displayed on the search page for returning users.
 * When user presses search button or return keyboard key or one of remembered searches, site redirects to result page.
-* Result Page displays current weather and air quality, 5 day forecast and recommended running clothes.
+* Result Page displays current weather and air quality, 5-day forecast and recommended running clothes.
 * User can switch between light and dark mode, choice is applied to all pages and is saved in localStorage, so it is remembered for the next visit.
 * User can display data sources by clicking info button in bottom right corner.
 
@@ -57,7 +57,7 @@ You will also see any lint errors in the console.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified, and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.

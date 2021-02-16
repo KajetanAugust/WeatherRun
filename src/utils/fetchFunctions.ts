@@ -6,9 +6,20 @@ function fetchForecast (locationData: Record<any, any>, openWeatherToken: String
         .then(res => res.json())
 }
 
-function fetchCoordinates (location: string, mapboxToken: String) {
+function fetchCoordinates (location: string, mapboxToken: String, setErr: any, setLoading: any) {
     return fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?types=place&access_token=${mapboxToken}`)
-        .then(res => res.json())
+        .then(res =>
+            {
+                if(res.status === 200) {
+                    return res.json()
+                } else {
+                    setErr('There was an error, please try again')
+                    setLoading(false)
+                }
+
+                // TODO: Error handling for server error/ no connection is needed
+            }
+        )
 }
 
 function fetchAqi (lat: number, lon:number,  aqiToken: String) {
@@ -18,9 +29,10 @@ function fetchAqi (lat: number, lon:number,  aqiToken: String) {
 
 export function fetchAll (cityName: string, setLocationInfo: any, setWeather: any, setPollution: any, setLoading: any, setErr: any) {
 
-    fetchCoordinates(cityName, mapboxToken)
+    fetchCoordinates(cityName, mapboxToken, setErr, setLoading)
         .then(coordinates => {
             setLocationInfo(coordinates.features[0])
+
             if (coordinates.features.length) {
 
                 saveToLocalStorage(coordinates.features[0].text) //adding search query to last searches.

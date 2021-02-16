@@ -15,7 +15,7 @@ export default function LastSearches () {
                             }
                         </div>
                     :
-                        <p>Your searches will be displayed here</p>
+                        <p>Your search history will be displayed here</p>
             }
         </div>
     )

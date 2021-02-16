@@ -15,7 +15,7 @@ export default function App() {
     const [ theme, setTheme ] = useState(localStorage.theme)
 
     useEffect(() => {
-        setTheme(localStorage.theme)
+        setTheme(localStorage.theme ? localStorage.theme : 'light')
     }, []);
 
       return (
