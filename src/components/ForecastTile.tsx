@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {Card, Paper} from "@material-ui/core";
+import { Paper} from "@material-ui/core";
 
 import { aqiFaceChecker } from "../utils/aqiFaceChecker";
 import { weatherIconChecker } from "../utils/weatherIconChecker";

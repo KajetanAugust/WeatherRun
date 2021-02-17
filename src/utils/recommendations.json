@@ -27,7 +27,7 @@
             "freezingCold": " Wear extra warm beanie or buff."
         },
         "body": {
-            "moderate": "Wear tee or long sleeve if you need.",
+            "moderate": " Wear tee or long sleeve if you need.",
             "hot": " Breathable material light tee is enough, wear light colors to protect from the sun.",
             "cold": " Warm long sleeve or midlayer.",
             "coldAndWindy": "Warm long sleeve and windproof jacket will be perfect.",
@@ -40,8 +40,8 @@
             "moderate": " Light shorts or short tights should be enough.",
             "cold": " Wear long tights.",
             "coldAndWindy": " Wear long tights, consider choosing windproof one if you get cold easily.",
-            "freezingCold": "Wear warm winter tights, consider adding extra layer if you get cold easily.",
-            "rainy": ""
+            "freezingCold": " Wear warm winter tights, consider adding extra layer if you get cold easily.",
+            "rainy": " Wear long tights, if you don't like getting wet consider wearing tights/pants with waterproof membrane."
         },
         "shoes": {
             "hot": " Wear normal running shoes.",

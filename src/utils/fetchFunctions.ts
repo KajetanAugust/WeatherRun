@@ -1,5 +1,5 @@
-import {aqiToken, mapboxToken, openWeatherToken} from "../tokens/tokens";
-import {saveToLocalStorage} from "./localStorageManagement";
+import { aqiToken, mapboxToken, openWeatherToken } from "../tokens/tokens";
+import { saveToLocalStorage } from "./localStorageManagement";
 
 function fetchForecast (locationData: Record<any, any>, openWeatherToken: String) {
     return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${locationData[1]}&lon=${locationData[0]}&exclude=minutely,hourly,alerts&appid=${openWeatherToken}&units=metric`)
@@ -8,18 +8,8 @@ function fetchForecast (locationData: Record<any, any>, openWeatherToken: String
 
 function fetchCoordinates (location: string, mapboxToken: String, setErr: any, setLoading: any) {
     return fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?types=place&access_token=${mapboxToken}`)
-        .then(res =>
-            {
-                if(res.status === 200) {
-                    return res.json()
-                } else {
-                    setErr('There was an error, please try again')
-                    setLoading(false)
-                }
-
-                // TODO: Error handling for server error/ no connection is needed
-            }
-        )
+        .then(res => res.json())
+        //TODO: add error handling for no connection/server error
 }
 
 function fetchAqi (lat: number, lon:number,  aqiToken: String) {

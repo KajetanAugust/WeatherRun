@@ -6,9 +6,11 @@ import {ThemeContext} from "../contexts";
 
 
 export default function GoBackButton (props:any) {
+
     let location = useLocation()
     let history = useHistory()
-    const {theme} = useContext(ThemeContext);
+    const {theme} = useContext(ThemeContext)
+
     return (
         <div className={`back-button ${theme}`}>
             <Tooltip title="Go back" placement="bottom" arrow>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import {Carousel} from "react-bootstrap";
 
@@ -10,11 +10,6 @@ interface ForecastCarouselProps {
 }
 
 export default function ForecastCarousel(props: ForecastCarouselProps) {
-
-    const [index, setIndex] = useState(0);
-    const handleSelect = (selectedIndex:any, e:any) => {
-        setIndex(selectedIndex);
-    };
 
     return (
             <Carousel
@@ -33,8 +28,8 @@ export default function ForecastCarousel(props: ForecastCarouselProps) {
                         </Carousel.Item>
                     ))
                 }
-                <span aria-hidden="true" className="carousel-control-next-icon" />
-                <span aria-hidden="true" className="carousel-control-prev-icon" />
+                <span aria-hidden="false" className="carousel-control-next-icon" />
+                <span aria-hidden="false" className="carousel-control-prev-icon" />
             </Carousel>
     )
 }

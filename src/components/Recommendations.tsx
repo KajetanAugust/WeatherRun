@@ -6,6 +6,7 @@ import { RunRecommendationGenerator } from '../utils/runRecommendationGenerator'
 import {ThemeContext} from "../contexts";
 
 import RecommedationCreator from "./RecommendationElementCreator";
+import Footer from "./Footer";
 
 
 interface recommendationsPropsData {
@@ -35,6 +36,7 @@ export default function Recommendations (props: recommendationsPropsData) {
                     recommendations.length > 0 && recommendations.map((tip,index) => <RecommedationCreator tip={tip} key={`${index} ${tip.type}`}/>)
                 }
             </div>
+
         </Paper>
     )
 }
