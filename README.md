@@ -1,6 +1,6 @@
 # WeatherRun
 
-## App is now available at [WeatherRun](weatherrun.netlify.app)
+## App is now available at [WeatherRun](https://weatherrun.netlify.app/)
 WeatherRun is the app providing users with current air quality and weather data and provides clothes recommendations based on that data.
 
 ## Basics
