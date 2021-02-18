@@ -1,5 +1,9 @@
-import { aqiToken, mapboxToken, openWeatherToken } from "../tokens/tokens";
+// import { aqiToken, mapboxToken, openWeatherToken } from "../tokens/tokens";
 import { saveToLocalStorage } from "./localStorageManagement";
+
+const aqiToken = String(process.env.REACT_APP_AQI_TOKEN)
+const mapboxToken = String(process.env.REACT_APP_MAPBOX_TOKEN)
+const openWeatherToken = String(process.env.REACT_APP_OPENWEATHER_TOKEN)
 
 function fetchForecast (locationData: Record<any, any>, openWeatherToken: String) {
     return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${locationData[1]}&lon=${locationData[0]}&exclude=minutely,hourly,alerts&appid=${openWeatherToken}&units=metric`)
