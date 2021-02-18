@@ -31,8 +31,8 @@
   .nav {
     margin: 10px 0;
     padding: 5px;
-    @include flex(row);
-    justify-content: left;
+    @include flex(row, space-beween);
+    //justify-content: left;
 
     div:last-child {
       display: none;

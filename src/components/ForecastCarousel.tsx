@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {Carousel} from "react-bootstrap";
 
@@ -11,10 +11,15 @@ interface ForecastCarouselProps {
 
 export default function ForecastCarousel(props: ForecastCarouselProps) {
 
+    const [index, setIndex] = useState(0);
+    const handleSelect = (selectedIndex:any, e:any) => {
+        setIndex(selectedIndex);
+    };
+
     return (
             <Carousel
-                controls={true}
-                indicators={false}
+                activeIndex={index}
+                onSelect={handleSelect}
             >
                 {
                     props.pollution.data.forecast.daily.pm10.slice(0, 5).map((pm10pollution: number, index: number) => (
@@ -28,8 +33,6 @@ export default function ForecastCarousel(props: ForecastCarouselProps) {
                         </Carousel.Item>
                     ))
                 }
-                <span aria-hidden="false" className="carousel-control-next-icon" />
-                <span aria-hidden="false" className="carousel-control-prev-icon" />
             </Carousel>
     )
 }

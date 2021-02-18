@@ -6,7 +6,6 @@ import { RunRecommendationGenerator } from '../utils/runRecommendationGenerator'
 import {ThemeContext} from "../contexts";
 
 import RecommedationCreator from "./RecommendationElementCreator";
-import Footer from "./Footer";
 
 
 interface recommendationsPropsData {

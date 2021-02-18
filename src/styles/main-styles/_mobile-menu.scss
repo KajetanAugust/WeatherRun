@@ -1,0 +1,28 @@
+.nav-menu-button {
+  width: 30px;
+  height: auto;
+}
+
+.mobile-menu-info-link {
+  text-decoration: none;
+  text-align: center;
+}
+
+div.MuiPopover-root.dark {
+  background-color: transparent;
+}
+
+div.MuiPopover-root.dark div ul {
+  background-color: $dark-background;
+  border: 1px solid $dark-borders;
+}
+
+div.MuiPopover-root.light div ul{
+  background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+  div.mobile-menu {
+    display: none;
+  }
+}
