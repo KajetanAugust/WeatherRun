@@ -68,12 +68,11 @@ function Search (props: any) {
                                 </Button>
                                 </span>
                             </Tooltip>
-
                     }
-                    <Tooltip title="Geolocation" placement="right" arrow>
+                    <Tooltip title="Get my location" placement="right" arrow>
                                 <span>
                                     <Button
-                                        onClick={async (e) => {
+                                        onClick={ async (e) => {
                                             e.preventDefault()
                                             let cityName =  await fetchLocationInfo(props.coords.longitude, props.coords.latitude)
                                             history.push(`/results?search=${cityName.features[0].text}`)

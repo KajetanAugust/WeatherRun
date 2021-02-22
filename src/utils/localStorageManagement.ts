@@ -8,10 +8,11 @@ export function saveToLocalStorage (searchValue: string) {
         const localStorageSearches = JSON.parse(localStorage.savedSearches);
 
         if(localStorageSearches.searches.includes(valueToAdd[0])) {
-            return
+            let filteredSearch = localStorageSearches.searches.filter((cityName: String) => cityName !== valueToAdd[0])
+            localStorage.savedSearches = JSON.stringify({"searches": [...valueToAdd, ...filteredSearch]})
         } else {
             if(localStorageSearches.searches.length >= 5) {
-                console.log(localStorageSearches.searches)
+                // console.log(localStorageSearches.searches)
                 let shorterSearch = localStorageSearches.searches.slice(0, 4)
                 localStorage.savedSearches = JSON.stringify({"searches": [...valueToAdd, ...shorterSearch]})
             } else {
