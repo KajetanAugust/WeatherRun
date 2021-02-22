@@ -1,8 +1,11 @@
 import React, {useContext, useState} from 'react'
 import { Button, TextField, Tooltip } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import { geolocated } from "react-geolocated";
 
-import { FaRunning } from "react-icons/fa";
+import { fetchLocationInfo } from "../utils/fetchFunctions";
+
+import { FaRunning, FaLocationArrow } from "react-icons/fa";
 import { WiDayRainWind } from 'react-icons/wi';
 
 import { ThemeContext } from "../contexts";
@@ -11,10 +14,11 @@ import ThemeSwitch from "./ThemeSwitch";
 import LastSearches from "./LastSearches";
 
 
-export default function Search (props: any) {
+function Search (props: any) {
 
     const [city, setCity] = useState('')
     const {theme, setTheme} = useContext(ThemeContext);
+    let history = useHistory()
 
         return (
             <div className={`search-page ${theme}`}>
@@ -66,8 +70,32 @@ export default function Search (props: any) {
                             </Tooltip>
 
                     }
+                    <Tooltip title="Geolocation" placement="right" arrow>
+                                <span>
+                                    <Button
+                                        onClick={async (e) => {
+                                            e.preventDefault()
+                                            let cityName =  await fetchLocationInfo(props.coords.longitude, props.coords.latitude)
+                                            history.push(`/results?search=${cityName.features[0].text}`)
+                                        }}
+                                        disabled={!props.coords}
+                                        variant="outlined"
+                                        style={theme === "dark" ? {color: 'white', borderColor: 'white'} : {}}
+                                    >
+                                    <FaLocationArrow />
+                                </Button>
+                                </span>
+                    </Tooltip>
                 </div>
                 <LastSearches />
             </div>
         )
 }
+
+
+export default geolocated({
+    positionOptions: {
+        enableHighAccuracy: false,
+    },
+    userDecisionTimeout: 5000,
+})(Search);

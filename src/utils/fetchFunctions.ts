@@ -1,4 +1,3 @@
-// import { aqiToken, mapboxToken, openWeatherToken } from "../tokens/tokens";
 import { saveToLocalStorage } from "./localStorageManagement";
 
 const aqiToken = String(process.env.REACT_APP_AQI_TOKEN)
@@ -14,6 +13,16 @@ function fetchCoordinates (location: string, mapboxToken: String, setErr: any, s
     return fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?types=place&access_token=${mapboxToken}`)
         .then(res => res.json())
         //TODO: add error handling for no connection/server error
+}
+
+export function fetchLocationInfo (lon: String ,lat: String) {
+    return fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${lon},${lat}.json?types=place&access_token=${mapboxToken}`)
+        .then(res => res.json())
+        .then((info) => {
+            console.log(info)
+            return info
+        })
+    //TODO: add error handling for no connection/server error
 }
 
 function fetchAqi (lat: number, lon:number,  aqiToken: String) {
