@@ -21,6 +21,20 @@ div.MuiPopover-root.light div ul{
   background-color: white;
 }
 
+div.MuiPopover-root div ul li:first-child {
+  border-bottom: 1px solid $light-borders;
+}
+
+div.MuiPopover-root div ul li a {
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+
+div.MuiPopover-root div ul li, div.MuiPopover-root div ul li svg {
+  background-color: transparent;
+}
+
 @media screen and (min-width: 768px) {
   div.mobile-menu {
     display: none;

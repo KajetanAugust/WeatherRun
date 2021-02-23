@@ -7,7 +7,9 @@ WeatherRun is the app providing users with current air quality and weather data 
 
 * User can type in a city name into the search box on the search page. 
 * 5 last searches are displayed on the search page for returning users.
+* User can press the "Location arrow" button to get location from device geolocation ( user have to allow for location services ).  
 * When user presses search button or return keyboard key or one of remembered searches, site redirects to result page.
+* When user presses geolocation button user location is acquired and passed to the fetch function which gets data for location.
 * Result Page displays current weather and air quality, 5-day forecast and recommended running clothes.
 * User can switch between light and dark mode, choice is applied to all pages and is saved in localStorage, so it is remembered for the next visit.
 * User can display data sources by clicking info button in bottom right corner.
@@ -31,6 +33,7 @@ All data that need to be saved are stored in localStorage.
   * [TypeScript](https://www.typescriptlang.org/),
   * [Scss](https://sass-lang.com/),  
   * [react-router](https://reactrouter.com/),
+  * [react-geolocate](https://www.npmjs.com/package/react-geolocated),  
   * [query-string](https://www.npmjs.com/package/query-string), 
   * [react-icons](https://react-icons.github.io/react-icons/), 
   * [Material-UI](https://material-ui.com/), 
