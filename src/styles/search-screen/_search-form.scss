@@ -49,33 +49,33 @@ $font-size: 1.1rem;
 
   .search-page {
     width: 85%;
+    text-align: center;
   }
 
   .search-form {
     @include flex(row, center);
     flex-wrap: wrap;
-    max-width: 100vw;
 
-    span {
-      max-width: 50%;
-      margin: 0;
+    :first-child {
+      flex-grow: 2;
     }
 
-    button {
-      margin-top: 15px;
-      max-width: 100%;
+    span button {
+      margin: 20px 10px;
     }
 
-    button:first-child {
-      margin-right: 10px;
-    }
-
-    button:last-child {
-      margin-left: 10px;
-    }
+    //span {
+    //  max-width: 50%;
+    //  margin: 0;
+    //}
+    //
+    //button {
+    //  margin-top: 15px;
+    //  max-width: 100%;
+    //}
 
     div {
-      width: 80%;
+      width: 90%;
       margin: auto;
     }
   }
