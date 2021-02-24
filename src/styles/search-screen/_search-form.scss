@@ -31,19 +31,19 @@ $font-size: 1.1rem;
   }
 }
 
-.search-text-field-dark fieldset, .search-text-field-dark fieldset:active {
+.search-text-field-dark fieldset, .search-text-field-dark fieldset:active, .search-text-field-dark fieldset:hover {
   border-color: $dark-font-color;
   color: $dark-font-color ;
 }
 
-.search-text-field-dark label, .search-text-field-dark label:active {
+.search-text-field-dark label, .search-text-field-dark label:active .search-text-field-dark label:hover {
   color: $dark-font-color;
+  border-color: $dark-font-color
 }
 
 .search-text-field-dark input {
   color: $dark-font-color;
 }
-
 
 @media screen and (max-width: 768px) {
 
@@ -63,16 +63,6 @@ $font-size: 1.1rem;
     span button {
       margin: 20px 10px;
     }
-
-    //span {
-    //  max-width: 50%;
-    //  margin: 0;
-    //}
-    //
-    //button {
-    //  margin-top: 15px;
-    //  max-width: 100%;
-    //}
 
     div {
       width: 90%;

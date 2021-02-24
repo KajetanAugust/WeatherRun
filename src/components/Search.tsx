@@ -1,26 +1,21 @@
 import React, {useContext, useState} from 'react'
 import { Button, TextField, Tooltip } from "@material-ui/core";
-import {Link, useHistory} from "react-router-dom";
-import { geolocated } from "react-geolocated";
+import { Link } from "react-router-dom";
 
-import { fetchLocationInfo } from "../utils/fetchFunctions";
-
-import { FaRunning, FaLocationArrow } from "react-icons/fa";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { FaRunning } from "react-icons/fa";
 import { WiDayRainWind } from 'react-icons/wi';
 
 import { ThemeContext } from "../contexts";
 
 import ThemeSwitch from "./ThemeSwitch";
 import LastSearches from "./LastSearches";
-import Loading from "./Loading";
-
+import GeolocationButton from "./GeolocationButton";
 
 function Search (props: any) {
 
     const [city, setCity] = useState('')
     const {theme, setTheme} = useContext(ThemeContext);
-    let history = useHistory()
+
 
         return (
             <div className={`search-page ${theme}`}>
@@ -71,49 +66,11 @@ function Search (props: any) {
                                 </span>
                             </Tooltip>
                     }
-                    {
-                        props.coords
-                            ?   <Tooltip title="Get my location" placement="right" arrow>
-                                    <span>
-                                        <Button
-                                            onClick={ async (e) => {
-                                                e.preventDefault()
-                                                let cityName =  await fetchLocationInfo(props.coords.longitude, props.coords.latitude)
-                                                history.push(`/results?search=${cityName.features[0].text}`)
-                                            }}
-                                            disabled={!props.coords}
-                                            variant="outlined"
-                                            style={theme === "dark" ? {color: 'white', borderColor: 'white'} : {}}
-                                        >
-                                        <FaLocationArrow />
-                                    </Button>
-                                    </span>
-                                </Tooltip>
-                            :   <Tooltip title="Starting location services, please wait." placement="right" arrow>
-                                        <span>
-                                            <Button
-                                                disabled
-                                                variant="outlined"
-                                                style={theme === "dark" ? {color: 'white', borderColor: 'white'} : {}}
-                                            >
-                                                <AiOutlineLoading3Quarters className='loading-indicator' style={{width: 'auto', height: '20px', margin: 0}} />
-                                        </Button>
-                                        </span>
-                                </Tooltip>
-                    }
-
-
-
+                    <GeolocationButton />
                 </div>
                 <LastSearches />
             </div>
         )
 }
 
-
-export default geolocated({
-    positionOptions: {
-        enableHighAccuracy: false,
-    },
-    userDecisionTimeout: 5000,
-})(Search);
+export default Search;
