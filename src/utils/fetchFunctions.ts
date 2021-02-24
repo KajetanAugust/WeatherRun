@@ -9,7 +9,7 @@ function fetchForecast (locationData: Record<any, any>, openWeatherToken: String
         .then(res => res.json())
 }
 
-function fetchCoordinates (location: string, mapboxToken: String, setErr: any, setLoading: any) {
+function fetchCoordinates (location: string, mapboxToken: String) {
     return fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?types=place&access_token=${mapboxToken}`)
         .then(res => res.json())
         //TODO: add error handling for no connection/server error
@@ -32,7 +32,7 @@ function fetchAqi (lat: number, lon:number,  aqiToken: String) {
 
 export function fetchAll (cityName: string, setLocationInfo: any, setWeather: any, setPollution: any, setLoading: any, setErr: any) {
 
-    fetchCoordinates(cityName, mapboxToken, setErr, setLoading)
+    fetchCoordinates(cityName, mapboxToken)
         .then(coordinates => {
             setLocationInfo(coordinates.features[0])
 
