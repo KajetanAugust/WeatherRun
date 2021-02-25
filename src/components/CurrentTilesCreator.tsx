@@ -1,7 +1,9 @@
 import React, {useContext} from "react";
 import {Paper} from "@material-ui/core";
-import {aqiFaceChecker} from "../utils/aqiFaceChecker";
+
 import {ThemeContext} from "../contexts";
+
+import {aqiFaceChecker} from "../utils/aqiFaceChecker";
 import {formatWeather} from "../utils/formatWeather";
 import {weatherIconChecker} from "../utils/weatherIconChecker";
 

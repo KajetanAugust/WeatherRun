@@ -1,11 +1,16 @@
 import React, {useContext} from "react";
-import {Button, Menu, MenuItem} from "@material-ui/core";
 import { Link } from 'react-router-dom';
-import {VscMenu} from "react-icons/vsc";
+
+import {Button, Menu, MenuItem} from "@material-ui/core";
+
+import { VscMenu } from "react-icons/vsc";
+
+import { ThemeContext } from "../contexts";
+
 import ThemeSwitch from "./ThemeSwitch";
-import {ThemeContext} from "../contexts";
 
 export default function MobileMenu () {
+
 
     const {theme, setTheme} = useContext(ThemeContext);
 
@@ -36,8 +41,10 @@ export default function MobileMenu () {
                     style={theme === "dark" ? {backgroundColor: 'rgb(19,19,19)', borderColor: 'rgb(37, 37, 37)', color: 'rgb(255, 255, 255)'} : {backgroundColor: "white"}}
                 ><ThemeSwitch theme={theme} setTheme={setTheme}/></MenuItem>
                 <MenuItem
-                    style={theme === "dark" ? {backgroundColor: 'rgb(19,19,19)', borderColor: 'rgb(37, 37, 37)', color: 'rgb(255, 255, 255)'} : {backgroundColor: "white"}}
-                    onClick={handleClose}>< Link className={`mobile-menu-info-link ${theme}`} to='/info'>Info</Link></MenuItem>
+                        style={theme === "dark" ? {backgroundColor: 'rgb(19,19,19)', borderColor: 'rgb(37, 37, 37)', color: 'rgb(255, 255, 255)'} : {backgroundColor: "white"}}
+                        onClick={handleClose}>
+                    <Link className={`mobile-menu-info-link ${theme}`} to='/info'>Info</Link>
+                </MenuItem>
             </Menu>
         </div>
     );

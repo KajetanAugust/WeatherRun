@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import {Button} from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 export default function LastSearchTile (props: any) {
     let history = useHistory()

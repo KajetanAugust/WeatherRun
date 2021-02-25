@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Button } from '@material-ui/core';
 
 import aqicnLogo from '../logos/aqilogo.png'
 import openweatherdark from '../logos/openweatherlogo-dark.png'
@@ -36,7 +37,21 @@ export default function DataSourcesInfo () {
                         <img src={theme === 'light' ? mapboxdark : mapboxlight} alt='Mapbox Logo'/>
                     </a>
                 </div>
+                <Button
+                    className={`github-link-button ${theme}`}
+                    variant="contained"
+                    color="default"
+                >
+                    <a
+                        className='github-link'
+                        href='https://github.com/KajetanAugust/WeatherRun'
+                        target='_blank'
+                        rel="noreferrer"
+                    >View project documentation page on GitHub.</a>
+                </Button>
             </div>
+
+
         </React.Fragment>
     )
 }
