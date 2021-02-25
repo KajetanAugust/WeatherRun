@@ -26,6 +26,7 @@ export default function ResultsPage (props: any) {
     useEffect(() => {
         const locationFromQuery = queryString.parse(props.location.search)
         fetchAll(String(locationFromQuery.search), setLocationInfo, setWeather, setPollution, setLoading, setErr)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     return (
