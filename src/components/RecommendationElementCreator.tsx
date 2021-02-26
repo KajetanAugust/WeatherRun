@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function RecommedationCreator (props: any) {
+export default function RecommendationElementCreator (props: any) {
     return (
         <div>
             <p><b>{props.tip.type}:</b> {props.tip.tip}</p>

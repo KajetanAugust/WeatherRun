@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Paper} from "@material-ui/core";
 
+import { ThemeContext } from "../contexts";
+
 import { aqiFaceChecker } from "../utils/aqiFaceChecker";
 import { weatherIconChecker } from "../utils/weatherIconChecker";
-import { getFormattedDay } from "../utils/getFormattedDay";
-import { ThemeContext } from "../contexts";
+import { formatDay } from "../utils/dateFormatters";
 
 interface ForecastTileProps {
     pm10: any,
@@ -24,7 +25,7 @@ export default function ForecastTile (props: ForecastTileProps) {
             <h3
                 className={`${theme}`}
                 style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)'} : {backgroundColor: "white"}}
-            >{getFormattedDay(props.forecast.dt)}</h3>
+            >{formatDay(props.forecast.dt)}</h3>
             <div
                 className={`forecast-tile ${theme} `}
                 style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)'} : {backgroundColor: "white"}}

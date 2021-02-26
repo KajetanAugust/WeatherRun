@@ -1,4 +1,4 @@
-export function getFormattedDay (timestamp: number) {
+export function formatDay (timestamp: number) {
     const date = new Date(timestamp * 1000)
     const day = date.getDay()
     const dayOfMonth = date.getDate();
@@ -22,4 +22,13 @@ export function getFormattedDay (timestamp: number) {
         case 6 :
             return `Sat ${fullDate}`
     }
+}
+
+
+export function getFormattedTime (timestamp: number) {
+    const date = new Date(timestamp * 1000)
+    const hour = date.getHours()
+    const minutes = date.getMinutes()
+    return `${hour}:${minutes}`
+
 }

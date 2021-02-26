@@ -1,5 +1,7 @@
+import { useContext } from "react";
+
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import {useContext} from "react";
+
 import {ThemeContext} from "../contexts";
 
 export default function Loading () {

@@ -6,6 +6,7 @@ import {ThemeContext} from "../contexts";
 import {aqiFaceChecker} from "../utils/aqiFaceChecker";
 import {formatWeather} from "../utils/formatWeather";
 import {weatherIconChecker} from "../utils/weatherIconChecker";
+import { getFormattedTime } from "../utils/dateFormatters";
 
 interface CurrentTilesCreatorProps {
     type: String,
@@ -15,11 +16,9 @@ interface CurrentTilesCreatorProps {
 export default function CurrentTilesCreator (props: CurrentTilesCreatorProps) {
 
     const { theme } = useContext(ThemeContext);
-
+    console.log(props.data)
     return (
         <React.Fragment>
-
-
                     <Paper
                         elevation={2}
                         className={`${props.type}-div ${theme}`}
@@ -43,6 +42,8 @@ export default function CurrentTilesCreator (props: CurrentTilesCreatorProps) {
                                         <p className='weather-details'>Temperature: {Math.round(props.data.current.temp)}&deg;C</p>
                                         <p className='weather-details'>Feels Like: {Math.round(props.data.current.feels_like)}&deg;C</p>
                                         <p className='weather-details'>Wind: {Math.ceil((props.data.current.wind_speed * 3.6))} km/h</p>
+                                        <p className='weather-details'>Sunrise: {getFormattedTime(props.data.current.sunrise)}</p>
+                                        <p className='weather-details'>Sunset: {getFormattedTime(props.data.current.sunset)}</p>
                                     </React.Fragment>
                         }
                     </Paper>

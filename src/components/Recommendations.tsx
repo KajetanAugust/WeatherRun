@@ -5,7 +5,7 @@ import { Paper } from "@material-ui/core";
 import { RunRecommendationGenerator } from '../utils/runRecommendationGenerator'
 import {ThemeContext} from "../contexts";
 
-import RecommedationCreator from "./RecommendationElementCreator";
+import RecommendationElementCreator from "./RecommendationElementCreator";
 
 
 interface recommendationsPropsData {
@@ -32,7 +32,7 @@ export default function Recommendations (props: recommendationsPropsData) {
                 <p className='recommendations-title'>Recommendations</p>
 
                 {
-                    recommendations.length > 0 && recommendations.map((tip,index) => <RecommedationCreator tip={tip} key={`${index} ${tip.type}`}/>)
+                    recommendations.length > 0 && recommendations.map((tip,index) => <RecommendationElementCreator tip={tip} key={`${index} ${tip.type}`}/>)
                 }
             </div>
 

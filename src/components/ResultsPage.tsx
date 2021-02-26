@@ -55,9 +55,6 @@ export default function ResultsPage (props: any) {
                         </React.Fragment>
                         :
                         <Loading/>
-
-
-
                 }
             </React.Fragment>
         );

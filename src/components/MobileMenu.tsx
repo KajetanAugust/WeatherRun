@@ -9,8 +9,8 @@ import { ThemeContext } from "../contexts";
 
 import ThemeSwitch from "./ThemeSwitch";
 
-export default function MobileMenu () {
 
+export default function MobileMenu () {
 
     const {theme, setTheme} = useContext(ThemeContext);
 

@@ -17,7 +17,6 @@ function GeolocationButton (props: any) {
     const { theme } = useContext(ThemeContext);
 
     return (
-
         <React.Fragment>
             {
                 props.coords
@@ -47,7 +46,7 @@ function GeolocationButton (props: any) {
                                     style={theme === "dark" ? {color: 'white', borderColor: 'white'} : {}}
                                 >
                                     <AiOutlineLoading3Quarters className='loading-indicator' style={{width: 'auto', height: '20px', margin: 0}} />
-                            </Button>
+                                </Button>
                             </span>
                         </Tooltip>
             }
