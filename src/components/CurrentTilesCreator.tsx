@@ -1,12 +1,10 @@
 import React, {useContext} from "react";
-import {Paper} from "@material-ui/core";
+import {Paper} from "@material-ui/core"
 
 import {ThemeContext} from "../contexts";
 
 import {aqiFaceChecker} from "../utils/aqiFaceChecker";
-import {formatWeather} from "../utils/formatWeather";
-import {weatherIconChecker} from "../utils/weatherIconChecker";
-import { getFormattedTime } from "../utils/dateFormatters";
+import CurrentWeatherTile from "./CurrentWeatherTile";
 
 interface CurrentTilesCreatorProps {
     type: String,
@@ -36,15 +34,7 @@ export default function CurrentTilesCreator (props: CurrentTilesCreatorProps) {
                                         <p className='aqi-details'>PM2.5: {props.data.data.iaqi.pm25 ? props.data.data.iaqi.pm25.v : 'N/A '}&micro;g/m&sup3;</p>
                                     </React.Fragment>
                                 :
-                                    <React.Fragment>
-                                        <p className='weather-title'>{formatWeather(props.data.current.weather[0].description)}</p>
-                                        {weatherIconChecker(props.data.current.weather[0].icon)}
-                                        <p className='weather-details'>Temperature: {Math.round(props.data.current.temp)}&deg;C</p>
-                                        <p className='weather-details'>Feels Like: {Math.round(props.data.current.feels_like)}&deg;C</p>
-                                        <p className='weather-details'>Wind: {Math.ceil((props.data.current.wind_speed * 3.6))} km/h</p>
-                                        <p className='weather-details'>Sunrise: {getFormattedTime(props.data.current.sunrise)}</p>
-                                        <p className='weather-details'>Sunset: {getFormattedTime(props.data.current.sunset)}</p>
-                                    </React.Fragment>
+                                    <CurrentWeatherTile weather={props.data} />
                         }
                     </Paper>
         </React.Fragment>

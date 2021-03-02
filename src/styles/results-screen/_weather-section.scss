@@ -11,11 +11,33 @@
   @media screen and (max-width: 768px) {
     padding: 50px 0;
   }
+  .weather-sub-div {
+    @include flex(row);
+    width: 85%;
+    border-top: 1px solid $light-borders;
+    span {
+      text-align: center;
+      margin: 5px 5px 0 5px;
+      width: 45%;
+      padding: 10px 0;
+      p {
+        margin-top: 0;
+      }
+      .small-weather-icon {
+        height: 25px;
+        width: auto;
+      }
+    }
+  }
+
+  .weather-sub-div:first-of-type {
+    border: none;
+  }
 }
 
 .weather-icon {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
 }
 
 .weather-details {
