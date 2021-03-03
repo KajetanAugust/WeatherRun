@@ -3,8 +3,8 @@ import {Paper} from "@material-ui/core"
 
 import {ThemeContext} from "../contexts";
 
-import {aqiFaceChecker} from "../utils/aqiFaceChecker";
 import CurrentWeatherTile from "./CurrentWeatherTile";
+import CurrentAirQualityTile from "./CurrentAirQualityTile";
 
 interface CurrentTilesCreatorProps {
     type: String,
@@ -14,7 +14,6 @@ interface CurrentTilesCreatorProps {
 export default function CurrentTilesCreator (props: CurrentTilesCreatorProps) {
 
     const { theme } = useContext(ThemeContext);
-    console.log(props.data)
     return (
         <React.Fragment>
                     <Paper
@@ -26,13 +25,7 @@ export default function CurrentTilesCreator (props: CurrentTilesCreatorProps) {
                         {
                             props.type === 'aqi'
                                 ?
-                                    <React.Fragment>
-                                        <p className='aqi-title'>Air Quality</p>
-                                        {props.data.data.aqi && aqiFaceChecker(props.data.data.aqi)}
-                                        <p className='aqi-details'>AQI: {typeof props.data.data.aqi === 'number' ? props.data.data.aqi : 'N/A'}</p>
-                                        <p className='aqi-details'>PM10: {props.data.data.iaqi.pm10 ? props.data.data.iaqi.pm10.v : 'N/A '}&micro;g/m&sup3;</p>
-                                        <p className='aqi-details'>PM2.5: {props.data.data.iaqi.pm25 ? props.data.data.iaqi.pm25.v : 'N/A '}&micro;g/m&sup3;</p>
-                                    </React.Fragment>
+                                    <CurrentAirQualityTile aqi={props.data}/>
                                 :
                                     <CurrentWeatherTile weather={props.data} />
                         }
