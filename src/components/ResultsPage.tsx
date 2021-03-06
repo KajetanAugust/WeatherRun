@@ -11,6 +11,7 @@ import NotFound from './NotFound';
 import Forecast from "./Forecast";
 import Recommendations from "./Recommendations";
 import CurrentTilesCreator from "./CurrentTilesCreator";
+import Map from "./Map";
 
 
 export default function ResultsPage (props: any) {
@@ -45,6 +46,7 @@ export default function ResultsPage (props: any) {
                                             <CurrentTilesCreator type='weather' data={weather} />
                                             <Recommendations aqi={pollution} weather={weather}/>
                                             <Forecast weather={weather} pollution={pollution}/>
+                                            <Map coordinates={pollution}/>
                                         </div>
                                     </React.Fragment>
                                     :
