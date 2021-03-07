@@ -5,7 +5,7 @@ import { Tooltip } from "@material-ui/core";
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { ThemeContext } from "../contexts";
 
-export default function Footer () {
+export default function InfoButton () {
     let history = useHistory()
     let location = useLocation()
     const { theme } = useContext(ThemeContext);

@@ -10,6 +10,7 @@ import { ThemeContext } from "../contexts";
 import ThemeSwitch from "./ThemeSwitch";
 import LastSearches from "./LastSearches";
 import GeolocationButton from "./GeolocationButton";
+import InfoButton from "./InfoButton";
 
 function Search (props: any) {
 
@@ -20,6 +21,7 @@ function Search (props: any) {
         return (
             <div className={`search-page ${theme}`}>
                 <div className={`theme-switch ${theme}`}>
+                    <InfoButton />
                     <ThemeSwitch theme={theme} setTheme={setTheme} />
                 </div>
                 <div className={`logo-wrapper ${theme}`}>

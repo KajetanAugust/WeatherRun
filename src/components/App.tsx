@@ -7,7 +7,7 @@ import { ThemeContext } from "../contexts";
 import ResultsPage from "./ResultsPage";
 import Search from "./Search";
 import NotFound from './NotFound';
-import Footer from "./Footer";
+import InfoButton from "./InfoButton";
 import DataSourcesInfo from "./DataSourcesInfo";
 
 export default function App() {
@@ -28,7 +28,6 @@ export default function App() {
                         <Route path='/info' component={DataSourcesInfo} />
                         <Route render={() => <NotFound text='Page not found' /> } />
                     </Switch>
-                    <Footer />
                 </Router>
 
             </div>
