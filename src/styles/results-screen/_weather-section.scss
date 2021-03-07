@@ -7,6 +7,9 @@
   @include results-section-dimensions;
   @include flex(column);
   position: relative;
+  .weather-title {
+    margin-bottom: 10px;
+  }
 
   @media screen and (max-width: 768px) {
     padding: 50px 0;

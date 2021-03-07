@@ -16,7 +16,7 @@ interface CurrentWeatherTileProps {
 export default function CurrentWeatherTile (props: CurrentWeatherTileProps) {
 
     const { theme } = useContext(ThemeContext);
-
+    // console.log(props.weather)
     return (
         <React.Fragment>
             <p className='weather-title'>{formatWeather(props.weather.current.weather[0].description)}</p>

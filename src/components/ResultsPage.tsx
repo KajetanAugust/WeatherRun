@@ -46,7 +46,7 @@ export default function ResultsPage (props: any) {
                                             <CurrentTilesCreator type='weather' data={weather} />
                                             <Recommendations aqi={pollution} weather={weather}/>
                                             <Forecast weather={weather} pollution={pollution}/>
-                                            <Map coordinates={pollution}/>
+                                            <Map coordinates={weather}/>
                                         </div>
                                     </React.Fragment>
                                     :
