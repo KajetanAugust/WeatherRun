@@ -7,7 +7,6 @@ import { ThemeContext } from "../contexts";
 import ResultsPage from "./ResultsPage";
 import Search from "./Search";
 import NotFound from './NotFound';
-import InfoButton from "./InfoButton";
 import DataSourcesInfo from "./DataSourcesInfo";
 
 export default function App() {
