@@ -32,7 +32,7 @@ export default function DataSourcesInfo () {
                     </a>
                 </div>
                 <div>
-                    <h3>Coordinates provided by Mapbox</h3>
+                    <h3>Map and coordinates provided by Mapbox</h3>
                     <a href='https://www.mapbox.com/' target='_blank' rel='noreferrer'>
                         <img src={theme === 'light' ? mapboxdark : mapboxlight} alt='Mapbox Logo'/>
                     </a>

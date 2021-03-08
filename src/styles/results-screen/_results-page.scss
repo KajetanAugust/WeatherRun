@@ -5,6 +5,7 @@
 .map-container {
   grid-area: map;
 }
+
 .results-page {
   width: 100%;
   height: 90%;
@@ -32,6 +33,7 @@
     grid-template-areas:
             'aqi aqi'
             'weather weather'
+            'map map'
             'forecast-carousel forecast-carousel'
             'recommendations recommendations'
     ;
@@ -43,6 +45,7 @@
     grid-template-rows: auto;
     grid-template-areas:
             'aqi weather'
+            'map map'
             'forecast forecast'
             'recommendations recommendations'
     ;
