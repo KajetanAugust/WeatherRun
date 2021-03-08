@@ -19,14 +19,12 @@ export default function Map (props: MapProps) {
         const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
         mapboxgl.accessToken = mapboxToken;
-        const map = new mapboxgl.Map({
+        let map = new mapboxgl.Map({
             container: 'map-container',
             style: `mapbox://styles/mapbox/${theme === 'light' ? 'light-v10' : 'dark-v10'}`,
             center: [props.coordinates.lon, props.coordinates.lat],
             zoom: 7
-        })
-
-        map.on('load', function(){
+        }).on('load', function(){
             map.addLayer({
                 "id": "simple-tiles",
                 "type": "raster",
@@ -39,7 +37,7 @@ export default function Map (props: MapProps) {
                 "maxzoom": 22
             });
         });
-    });
+    },);
 
     return (
         <Paper
