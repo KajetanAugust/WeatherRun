@@ -1,6 +1,10 @@
 import {useContext, useEffect} from "react";
-import {ThemeContext} from "../contexts";
+
 import {Paper} from "@material-ui/core";
+
+import {ThemeContext} from "../contexts";
+
+const mapboxToken = String(process.env.REACT_APP_MAPBOX_TOKEN)
 
 interface MapProps {
     coordinates: Record<any, any>
@@ -13,7 +17,7 @@ export default function Map (props: MapProps) {
     useEffect(() => {
         const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
-        mapboxgl.accessToken = 'pk.eyJ1Ijoia2FqYXVnIiwiYSI6ImNra2g2eWJpNjFhZzQyb21ubDhjOTBpMHEifQ.vPIpne0RtMGAaZ9zPT6QEQ';
+        mapboxgl.accessToken = mapboxToken;
         const map = new mapboxgl.Map({
             container: 'map-container',
             style: `mapbox://styles/mapbox/${theme === 'light' ? 'light-v10' : 'dark-v10'}`,
