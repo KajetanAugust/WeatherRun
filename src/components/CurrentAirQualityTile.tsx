@@ -34,8 +34,8 @@ export default function CurrentAirQualityTile (props: CurrentAirQualityTileProps
                 className={`aqi-sub-div ${theme}`}
                 style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)', borderColor: 'rgb(37, 37, 37)'} : {backgroundColor: "white"}}
             >
-                <p className='aqi-details'>SO<sub>2</sub>: {props.aqi.data.iaqi.o3 ? props.aqi.data.iaqi.so2.v : 'N/A '}ppm</p>
-                <p className='aqi-details'>NO<sub>2</sub>: {props.aqi.data.iaqi.o3 ? props.aqi.data.iaqi.no2.v : 'N/A '}ppm</p>
+                <p className='aqi-details'>SO<sub>2</sub>: {props.aqi.data.iaqi.so2 ? props.aqi.data.iaqi.so2.v : 'N/A '}ppm</p>
+                <p className='aqi-details'>NO<sub>2</sub>: {props.aqi.data.iaqi.no2 ? props.aqi.data.iaqi.no2.v : 'N/A '}ppm</p>
             </div>
         </React.Fragment>
     )
