@@ -19,7 +19,6 @@ export default function Map (props: MapProps) {
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
-
         mapboxgl.accessToken = mapboxToken;
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const map = new mapboxgl.Map({
