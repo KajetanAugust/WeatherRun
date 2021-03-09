@@ -5,7 +5,7 @@ import {Paper} from "@material-ui/core";
 import {ThemeContext} from "../contexts";
 
 const mapboxToken = String(process.env.REACT_APP_MAPBOX_TOKEN)
-const openWeatherToken = String(process.env.REACT_APP_OPENWEATHER_TOKEN)
+// const openWeatherToken = String(process.env.REACT_APP_OPENWEATHER_TOKEN)
 
 interface MapProps {
     coordinates: Record<any, any>
@@ -19,24 +19,25 @@ export default function Map (props: MapProps) {
         const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
         mapboxgl.accessToken = mapboxToken;
-        let map = new mapboxgl.Map({
+        const map = new mapboxgl.Map({
             container: 'map-container',
             style: `mapbox://styles/mapbox/${theme === 'light' ? 'light-v10' : 'dark-v10'}`,
             center: [props.coordinates.lon, props.coordinates.lat],
             zoom: 7
-        }).on('load', function(){
-            map.addLayer({
-                "id": "simple-tiles",
-                "type": "raster",
-                "source": {
-                    "type": "raster",
-                    "tiles": [`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${openWeatherToken}`],
-                    "tileSize": 256
-                },
-                "minzoom": 0,
-                "maxzoom": 22
-            });
-        });
+        })
+        //     .on('load', function(){
+        //     map.addLayer({
+        //         "id": "simple-tiles",
+        //         "type": "raster",
+        //         "source": {
+        //             "type": "raster",
+        //             "tiles": [`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${openWeatherToken}`],
+        //             "tileSize": 256
+        //         },
+        //         "minzoom": 0,
+        //         "maxzoom": 22
+        //     });
+        // });
     });
 
     return (
