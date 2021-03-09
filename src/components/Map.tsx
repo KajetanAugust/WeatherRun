@@ -24,8 +24,7 @@ export default function Map (props: MapProps) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const map = new mapboxgl.Map({
             container: 'map-container',
-            // style: `mapbox://styles/mapbox/${theme === 'light' ? 'light-v10' : 'dark-v10'}`,
-            style: 'mapbox://styles/mapbox/light-v10',
+            style: `mapbox://styles/mapbox/${theme === 'light' ? 'light-v10' : 'dark-v10'}`,
             center: [props.coordinates.lon, props.coordinates.lat],
             zoom: 7
         }).on('load', function(){
