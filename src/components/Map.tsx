@@ -19,6 +19,7 @@ export default function Map (props: MapProps) {
         const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
         mapboxgl.accessToken = mapboxToken;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const map = new mapboxgl.Map({
             container: 'map-container',
             style: `mapbox://styles/mapbox/${theme === 'light' ? 'light-v10' : 'dark-v10'}`,
