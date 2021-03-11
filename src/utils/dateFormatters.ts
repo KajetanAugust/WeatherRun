@@ -29,6 +29,6 @@ export function getFormattedTime (timestamp: number) {
     const date = new Date(timestamp * 1000)
     const hour = date.getHours()
     const minutes = date.getMinutes()
-    return `${hour}:${minutes}`
+    return `${hour}:${minutes < 9 ? `0${minutes}` : minutes}`
 
 }

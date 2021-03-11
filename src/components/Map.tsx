@@ -1,8 +1,9 @@
-import {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 
 import {Paper} from "@material-ui/core";
 
 import {ThemeContext} from "../contexts";
+import MapButtons from "./MapButtons";
 
 const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 // eslint-disable-next-line import/no-webpack-loader-syntax
@@ -18,6 +19,8 @@ export default function Map (props: MapProps) {
 
     const { theme } = useContext(ThemeContext);
 
+    const [mapMode, setMapMode] = useState('precipitation')
+
     useEffect(() => {
         mapboxgl.accessToken = mapboxToken;
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -32,7 +35,7 @@ export default function Map (props: MapProps) {
                 "type": "raster",
                 "source": {
                     "type": "raster",
-                    "tiles": [`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${openWeatherToken}`],
+                    "tiles": [`https://tile.openweathermap.org/map/${mapMode}_new/{z}/{x}/{y}.png?appid=${openWeatherToken}`],
                     "tileSize": 256
                 },
                 "minzoom": 0,
@@ -42,11 +45,17 @@ export default function Map (props: MapProps) {
     });
 
     return (
-        <Paper
-            className='map-container'
-            id='map-container'
-            style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)', borderColor: 'rgb(37, 37, 37)'} : {backgroundColor: "white"}}
-            variant={theme === 'dark' ? 'outlined' : 'elevation'}
-        ></Paper>
+        <div className='map-and-buttons'>
+            <MapButtons
+                mapModeSetter={setMapMode}
+                selectedMode={mapMode}
+            />
+            <Paper
+                className='map-container'
+                id='map-container'
+                style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)', borderColor: 'rgb(37, 37, 37)'} : {backgroundColor: "white"}}
+                variant={theme === 'dark' ? 'outlined' : 'elevation'}
+            ></Paper>
+        </div>
     )
 }
