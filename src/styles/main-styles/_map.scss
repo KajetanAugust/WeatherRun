@@ -2,14 +2,9 @@
   grid-area: map;
 }
 
-.map-buttons div.MuiButtonGroup-root {
-  width: 100%;
-  button {
-    width: 25%;
-  }
+.map-buttons {
+  margin-bottom: 5px;
 }
-
-
 
 .map-container {
   height: 90%;

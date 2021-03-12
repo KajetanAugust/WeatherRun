@@ -45,17 +45,20 @@ export default function Map (props: MapProps) {
     });
 
     return (
-        <div className='map-and-buttons'>
-            <MapButtons
-                mapModeSetter={setMapMode}
-                selectedMode={mapMode}
-            />
             <Paper
-                className='map-container'
-                id='map-container'
+                className='map-and-buttons'
                 style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)', borderColor: 'rgb(37, 37, 37)'} : {backgroundColor: "white"}}
                 variant={theme === 'dark' ? 'outlined' : 'elevation'}
-            ></Paper>
-        </div>
+            >
+                <MapButtons
+                    mapModeSetter={setMapMode}
+                    selectedMode={mapMode}
+                />
+                <div
+                    className='map-container'
+                    id='map-container'
+                >
+                </div>
+            </Paper>
     )
 }
