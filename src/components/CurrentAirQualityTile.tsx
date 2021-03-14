@@ -11,7 +11,7 @@ interface CurrentAirQualityTileProps {
 export default function CurrentAirQualityTile (props: CurrentAirQualityTileProps) {
 
     const { theme } = useContext(ThemeContext);
-    // console.log(props.aqi)
+    console.log(props.aqi)
     return (
         <React.Fragment>
             <p className='aqi-title'>Air Quality</p>

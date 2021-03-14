@@ -6,9 +6,11 @@ import ThemeSwitch from "./ThemeSwitch";
 import GoBackButton from "./GoBackButton";
 import MobileMenu from "./MobileMenu";
 import InfoButton from "./InfoButton";
+import {Button} from "@material-ui/core";
 
 interface NavProps {
-    location: string
+    location: string,
+    openSetter: any
 }
 
 export default function Nav (props: NavProps) {
@@ -17,6 +19,16 @@ export default function Nav (props: NavProps) {
         <div className={`nav ${theme}`}>
             <GoBackButton location={props.location} />
             <MobileMenu />
+            {
+                props.openSetter !== null &&
+                <Button
+                    variant={theme === 'light' ? 'outlined' : "contained"}
+                    onClick={() => props.openSetter(true)}
+                >
+                    Show Current Day
+                </Button>
+            }
+
             <div>
                 <InfoButton />
                 <ThemeSwitch theme={theme} setTheme={setTheme}/>

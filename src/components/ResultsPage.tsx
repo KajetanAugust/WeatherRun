@@ -12,6 +12,7 @@ import Forecast from "./Forecast";
 import Recommendations from "./Recommendations";
 import CurrentTilesCreator from "./CurrentTilesCreator";
 import Map from "./Map";
+import ModalWindow from "./ModalWindow";
 
 
 export default function ResultsPage (props: any) {
@@ -21,6 +22,7 @@ export default function ResultsPage (props: any) {
     const [ pollution, setPollution ] = useState({})
     const [ locationInfo, setLocationInfo ] = useState({})
     const [ err, setErr ] = useState('')
+    const [ open, setOpen ] = useState(false)
 
     const { theme } = useContext(ThemeContext);
 
@@ -36,12 +38,13 @@ export default function ResultsPage (props: any) {
                     !loading && weather !== {} && pollution !== {}
                         ?
                         <React.Fragment>
-                            <Nav location={err === '' ? formatLocation(locationInfo) : ''}/>
+                            <Nav location={err === '' ? formatLocation(locationInfo) : ''} openSetter={setOpen}/>
                             {
                                 !loading && err === ''
                                     ?
                                     <React.Fragment>
                                         <div className={`results-page ${theme}`}>
+                                            <ModalWindow isOpen={open} openSetter={setOpen} weather={weather} pollution={pollution}/>
                                             <CurrentTilesCreator type='aqi' data={pollution} />
                                             <CurrentTilesCreator type='weather' data={weather} />
                                             <Recommendations aqi={pollution} weather={weather}/>

@@ -17,7 +17,7 @@ export default function DataSourcesInfo () {
 
     return (
         <React.Fragment>
-            <Nav location={''}/>
+            <Nav location={''} openSetter={null} />
             <div className='data-sources-info'>
                 <div>
                     <h3>Weather information provided by OpenWeatherMap</h3>
