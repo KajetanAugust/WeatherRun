@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import {useHistory, useLocation} from "react-router-dom";
 
 import { ThemeContext } from "../contexts";
 
@@ -8,27 +9,38 @@ import MobileMenu from "./MobileMenu";
 import InfoButton from "./InfoButton";
 import {Button} from "@material-ui/core";
 
+
 interface NavProps {
-    location: string,
-    openSetter: any
+    location: string
 }
 
 export default function Nav (props: NavProps) {
+
+    let history = useHistory()
+    let location = useLocation()
     const {theme, setTheme} = useContext(ThemeContext);
+
     return(
         <div className={`nav ${theme}`}>
             <GoBackButton location={props.location} />
             <MobileMenu />
             {
-                props.openSetter !== null &&
-                <Button
-                    variant={theme === 'light' ? 'outlined' : "contained"}
-                    onClick={() => props.openSetter(true)}
-                >
-                    Show Current Day
-                </Button>
+                location.pathname !== '/info' &&
+                    <div>
+                        <Button
+                            variant={theme === 'light' ? 'outlined' : "contained"}
+                            onClick={() => history.push('/day-view')}
+                        >
+                            Main Screen
+                        </Button>
+                        <Button
+                            variant={theme === 'light' ? 'outlined' : "contained"}
+                            onClick={() => history.push('/day-view')}
+                        >
+                            Day Details
+                        </Button>
+                    </div>
             }
-
             <div>
                 <InfoButton />
                 <ThemeSwitch theme={theme} setTheme={setTheme}/>

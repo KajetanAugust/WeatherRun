@@ -3,7 +3,7 @@ import queryString from "query-string";
 
 import { fetchAll } from "../utils/fetchFunctions";
 import formatLocation from '../utils/formatLocation'
-import { ThemeContext } from "../contexts";
+import { ThemeContext} from "../contexts";
 
 import Loading from "./Loading";
 import Nav from './Nav'
@@ -12,7 +12,6 @@ import Forecast from "./Forecast";
 import Recommendations from "./Recommendations";
 import CurrentTilesCreator from "./CurrentTilesCreator";
 import Map from "./Map";
-import ModalWindow from "./ModalWindow";
 
 
 export default function ResultsPage (props: any) {
@@ -22,12 +21,12 @@ export default function ResultsPage (props: any) {
     const [ pollution, setPollution ] = useState({})
     const [ locationInfo, setLocationInfo ] = useState({})
     const [ err, setErr ] = useState('')
-    const [ open, setOpen ] = useState(false)
 
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         const locationFromQuery = queryString.parse(props.location.search)
+        console.log(locationFromQuery)
         fetchAll(String(locationFromQuery.search), setLocationInfo, setWeather, setPollution, setLoading, setErr)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
@@ -38,13 +37,12 @@ export default function ResultsPage (props: any) {
                     !loading && weather !== {} && pollution !== {}
                         ?
                         <React.Fragment>
-                            <Nav location={err === '' ? formatLocation(locationInfo) : ''} openSetter={setOpen}/>
+                            <Nav location={err === '' ? formatLocation(locationInfo) : ''} />
                             {
                                 !loading && err === ''
                                     ?
                                     <React.Fragment>
                                         <div className={`results-page ${theme}`}>
-                                            <ModalWindow isOpen={open} openSetter={setOpen} weather={weather} pollution={pollution}/>
                                             <CurrentTilesCreator type='aqi' data={pollution} />
                                             <CurrentTilesCreator type='weather' data={weather} />
                                             <Recommendations aqi={pollution} weather={weather}/>

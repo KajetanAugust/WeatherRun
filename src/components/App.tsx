@@ -8,6 +8,7 @@ import ResultsPage from "./ResultsPage";
 import Search from "./Search";
 import NotFound from './NotFound';
 import DataSourcesInfo from "./DataSourcesInfo";
+import DayDetails from "./DayDetails";
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
                         <Route exact path='/' component={Search} />
                         <Route path='/results' component={ResultsPage} />
                         <Route path='/info' component={DataSourcesInfo} />
+                        <Route path='/day-view' component={DayDetails} />
                         <Route render={() => <NotFound text='Page not found' /> } />
                     </Switch>
                 </Router>
