@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {useHistory, useLocation} from "react-router-dom";
+// import {useHistory, useLocation} from "react-router-dom";
 
 import { ThemeContext } from "../contexts";
 
@@ -7,7 +7,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import GoBackButton from "./GoBackButton";
 import MobileMenu from "./MobileMenu";
 import InfoButton from "./InfoButton";
-import {Button} from "@material-ui/core";
+// import {Button} from "@material-ui/core";
 
 
 interface NavProps {
@@ -16,8 +16,8 @@ interface NavProps {
 
 export default function Nav (props: NavProps) {
 
-    let history = useHistory()
-    let location = useLocation()
+    // let history = useHistory()
+    // let location = useLocation()
     const {theme, setTheme} = useContext(ThemeContext);
 
     return(

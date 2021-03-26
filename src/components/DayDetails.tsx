@@ -1,23 +1,23 @@
-import React, {useContext, useEffect, useState} from "react";
-import {Paper} from "@material-ui/core";
-import { ResponsiveLine } from '@nivo/line'
-
-import {getFormattedTime} from "../utils/dateFormatters";
-import {ThemeContext} from "../contexts";
-
-import Nav from "./Nav";
-import queryString from "query-string";
-import {fetchAll} from "../utils/fetchFunctions";
-import Loading from "./Loading";
+// import React, {useContext, useEffect, useState} from "react";
+// import {Paper} from "@material-ui/core";
+// import { ResponsiveLine } from '@nivo/line'
+//
+// import {getFormattedTime} from "../utils/dateFormatters";
+// import {ThemeContext} from "../contexts";
+//
+// import Nav from "./Nav";
+// import queryString from "query-string";
+// import {fetchAll} from "../utils/fetchFunctions";
+// import Loading from "./Loading";
 
 // interface ModalWindowProps {
 //     city: String
 // }
 
-export default function DayDetails (props: any) {
+export default function DayDetails () {
 
     return (
-            <div>test</div>
+            <div>In Development</div>
         // weather !== {} ?
         // <React.Fragment>
         //     <Nav location={''}/>
