@@ -24,23 +24,23 @@ export default function Nav (props: NavProps) {
         <div className={`nav ${theme}`}>
             <GoBackButton location={props.location} />
             <MobileMenu />
-            {
-                location.pathname !== '/info' &&
-                    <div>
-                        <Button
-                            variant={theme === 'light' ? 'outlined' : "contained"}
-                            onClick={() => history.push('/day-view')}
-                        >
-                            Main Screen
-                        </Button>
-                        <Button
-                            variant={theme === 'light' ? 'outlined' : "contained"}
-                            onClick={() => history.push('/day-view')}
-                        >
-                            Day Details
-                        </Button>
-                    </div>
-            }
+            {/*{*/}
+            {/*    location.pathname !== '/info' &&*/}
+            {/*        <div>*/}
+            {/*            <Button*/}
+            {/*                variant={theme === 'light' ? 'outlined' : "contained"}*/}
+            {/*                onClick={() => history.push('/day-view')}*/}
+            {/*            >*/}
+            {/*                Main Screen*/}
+            {/*            </Button>*/}
+            {/*            <Button*/}
+            {/*                variant={theme === 'light' ? 'outlined' : "contained"}*/}
+            {/*                onClick={() => history.push('/day-view')}*/}
+            {/*            >*/}
+            {/*                Day Details*/}
+            {/*            </Button>*/}
+            {/*        </div>*/}
+            {/*}*/}
             <div>
                 <InfoButton />
                 <ThemeSwitch theme={theme} setTheme={setTheme}/>
