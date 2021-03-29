@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 
 import { fetchAll } from "../utils/fetchFunctions";
 import formatLocation from '../utils/formatLocation'
-import { ThemeContext} from "../contexts";
+import { ThemeContext } from "../contexts";
 
 import Loading from "./Loading";
 import Nav from './Nav'
@@ -16,18 +17,15 @@ import Map from "./Map";
 
 export default function ResultsPage (props: any) {
 
+    let location = useLocation()
+
     const [ loading, setLoading ] = useState(true)
-    const [ weather, setWeather ] = useState({})
-    const [ pollution, setPollution ] = useState({})
-    const [ locationInfo, setLocationInfo ] = useState({})
-    const [ err, setErr ] = useState('')
+    const {weather, weatherSetter, pollution, pollutionSetter, locationInfo, locationInfoSetter, err, errSetter} = props
 
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
-        const locationFromQuery = queryString.parse(props.location.search)
-        console.log(locationFromQuery)
-        fetchAll(String(locationFromQuery.search), setLocationInfo, setWeather, setPollution, setLoading, setErr)
+        fetchAll(String(queryString.parse(location.search).search), locationInfoSetter, weatherSetter, pollutionSetter, setLoading, errSetter)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 

@@ -15,9 +15,8 @@ import InfoButton from "./InfoButton";
 function Search (props: any) {
 
     const [ city, setCity ] = useState('')
+
     const { theme, setTheme } = useContext(ThemeContext);
-
-
 
         return (
             <div className={`search-page ${theme}`}>
