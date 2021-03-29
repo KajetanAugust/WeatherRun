@@ -26,6 +26,7 @@ export default function ResultsPage (props: any) {
 
     useEffect(() => {
         fetchAll(String(queryString.parse(location.search).search), locationInfoSetter, weatherSetter, pollutionSetter, setLoading, errSetter)
+        locationInfoSetter(String(queryString.parse(location.search).search))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
