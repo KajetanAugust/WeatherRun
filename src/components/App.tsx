@@ -43,6 +43,7 @@ export default function App() {
                         <Route path='/day-view' render={() => <DayDetails
                             pollution={pollution}
                             weather={weather}
+                            locationInfo={locationInfo}
                         /> } />
                         <Route render={() => <NotFound text='Page not found' /> } />
                     </Switch>
