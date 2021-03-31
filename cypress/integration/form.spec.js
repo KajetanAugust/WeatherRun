@@ -30,7 +30,7 @@ describe('Search form tests', () => {
     })
 
     it('submits input', () => {
-        const input = 'Katowice'
+        const input = 'katowice'
         // eslint-disable-next-line no-undef
         cy.get('.search-form')
             // eslint-disable-next-line no-undef
@@ -42,6 +42,19 @@ describe('Search form tests', () => {
         // eslint-disable-next-line no-undef
         cy.url().should('eq', 'http://localhost:3000/results?search=katowice')
     })
+
+    it('submits input on enter click', () => {
+        const input = 'katowice'
+        // eslint-disable-next-line no-undef
+        cy.get('.search-form')
+        // eslint-disable-next-line no-undef
+        cy.get('.MuiOutlinedInput-inputMarginDense')
+            .type(input)
+            .type('{enter}')
+        // eslint-disable-next-line no-undef
+        cy.url().should('eq', 'http://localhost:3000/results?search=katowice')
+    })
+
 
     it('clicks last search', () => {
         const input = "Katowice"
