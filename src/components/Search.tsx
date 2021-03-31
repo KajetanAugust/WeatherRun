@@ -37,6 +37,7 @@ function Search (props: any) {
                 >
                     <TextField
                         size='small'
+                        autoFocus
                         className={`search-text-field-${theme}`}
                         id="outlined-basic"
                         autoComplete="off"
@@ -48,7 +49,11 @@ function Search (props: any) {
                     {
                         city !== ''
                             ?
-                            <Link to={`/results?search=${city}`} style={{textDecoration: 'none'}} >
+                            <Link
+                                to={`/results?search=${city.toLowerCase()}`}
+                                style={{textDecoration: 'none'}}
+                                className='search-link'
+                            >
                                 <Button
                                     variant="contained"
                                     disableElevation
