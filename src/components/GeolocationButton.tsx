@@ -32,6 +32,7 @@ function GeolocationButton (props: any) {
                                     disabled={!props.coords}
                                     variant="outlined"
                                     style={theme === "dark" ? {color: 'white', borderColor: 'white'} : {}}
+                                    className='location-button'
                                 >
                                     <FaLocationArrow />
                                 </Button>
