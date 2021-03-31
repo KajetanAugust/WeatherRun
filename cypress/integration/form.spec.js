@@ -10,20 +10,33 @@ describe('Search form tests', () => {
     })
 
     it('accepts input', () => {
-        const input = "Katowice"
+        const input = 'Katowice'
         // eslint-disable-next-line no-undef
         cy.get('.MuiOutlinedInput-inputMarginDense')
             .type(input)
             .should('have.value', input)
     })
 
+    it('submit locked for input under three letters', () => {
+        const input = 'te'
+        // eslint-disable-next-line no-undef
+        cy.get('.MuiOutlinedInput-inputMarginDense')
+            .type(input)
+            // eslint-disable-next-line no-undef
+            cy.get('.MuiButtonBase-root.MuiButton-root.MuiButton-outlined.Mui-disabled.Mui-disabled')
+            .click()
+        // eslint-disable-next-line no-undef
+        cy.url().should('eq', 'http://localhost:3000/')
+    })
+
     it('submits input', () => {
-        const input = "Katowice"
+        const input = 'Katowice'
         // eslint-disable-next-line no-undef
         cy.get('.search-form')
-            .find('.MuiOutlinedInput-inputMarginDense')
+            // eslint-disable-next-line no-undef
+            cy.get('.MuiOutlinedInput-inputMarginDense')
             .type(input)
-        // eslint-disable-next-line no-undef
+            // eslint-disable-next-line no-undef
             cy.get('.search-link')
             .click()
         // eslint-disable-next-line no-undef
@@ -34,10 +47,11 @@ describe('Search form tests', () => {
         const input = "Katowice"
         // eslint-disable-next-line no-undef
         cy.get('.search-form')
-            .find('.MuiOutlinedInput-inputMarginDense')
+            // eslint-disable-next-line no-undef
+            cy.get('.MuiOutlinedInput-inputMarginDense')
             .type(input)
-        // eslint-disable-next-line no-undef
-        cy.get('.search-link')
+            // eslint-disable-next-line no-undef
+            cy.get('.search-link')
             .click()
         // eslint-disable-next-line no-undef
         cy.get('.back-arrow')
