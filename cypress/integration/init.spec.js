@@ -9,7 +9,7 @@ describe('General tests', () => {
 
     it('visits the app', () => {
         // eslint-disable-next-line no-undef
-        cy.visit('/')
+        cy.visit('https://blissful-almeida-fb7353.netlify.app')
     })
 
     it('app changes theme', () => {
@@ -22,7 +22,7 @@ describe('General tests', () => {
 describe('Search form tests', () => {
     beforeEach(() => {
         // eslint-disable-next-line no-undef
-        cy.visit('/')
+        cy.visit('https://blissful-almeida-fb7353.netlify.app')
     })
 
     it('focuses the input', () => {
@@ -47,7 +47,7 @@ describe('Search form tests', () => {
         cy.get('.MuiButtonBase-root.MuiButton-root.MuiButton-outlined.Mui-disabled.Mui-disabled')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', '/')
+        cy.url().should('eq', 'https://blissful-almeida-fb7353.netlify.app')
     })
 
     it('submits input', () => {
@@ -61,7 +61,7 @@ describe('Search form tests', () => {
         cy.get('.search-link')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', '/results?search=katowice')
+        cy.url().should('eq', 'https://blissful-almeida-fb7353.netlify.app/results?search=katowice')
     })
 
     it('submits input on enter click', () => {
@@ -73,7 +73,7 @@ describe('Search form tests', () => {
             .type(input)
             .type('{enter}')
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', '/results?search=katowice')
+        cy.url().should('eq', 'https://blissful-almeida-fb7353.netlify.app/results?search=katowice')
     })
 
 
@@ -95,7 +95,7 @@ describe('Search form tests', () => {
             .find('button')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', '/results?search=katowice')
+        cy.url().should('eq', 'https://blissful-almeida-fb7353.netlify.app/results?search=katowice')
     })
 
     it('locates user', () => {
@@ -109,7 +109,7 @@ describe('Search form tests', () => {
 describe('Results', () => {
     beforeEach(() => {
         // eslint-disable-next-line no-undef
-        cy.visit('/')
+        cy.visit('https://blissful-almeida-fb7353.netlify.app')
     })
 
     it('site info is shown', () => {
@@ -127,7 +127,7 @@ describe('Results', () => {
             .find('button')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', '/info')
+        cy.url().should('eq', 'https://blissful-almeida-fb7353.netlify.app/info')
     })
 
     it('github link/button is present', () => {
@@ -164,7 +164,7 @@ describe('Results', () => {
         cy.get('.back-arrow')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', '/')
+        cy.url().should('eq', 'https://blissful-almeida-fb7353.netlify.app')
     })
 })
 
