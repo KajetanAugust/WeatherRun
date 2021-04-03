@@ -47,7 +47,7 @@ describe('Search form tests', () => {
         cy.get('.MuiButtonBase-root.MuiButton-root.MuiButton-outlined.Mui-disabled.Mui-disabled')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', 'http://localhost:3000/')
+        cy.url().should('eq', '/')
     })
 
     it('submits input', () => {
@@ -61,7 +61,7 @@ describe('Search form tests', () => {
         cy.get('.search-link')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', 'http://localhost:3000/results?search=katowice')
+        cy.url().should('eq', '/results?search=katowice')
     })
 
     it('submits input on enter click', () => {
@@ -73,7 +73,7 @@ describe('Search form tests', () => {
             .type(input)
             .type('{enter}')
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', 'http://localhost:3000/results?search=katowice')
+        cy.url().should('eq', '/results?search=katowice')
     })
 
 
@@ -95,7 +95,7 @@ describe('Search form tests', () => {
             .find('button')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', 'http://localhost:3000/results?search=katowice')
+        cy.url().should('eq', '/results?search=katowice')
     })
 
     it('locates user', () => {
@@ -127,7 +127,7 @@ describe('Results', () => {
             .find('button')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', 'http://localhost:3000/info')
+        cy.url().should('eq', '/info')
     })
 
     it('github link/button is present', () => {
@@ -164,7 +164,7 @@ describe('Results', () => {
         cy.get('.back-arrow')
             .click()
         // eslint-disable-next-line no-undef
-        cy.url().should('eq', 'http://localhost:3000/')
+        cy.url().should('eq', '/')
     })
 })
 
