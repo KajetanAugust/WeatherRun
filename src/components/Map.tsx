@@ -50,15 +50,16 @@ export default function Map (props: MapProps) {
                 style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)', borderColor: 'rgb(37, 37, 37)'} : {backgroundColor: "white"}}
                 variant={theme === 'dark' ? 'outlined' : 'elevation'}
             >
-                <MapButtons
-                    mapModeSetter={setMapMode}
-                    selectedMode={mapMode}
-                />
                 <div
                     className='map-container'
                     id='map-container'
                 >
                 </div>
+                <MapButtons
+                    mapModeSetter={setMapMode}
+                    selectedMode={mapMode}
+                />
+
             </Paper>
     )
 }

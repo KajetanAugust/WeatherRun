@@ -14,7 +14,8 @@ export default function MapButtons (props: any) {
             aria-label="outlined primary button group"
             className={`map-buttons ${theme}`}
             variant={theme === 'light' ? 'outlined' : "contained"}
-            style={{width: '100%'}}>
+            style={{width: '100%'}}
+        >
             {
                 availableMapModes.map((mode) => (
                     <Button
