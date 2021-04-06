@@ -22,83 +22,59 @@ export function RunRecommendationGenerator (aqi: number, weather: Record<any, an
 
     if (weather.rain) {
         tip = [
-            ...tip,
-            ...[
-                {type: 'Head', tip: recommendations.clothes.head.moderate},
-                {type: 'Body', tip: recommendations.clothes.body.rainy},
-                {type: 'Legs', tip: recommendations.clothes.legs.rainy},
-                {type: 'Shoes', tip: recommendations.clothes.shoes.rainy}
-            ]
+            {type: 'Head', tip: recommendations.clothes.head.moderate},
+            {type: 'Body', tip: recommendations.clothes.body.rainy},
+            {type: 'Legs', tip: recommendations.clothes.legs.rainy},
+            {type: 'Shoes', tip: recommendations.clothes.shoes.rainy}
         ]
 
     } else if (weather.temp < 5 && weather.temp > -10 && weather.wind_speed > 3) {
         tip = [
-            ...tip,
-            ...[
-                {type: 'Head', tip: recommendations.clothes.head.coldAndWindy},
-                {type: 'Body', tip: recommendations.clothes.body.coldAndWindy},
-                {type: 'Legs', tip: recommendations.clothes.legs.coldAndWindy},
-                {type: 'Shoes', tip: recommendations.clothes.shoes.cold}
-            ]
+            {type: 'Head', tip: recommendations.clothes.head.coldAndWindy},
+            {type: 'Body', tip: recommendations.clothes.body.coldAndWindy},
+            {type: 'Legs', tip: recommendations.clothes.legs.coldAndWindy},
+            {type: 'Shoes', tip: recommendations.clothes.shoes.cold}
         ]
-
 
     } else if (weather.temp < 5 && weather.temp > -10 && weather.wind_speed <= 3) {
         tip = [
-            ...tip,
-            ...[
-                {type: 'Head', tip: recommendations.clothes.head.cold},
-                {type: 'Body', tip: recommendations.clothes.body.cold},
-                {type: 'Legs', tip: recommendations.clothes.legs.cold},
-                {type: 'Shoes', tip: recommendations.clothes.shoes.cold}
-            ]
+            {type: 'Head', tip: recommendations.clothes.head.cold},
+            {type: 'Body', tip: recommendations.clothes.body.cold},
+            {type: 'Legs', tip: recommendations.clothes.legs.cold},
+            {type: 'Shoes', tip: recommendations.clothes.shoes.cold}
         ]
-
 
     } else if (weather.temp < -10) {
         tip = [
-            ...tip,
-            ...[
-                {type: 'Head', tip: recommendations.clothes.head.freezingCold},
-                {type: 'Body', tip: recommendations.clothes.body.freezingCold},
-                {type: 'Legs', tip: recommendations.clothes.legs.freezingCold},
-                {type: 'Shoes', tip: recommendations.clothes.shoes.cold}
-            ]
+            {type: 'Head', tip: recommendations.clothes.head.freezingCold},
+            {type: 'Body', tip: recommendations.clothes.body.freezingCold},
+            {type: 'Legs', tip: recommendations.clothes.legs.freezingCold},
+            {type: 'Shoes', tip: recommendations.clothes.shoes.cold}
         ]
 
     } else if (weather.temp > 5 && weather.temp < 18) {
         tip = [
-            ...tip,
-            ...[
-                {type: 'Head', tip: recommendations.clothes.head.moderate},
-                {type: 'Body', tip: recommendations.clothes.body.moderate},
-                {type: 'Legs', tip: recommendations.clothes.legs.moderate},
-                {type: 'Shoes', tip: recommendations.clothes.shoes.hot}
-            ]
+            {type: 'Head', tip: recommendations.clothes.head.moderate},
+            {type: 'Body', tip: recommendations.clothes.body.moderate},
+            {type: 'Legs', tip: recommendations.clothes.legs.moderate},
+            {type: 'Shoes', tip: recommendations.clothes.shoes.hot}
         ]
 
     } else if (weather.temp > 18 && weather.temp < 25) {
         tip = [
-            ...tip,
-            ...[
-                {type: 'Head', tip: recommendations.clothes.head.hot},
-                {type: 'Body', tip: recommendations.clothes.body.hot},
-                {type: 'Legs', tip: recommendations.clothes.legs.hot},
-                {type: 'Shoes', tip: recommendations.clothes.shoes.hot}
-            ]
+            {type: 'Head', tip: recommendations.clothes.head.hot},
+            {type: 'Body', tip: recommendations.clothes.body.hot},
+            {type: 'Legs', tip: recommendations.clothes.legs.hot},
+            {type: 'Shoes', tip: recommendations.clothes.shoes.hot}
         ]
 
     } else if (weather.temp > 25) {
         tip = [
-            ...tip,
-            ...[
-                {type: 'Head', tip: recommendations.clothes.head.hot},
-                {type: 'Body', tip: recommendations.clothes.body.hot},
-                {type: 'Legs', tip: recommendations.clothes.legs.hot},
-                {type: 'Shoes', tip: recommendations.clothes.shoes.hot}
-            ]
+             {type: 'Head', tip: recommendations.clothes.head.hot},
+             {type: 'Body', tip: recommendations.clothes.body.hot},
+             {type: 'Legs', tip: recommendations.clothes.legs.hot},
+             {type: 'Shoes', tip: recommendations.clothes.shoes.hot}
         ]
-
     }
 
     return tip
