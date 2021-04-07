@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 
-import { Paper, Tooltip } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import { FaRunning } from "react-icons/fa";
 
 import { RunRecommendationGenerator } from '../utils/runRecommendationGenerator'

@@ -2,8 +2,6 @@ import React from "react";
 
 import { Paper } from "@material-ui/core";
 
-
-
 export default function RecommendationElementCreator (props: any) {
     const offsets = {Head: '20px', Body: '120px', Legs: '220px', Shoes: '320px'}
 
