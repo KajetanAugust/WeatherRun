@@ -28,8 +28,8 @@ export default function Recommendations (props: recommendationsPropsData) {
                 className={`recommendations-runner ${theme}`}
                 style={{
                     height: '80%',
-                    width: 'auto',
-                    marginLeft: '5%',
+                    width: '50%',
+                    marginLeft: '15px',
                     backgroundColor: 'transparent',
                 }}
             />
