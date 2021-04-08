@@ -29,8 +29,8 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-            'aqi aqi'
             'weather weather'
+            'aqi aqi'
             'map map'
             'forecast-carousel forecast-carousel'
             'recommendations recommendations'
