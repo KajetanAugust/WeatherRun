@@ -1,4 +1,4 @@
-import {getFormattedTime} from "../utils/dateFormatters";
+import {getFormattedTime} from "../../utils/dateFormatters";
 import {ResponsiveLine} from "@nivo/line";
 import React from "react";
 

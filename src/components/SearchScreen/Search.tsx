@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import { FaRunning } from "react-icons/fa";
 import { WiDayRainWind } from 'react-icons/wi';
 
-import { ThemeContext } from "../contexts";
+import { ThemeContext } from "../../contexts";
 
-import ThemeSwitch from "./ThemeSwitch";
+import ThemeSwitch from "../Nav/ThemeSwitch";
 import LastSearches from "./LastSearches";
 import GeolocationButton from "./GeolocationButton";
-import InfoButton from "./InfoButton";
+import InfoButton from "../Nav/InfoButton";
 
 function Search (props: any) {
 

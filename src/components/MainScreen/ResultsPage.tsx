@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 
-import { fetchAll } from "../utils/fetchFunctions";
-import formatLocation from '../utils/formatLocation'
-import { ThemeContext } from "../contexts";
+import { fetchAll } from "../../utils/fetchFunctions";
+import formatLocation from '../../utils/formatLocation'
+import { ThemeContext } from "../../contexts";
 
-import Loading from "./Loading";
-import Nav from './Nav'
-import NotFound from './NotFound';
+import Loading from "../UtilityScreens/Loading";
+import Nav from '../Nav/Nav'
+import NotFound from '../UtilityScreens/NotFound';
 import Forecast from "./Forecast";
 import Recommendations from "./Recommendations";
 import CurrentTilesCreator from "./CurrentTilesCreator";

@@ -6,9 +6,9 @@ import { Button, Tooltip } from "@material-ui/core";
 import { FaLocationArrow } from "react-icons/fa";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-import { ThemeContext } from "../contexts";
+import { ThemeContext } from "../../contexts";
 
-import { fetchLocationInfo } from "../utils/fetchFunctions";
+import { fetchLocationInfo } from "../../utils/fetchFunctions";
 
 
 function GeolocationButton (props: any) {

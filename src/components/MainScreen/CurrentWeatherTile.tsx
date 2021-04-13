@@ -2,11 +2,11 @@ import React, {useContext} from "react";
 
 import {WiHumidity, WiStrongWind, WiSunrise, WiSunset, WiThermometer, WiThermometerExterior} from "react-icons/all";
 
-import {ThemeContext} from "../contexts";
+import {ThemeContext} from "../../contexts";
 
-import {formatWeather} from "../utils/formatWeather";
-import {weatherIconChecker} from "../utils/weatherIconChecker";
-import {getFormattedTime} from "../utils/dateFormatters";
+import {formatWeather} from "../../utils/formatWeather";
+import {weatherIconChecker} from "../../utils/weatherIconChecker";
+import {getFormattedTime} from "../../utils/dateFormatters";
 
 
 interface CurrentWeatherTileProps {

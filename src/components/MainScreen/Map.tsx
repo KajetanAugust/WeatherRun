@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 
 import {Paper} from "@material-ui/core";
 
-import {ThemeContext} from "../contexts";
+import {ThemeContext} from "../../contexts";
 import MapButtons from "./MapButtons";
 
 const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');

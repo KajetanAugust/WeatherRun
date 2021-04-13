@@ -4,11 +4,11 @@ import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import '../styles/index.scss'
 import { ThemeContext } from "../contexts";
 
-import ResultsPage from "./ResultsPage";
-import Search from "./Search";
-import NotFound from './NotFound';
-import DataSourcesInfo from "./DataSourcesInfo";
-import DayDetails from "./DayDetails";
+import ResultsPage from "./MainScreen/ResultsPage";
+import Search from "./SearchScreen/Search";
+import NotFound from './UtilityScreens/NotFound';
+import DataSourcesInfo from "./UtilityScreens/DataSourcesInfo";
+import DayDetails from "./DayView/DayDetails";
 
 export default function App() {
 

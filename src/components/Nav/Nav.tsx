@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import {useHistory, useLocation} from "react-router-dom";
 
-import { ThemeContext } from "../contexts";
+import { ThemeContext } from "../../contexts";
 
 import ThemeSwitch from "./ThemeSwitch";
 import GoBackButton from "./GoBackButton";
