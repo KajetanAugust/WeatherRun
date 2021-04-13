@@ -1,5 +1,5 @@
 import LastSearchTile from "./LastSearchTile";
-import { getFromLocalStorage } from "../utils/localStorageManagement";
+import { getFromLocalStorage } from "../../utils/localStorageManagement";
 
 export default function LastSearches () {
     const searchHistory = getFromLocalStorage()

@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 
 import { Paper } from "@material-ui/core";
-import {ThemeContext} from "../contexts";
+import {ThemeContext} from "../../contexts";
 
 export default function RecommendationElementCreator (props: any) {
     const offsets = {Head: '5%', Body: '30%', Legs: '55%', Shoes: '80%'}

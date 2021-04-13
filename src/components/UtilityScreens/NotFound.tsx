@@ -1,7 +1,7 @@
 import React from 'react'
 
-import GoBackButton from "./GoBackButton";
-import Nav from "./Nav";
+import GoBackButton from "../Nav/GoBackButton";
+import Nav from "../Nav/Nav";
 
 interface NotFoundProps {
     text: string

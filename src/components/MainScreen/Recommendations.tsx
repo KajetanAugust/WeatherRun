@@ -3,8 +3,8 @@ import React, {useContext, useState} from 'react'
 import { Paper } from "@material-ui/core";
 import { FaRunning } from "react-icons/fa";
 
-import { RunRecommendationGenerator } from '../utils/runRecommendationGenerator'
-import {ThemeContext} from "../contexts";
+import { RunRecommendationGenerator } from '../../utils/runRecommendationGenerator'
+import {ThemeContext} from "../../contexts";
 import RecommendationElementCreator from "./RecommendationElementCreator";
 
 interface recommendationsPropsData {

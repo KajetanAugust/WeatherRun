@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Paper} from "@material-ui/core";
 
-import { ThemeContext } from "../contexts";
+import { ThemeContext } from "../../contexts";
 
-import { aqiFaceChecker } from "../utils/aqiFaceChecker";
-import { weatherIconChecker } from "../utils/weatherIconChecker";
-import { formatDay } from "../utils/dateFormatters";
+import { aqiFaceChecker } from "../../utils/aqiFaceChecker";
+import { weatherIconChecker } from "../../utils/weatherIconChecker";
+import { formatDay } from "../../utils/dateFormatters";
 
 interface ForecastTileProps {
     pm10: any,

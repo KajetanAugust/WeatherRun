@@ -5,7 +5,7 @@ import {Button, Menu, MenuItem} from "@material-ui/core";
 
 import { VscMenu } from "react-icons/vsc";
 
-import { ThemeContext } from "../contexts";
+import { ThemeContext } from "../../contexts";
 
 import ThemeSwitch from "./ThemeSwitch";
 

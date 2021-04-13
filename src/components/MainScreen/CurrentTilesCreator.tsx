@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {Paper} from "@material-ui/core"
 
-import {ThemeContext} from "../contexts";
+import {ThemeContext} from "../../contexts";
 
 import CurrentWeatherTile from "./CurrentWeatherTile";
 import CurrentAirQualityTile from "./CurrentAirQualityTile";

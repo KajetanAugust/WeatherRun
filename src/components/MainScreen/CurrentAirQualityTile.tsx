@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
 
-import {ThemeContext} from "../contexts";
+import {ThemeContext} from "../../contexts";
 
-import {aqiFaceChecker} from "../utils/aqiFaceChecker";
+import {aqiFaceChecker} from "../../utils/aqiFaceChecker";
 
 interface CurrentAirQualityTileProps {
     aqi: Record<any, any>
