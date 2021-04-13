@@ -4,7 +4,7 @@ import { Paper } from "@material-ui/core";
 import {ThemeContext} from "../contexts";
 
 export default function RecommendationElementCreator (props: any) {
-    const offsets = {Head: '20px', Body: '120px', Legs: '220px', Shoes: '320px'}
+    const offsets = {Head: '5%', Body: '30%', Legs: '55%', Shoes: '80%'}
     const { theme } = useContext(ThemeContext);
     return (
         <div>
@@ -13,10 +13,11 @@ export default function RecommendationElementCreator (props: any) {
                  variant={theme === 'dark' ? 'outlined' : 'elevation'}
                  className={theme}
                  style={{
-                     maxWidth: '350px',
+                     maxWidth: '320px',
                      textAlign: 'center',
-                     padding: '15px',
+                     padding: '15px 10px',
                      position: 'absolute',
+                     fontSize: '1rem',
                      // @ts-ignore
                      top: `${offsets[props.tip.type]}`,
                      left: `${props.tip.type === 'Head' || props.tip.type === 'Shoes' ? '300px' : '350px'}`,

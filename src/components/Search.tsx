@@ -61,9 +61,10 @@ function Search (props: any) {
                                         variant="outlined"
                                         disabled
                                         style={theme === "dark" ? {color: 'white', borderColor: 'white'} : {}}
+                                        className='disabled-search-button'
                                     >
-                                    SEARCH
-                                </Button>
+                                        SEARCH
+                                    </Button>
                                 </span>
                             </Tooltip>
                     }
