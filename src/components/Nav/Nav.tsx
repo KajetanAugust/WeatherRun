@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
-// import {useHistory, useLocation} from "react-router-dom";
-import {useLocation} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import { ThemeContext } from "../../contexts";
 
 import ThemeSwitch from "./ThemeSwitch";
 import GoBackButton from "./GoBackButton";
 import MobileMenu from "./MobileMenu";
 import InfoButton from "./InfoButton";
-// import {Button} from "@material-ui/core";
+import {Button} from "@material-ui/core";
 
 
 interface NavProps {
@@ -16,7 +15,7 @@ interface NavProps {
 
 export default function Nav (props: NavProps) {
     //COMMENTED OUT FOR COMMIT
-    // let history = useHistory()
+    let history = useHistory()
     let location = useLocation()
     const {theme, setTheme} = useContext(ThemeContext);
 
@@ -27,20 +26,19 @@ export default function Nav (props: NavProps) {
             {
                 location.pathname !== '/info' &&
                     <div>
-                        {/*TODO: COMMENTED OUT FOR COMMIT*/}
-                        {/*<Button*/}
-                        {/*    variant={theme === 'light' ? 'outlined' : "contained"}*/}
-                        {/*    onClick={() => history.push(`/results?search=${props.location}`)}*/}
-                        {/*    style={{marginRight: '15px'}}*/}
-                        {/*>*/}
-                        {/*    Main Screen*/}
-                        {/*</Button>*/}
-                        {/*<Button*/}
-                        {/*    variant={theme === 'light' ? 'outlined' : "contained"}*/}
-                        {/*    onClick={() => history.push('/day-view')}*/}
-                        {/*>*/}
-                        {/*    Day Details*/}
-                        {/*</Button>*/}
+                        <Button
+                            variant={theme === 'light' ? 'outlined' : "contained"}
+                            onClick={() => history.push(`/results?search=${props.location}`)}
+                            style={{marginRight: '15px'}}
+                        >
+                            Main Screen
+                        </Button>
+                        <Button
+                            variant={theme === 'light' ? 'outlined' : "contained"}
+                            onClick={() => history.push('/day-view')}
+                        >
+                            Day Details
+                        </Button>
                     </div>
             }
             <div>
