@@ -15,4 +15,6 @@ jobs:
         with:
             install-command: yarn --frozen-lockfile --silent
             start: yarn start
+            wait-on: 'http://localhost:3000'
+            config: baseUrl=https://localhost:3000
             command: yarn cypress
