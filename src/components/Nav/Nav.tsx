@@ -35,7 +35,7 @@ export default function Nav (props: NavProps) {
                         </Button>
                         <Button
                             variant={theme === 'light' ? 'outlined' : "contained"}
-                            onClick={() => history.push('/day-view')}
+                            onClick={() => history.push(`/day-view?search=${props.location}`)}
                         >
                             Day Details
                         </Button>

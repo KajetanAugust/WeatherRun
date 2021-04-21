@@ -16,6 +16,7 @@ export default function Recommendations (props: recommendationsPropsData) {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [recommendations, setRecommendations ] = useState(RunRecommendationGenerator(props.aqi.data.aqi, props.weather.current))
+
     const { theme } = useContext(ThemeContext);
     return (
         <Paper

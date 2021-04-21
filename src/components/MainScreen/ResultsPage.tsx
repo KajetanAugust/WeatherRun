@@ -20,6 +20,9 @@ export default function ResultsPage (props: any) {
     let location = useLocation()
 
     const [ loading, setLoading ] = useState(true)
+    const [resultsIsVisible, setResultsIsVisible] = useState(true);
+    // TODO: pass resultsIsVisible setter to the nav component
+
     const {weather, weatherSetter, pollution, pollutionSetter, locationInfo, locationInfoSetter, err, errSetter} = props
 
     const { theme } = useContext(ThemeContext);
