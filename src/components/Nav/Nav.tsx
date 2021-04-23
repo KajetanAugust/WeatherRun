@@ -13,7 +13,7 @@ interface NavProps {
     location: string
 }
 
-export default function Nav (props: NavProps) {
+export default function Nav (props: any) {
     //COMMENTED OUT FOR COMMIT
     let history = useHistory()
     let location = useLocation()

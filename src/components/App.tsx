@@ -41,9 +41,14 @@ export default function App() {
                         /> } />
                         <Route path='/info' component={DataSourcesInfo} />
                         <Route path='/day-view' render={() => <DayDetails
-                            pollution={pollution}
                             weather={weather}
+                            weatherSetter={setWeather}
+                            pollution={pollution}
+                            pollutionSetter={setPollution}
                             locationInfo={locationInfo}
+                            locationInfoSetter={setLocationInfo}
+                            err={err}
+                            errSetter={setErr}
                         /> } />
                         <Route render={() => <NotFound text='Page not found' /> } />
                     </Switch>
