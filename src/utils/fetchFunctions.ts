@@ -25,10 +25,16 @@ export function fetchLocationInfo (lon: String ,lat: String) {
     //TODO: add error handling for no connection/server error
 }
 
+// function fetchAqi (lat: number, lon:number,  aqiToken: String) {
+//     return fetch(`https://api.waqi.info/feed/geo:${lat};${lon}/?token=${aqiToken}&origin=*`)
+//         .then(res => res.json())
+// }
+
 function fetchAqi (lat: number, lon:number,  aqiToken: String) {
-    return fetch(`https://api.waqi.info/feed/geo:${lat};${lon}/?token=${aqiToken}&origin=*`)
+    return fetch(`http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${lat}&lon=${lon}&appid=${openWeatherToken}`)
         .then(res => res.json())
 }
+
 
 export function fetchAll (cityName: string, setLocationInfo: any, setWeather: any, setPollution: any, setLoading: any, setErr: any) {
 

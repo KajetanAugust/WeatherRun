@@ -40,13 +40,13 @@ export default function ForecastTile (props: ForecastTileProps) {
                     className={`forecast-aqi-data ${theme}`}
                     style={theme === "dark" ? {backgroundColor: 'rgb(24, 24, 24)'} : {backgroundColor: "white"}}
                 >
-                    {aqiFaceChecker(props.pm25.avg, '-small')}
-                    <p className='aqi-details'>pm10: {props.pm10.avg ? props.pm10.avg : 'N/A '}&micro;g/m&sup3;</p>
-                    <p className='aqi-details'>pm2.5: {props.pm25.avg ? props.pm25.avg : 'N/A '}&micro;g/m&sup3;</p>
-                    <p className='aqi-details'>AQI: {props.pm25.avg ? props.pm25.avg : 'N/A '}</p>
+                    {aqiFaceChecker(props.pm25, '-small')}
+                    <p className='aqi-details'>pm10: {props.pm10 ? props.pm10 : 'N/A '}&micro;g/m&sup3;</p>
+                    <p className='aqi-details'>pm2.5: {props.pm25 ? props.pm25 : 'N/A '}&micro;g/m&sup3;</p>
+                    <p className='aqi-details'>AQI: {props.pm25 ? props.pm25 : 'N/A '}</p>
                 </div>
+                {/*TODO:rewrite passing arguments to aqiFaceChecker*/}
             </div>
         </Paper>
-
     )
 }

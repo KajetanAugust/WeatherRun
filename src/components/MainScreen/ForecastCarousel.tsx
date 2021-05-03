@@ -22,15 +22,13 @@ export default function ForecastCarousel(props: ForecastCarouselProps) {
                 onSelect={handleSelect}
             >
                 {
-                    props.pollution.data.forecast.daily.pm10.slice(0, 5).map((pm10pollution: number, index: number) => (
-                        <Carousel.Item>
-                            <ForecastTile
-                                pm10={pm10pollution}
-                                pm25={props.pollution.data.forecast.daily.pm25[index]}
-                                forecast={props.weather.daily[index + 1]}
-                                key={`forecastCarouselTile${index}`}
-                            />
-                        </Carousel.Item>
+                    props.pollution.list.slice(0, 5).map((data: Record<any, any>, index: number) => (
+                        <ForecastTile
+                            pm10={data.components.pm10}
+                            pm25={data.components.pm2_5}
+                            forecast={props.weather.daily[index + 1]}
+                            key={`forecastTile${index}`}
+                        />
                     ))
                 }
             </Carousel>
