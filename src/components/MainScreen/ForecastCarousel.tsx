@@ -24,6 +24,7 @@ export default function ForecastCarousel(props: ForecastCarouselProps) {
                 {
                     props.pollution.list.slice(0, 5).map((data: Record<any, any>, index: number) => (
                         <ForecastTile
+                            aqi={data.main.aqi}
                             pm10={data.components.pm10}
                             pm25={data.components.pm2_5}
                             forecast={props.weather.daily[index + 1]}
